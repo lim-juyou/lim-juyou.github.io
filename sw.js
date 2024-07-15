@@ -1,13 +1,13 @@
-const swPath = "/sw.js";
+const swPath = "/lim-juyou.gtihub.io/sw.js";
 const preCache = [
-  "/images/taichi.png",
-  "/images/banner.webp",
-  "/images/taichi-fill.png",
-  "/css/loader.css",
-  "/css/style.css",
-  "/js/script.js",
+  "/lim-juyou.gtihub.io/images/taichi.png",
+  "/lim-juyou.gtihub.io/images/banner.webp",
+  "/lim-juyou.gtihub.io/images/taichi-fill.png",
+  "/lim-juyou.gtihub.io/css/loader.css",
+  "/lim-juyou.gtihub.io/css/style.css",
+  "/lim-juyou.gtihub.io/js/script.js",
 ];
-const VERSION = "1721052290509";
+const VERSION = "1721052524617";
 const cacheDomain = [
   "fonts.googleapis.com",
   "npm.webcache.cn",
