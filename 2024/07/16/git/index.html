@@ -35,9 +35,12 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://lim-juyou.github.io/images/git/Snipaste_2024-07-16_11-21-48.png">
 <meta property="og:image" content="http://lim-juyou.github.io/images/git/image2.png">
-<meta property="og:image" content="http://lim-juyou.github.io/2024/07/16/git/image3.png">
+<meta property="og:image" content="http://lim-juyou.github.io/images/git/image1.png">
+<meta property="og:image" content="http://lim-juyou.github.io/images/git/image3.png">
+<meta property="og:image" content="http://lim-juyou.github.io/images/git/image4.png">
+<meta property="og:image" content="http://lim-juyou.github.io/images/git/image4.png">
 <meta property="article:published_time" content="2024-07-16T01:43:15.772Z">
-<meta property="article:modified_time" content="2024-07-16T07:10:28.918Z">
+<meta property="article:modified_time" content="2024-07-16T08:13:11.117Z">
 <meta property="article:author" content="Lim">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://lim-juyou.github.io/images/git/Snipaste_2024-07-16_11-21-48.png">
@@ -274,7 +277,8 @@
 <p>+++</p>
 <h2 id="git基本操做"><a href="#git基本操做" class="headerlink" title="git基本操做"></a>git基本操做</h2><p>git的工作就是创建和保存你项目的快照及之后的快照进行对比</p>
 <p>git常用的6个命令:<strong>git clone, git push, git add, git commit, git checkout, git pull</strong>.</p>
-<img src="/2024/07/16/git/image3.png" class></li>
+<p><img src="/images/git/image1.png"></p>
+</li>
 </ul>
 <h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init </span><br></pre></td></tr></table></figure>
 
@@ -310,6 +314,88 @@
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push	上传远程代码并合并</span><br></pre></td></tr></table></figure>
 
+<p>+++</p>
+<h3 id="git分支管理"><a href="#git分支管理" class="headerlink" title="git分支管理"></a>git分支管理</h3><p>几乎每一种版本控制系统都以某种形式支持分支，一条分支代表一条独立的开发栈。</p>
+<p>使用分支意味着你可以从开发主线上分离开来，然后不影响主线的同时继续工作。</p>
+<p><img src="/images/git/image3.png"></p>
+<p>git分支实际上是指向更改快照的指针</p>
+<p>创建分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch (branchname)</span><br></pre></td></tr></table></figure>
+
+<p>切换分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout (branchname)</span><br></pre></td></tr></table></figure>
+
+<p>当你切换分支的时候，Git会用该分支的最后提交的快照替换你的工作目录的内容，所有多个分支不需要多个目录。</p>
+<p>合并分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge</span><br></pre></td></tr></table></figure>
+
+<p>查看本地分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<p>查看远程分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -r    -r表示remote</span><br></pre></td></tr></table></figure>
+
+<p>查看所有分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
+
+<p>+++</p>
+<h2 id="git标签"><a href="#git标签" class="headerlink" title="git标签"></a>git标签</h2><p>如果你达到一个重要的阶段，并希望永远记住那个特别的提交快照，你可以使用git tag 给它打上标签。比如我们的project 项目发布一个“1.0”版本。我们可以使用git tag -a v1.0 给最新一个提交打上（head)”v1.0”的标签。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -a v1.0</span><br></pre></td></tr></table></figure>
+
+<p>当你执行 git tag -a 命令时，Git 会打开你的编辑器，让你写一句标签注解，就像你给提交写注解一样。</p>
+<p>现在，注意当我们执行 git log –decorate 时，我们可以看到我们的标签了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  d5e9fc2 (HEAD -&gt; master) Merge branch &#x27;change_site&#x27;</span><br><span class="line">|\  </span><br><span class="line">| * 7774248 (change_site) changed the runoob.php</span><br><span class="line">* | c68142b 修改代码</span><br><span class="line">|/  </span><br><span class="line">* c1501a2 removed test.txt、add runoob.php</span><br><span class="line">* 3e92c19 add test.txt</span><br><span class="line">* 3b58100 第一次版本提交</span><br></pre></td></tr></table></figure>
+
+<p>如果我们忘了给某个提交打标签，又将它发布了，我们可以给它追加标签。</p>
+<p>例如，假设我们发布了提交 85fc7e7(上面实例最后一行)，但是那时候忘了给它打标签。 我们现在也可以：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -a v0.9 85fc7e7</span><br><span class="line">$ git log --oneline --decorate --graph</span><br><span class="line">*   d5e9fc2 (HEAD -&gt; master) Merge branch &#x27;change_site&#x27;</span><br><span class="line">|\  </span><br><span class="line">| * 7774248 (change_site) changed the runoob.php</span><br><span class="line">* | c68142b 修改代码</span><br><span class="line">|/  </span><br><span class="line">* c1501a2 removed test.txt、add runoob.php</span><br><span class="line">* 3e92c19 add test.txt</span><br><span class="line">* 3b58100 (tag: v0.9) 第一次版本提交</span><br></pre></td></tr></table></figure>
+
+<p>如果我们要查看所有标签可以使用以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git tag</span><br><span class="line">v0.9</span><br><span class="line">v1.0</span><br></pre></td></tr></table></figure>
+
+<p>指定标签信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -a &lt;tagname&gt; -m &quot;project.com标签&quot;</span><br></pre></td></tr></table></figure>
+
+<p>PGP签名标签命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -s &lt;tagname&gt; -m &quot;project.com标签&quot;</span><br></pre></td></tr></table></figure>
+
+<p>删除标签</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -d v1.1</span><br></pre></td></tr></table></figure>
+
+<p>发布一个版本时，我们通常先在版本库中打一个标签（tag），这样就唯一确定了打标签时刻的版本。将来无论什么时候，取某个标签的版本，就是把那个打标签的时刻的历史版本取出来。</p>
+<p>所以，标签也是版本库的一个快照。</p>
+<p>Git 的标签虽然是版本库的快照，但其实它就是指向某个 commit 的指针（跟分支很像对不对？但是分支可以移动，标签不能移动），所以，创建和删除标签都是瞬间完成的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Git有commit，为什么还要引入tag？</span><br><span class="line"></span><br><span class="line">&quot;请把上周一的那个版本打包发布，commit号是6a5819e…&quot;</span><br><span class="line"></span><br><span class="line">&quot;一串乱七八糟的数字不好找！&quot;</span><br><span class="line"></span><br><span class="line">如果换一个办法：</span><br><span class="line"></span><br><span class="line">&quot;请把上周一的那个版本打包发布，版本号是v1.2&quot;</span><br><span class="line"></span><br><span class="line">&quot;好的，按照tag v1.2查找commit就行！&quot;</span><br><span class="line"></span><br><span class="line">所以，tag就是一个让人容易记住的有意义的名字，它跟某个commit绑在一起。</span><br></pre></td></tr></table></figure>
+
+<p>+++</p>
+<h2 id="git连接远程仓库"><a href="#git连接远程仓库" class="headerlink" title="git连接远程仓库"></a>git连接远程仓库</h2><p><img src="/images/git/image4.png"></p>
+<h4 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h4><p>使用url</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add [shortname] [url]</span><br></pre></td></tr></table></figure>
+
+<p>使用ssh</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url origin git@github.com:username/repository.git</span><br></pre></td></tr></table></figure>
+
+<p>检查远程仓库配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+
+<p>生成ssh key</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>后面的 <strong><a href="mailto:&#121;&#x6f;&#x75;&#x72;&#95;&#x65;&#x6d;&#x61;&#x69;&#108;&#x40;&#x79;&#x6f;&#x75;&#114;&#101;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;">&#121;&#x6f;&#x75;&#x72;&#95;&#x65;&#x6d;&#x61;&#x69;&#108;&#x40;&#x79;&#x6f;&#x75;&#114;&#101;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;</a></strong> 改为你在 Github 上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。</p>
+<p>成功的话会在 <strong>~&#x2F;</strong> 下生成 <strong>.ssh</strong> 文件夹，进去，打开 <strong>id_rsa.pub</strong>，复制里面的 <strong>key</strong>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;429240967@qq.com&quot;</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/Users/tianqixin/.ssh/id_rsa): </span><br><span class="line">Enter passphrase (empty for no passphrase):    # 直接回车</span><br><span class="line">Enter same passphrase again:                   # 直接回车</span><br><span class="line">Your identification has been saved in /Users/tianqixin/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /Users/tianqixin/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:MDKVidPTDXIQoJwoqUmI4LBAsg5XByBlrOEzkxrwARI 429240967@qq.com</span><br><span class="line">The key&#x27;s randomart image is:</span><br><span class="line">+---[RSA 3072]----+</span><br><span class="line">|E*+.+=**oo       |</span><br><span class="line">|%Oo+oo=o. .      |</span><br><span class="line">|%**.o.o.         |</span><br><span class="line">|OO.  o o         |</span><br><span class="line">|+o+     S        |</span><br><span class="line">|.                |</span><br><span class="line">|                 |</span><br><span class="line">|                 |</span><br><span class="line">|                 |</span><br><span class="line">+----[SHA256]-----+</span><br></pre></td></tr></table></figure>
+
+<p>回到 github 上，进入 Account &#x3D;&gt; Settings（账户配置）</p>
+<p><img src="/images/git/image4.png"></p>
+<p>为了验证是否成功，输入以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">The authenticity of host &#x27;github.com (52.74.223.119)&#x27; can&#x27;t be established.</span><br><span class="line">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span><br><span class="line">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes                   # 输入 yes</span><br><span class="line">Warning: Permanently added &#x27;github.com,52.74.223.119&#x27; (RSA) to the list of known hosts.</span><br><span class="line">Hi tianqixin! You&#x27;ve successfully authenticated, but GitHub does not provide shell access. # 成功信息</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>…or create a new repository on the command line</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# java&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/lim-juyou/java.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
+<p><strong>…or push an existing repository from the command line</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/lim-juyou/java.git</span><br><span class="line">git branch -M main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -327,6 +413,22 @@
   
     
   <nav id="article-nav" class="wow fadeInUp">
+    
+      <div class="article-nav-link-wrap article-nav-link-left">
+        
+          
+          
+            <img data-src="/images/banner.webp" data-sizes="auto" alt="hexo搭建个人博客并部署到Github" class="lazyload">
+          
+        
+        <a href="/2024/07/16/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/"></a>
+        <div class="article-nav-caption">Newer</div>
+        <h3 class="article-nav-title">
+          
+            hexo搭建个人博客并部署到Github
+          
+        </h3>
+      </div>
     
     
     <div class="article-nav-link-wrap article-nav-link-right">
@@ -365,7 +467,7 @@
   <h3 class="toc-title">Contents</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">git的介绍和使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">git配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.1.</span> <span class="toc-text">用户信息配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text">文本编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.3.</span> <span class="toc-text">查看配置信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">git工作流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E6%9A%82%E5%AD%98%E5%8C%BA%E5%92%8C%E7%89%88%E6%9C%AC%E5%BA%93"><span class="toc-number">1.3.</span> <span class="toc-text">git工作区暂存区和版本库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">1.4.</span> <span class="toc-text">git创建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%9F%BA%E6%9C%AC%E6%93%8D%E5%81%9A"><span class="toc-number">1.5.</span> <span class="toc-text">git基本操做</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E4%B8%8E%E4%BF%AE%E6%94%B9"><span class="toc-number">1.5.0.2.</span> <span class="toc-text">提交与修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%97"><span class="toc-number">1.5.0.3.</span> <span class="toc-text">提交日志</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%93%8D%E4%BD%9C"><span class="toc-number">1.5.0.4.</span> <span class="toc-text">远程操作</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">git的介绍和使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">git配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.1.</span> <span class="toc-text">用户信息配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text">文本编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.3.</span> <span class="toc-text">查看配置信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">git工作流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E6%9A%82%E5%AD%98%E5%8C%BA%E5%92%8C%E7%89%88%E6%9C%AC%E5%BA%93"><span class="toc-number">1.3.</span> <span class="toc-text">git工作区暂存区和版本库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">1.4.</span> <span class="toc-text">git创建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%9F%BA%E6%9C%AC%E6%93%8D%E5%81%9A"><span class="toc-number">1.5.</span> <span class="toc-text">git基本操做</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E4%B8%8E%E4%BF%AE%E6%94%B9"><span class="toc-number">1.5.0.2.</span> <span class="toc-text">提交与修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%97"><span class="toc-number">1.5.0.3.</span> <span class="toc-text">提交日志</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%93%8D%E4%BD%9C"><span class="toc-number">1.5.0.4.</span> <span class="toc-text">远程操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="toc-number">1.5.1.</span> <span class="toc-text">git分支管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E6%A0%87%E7%AD%BE"><span class="toc-number">1.6.</span> <span class="toc-text">git标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">1.7.</span> <span class="toc-text">git连接远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%BF%9C%E7%A8%8B%E5%BA%93"><span class="toc-number">1.7.0.1.</span> <span class="toc-text">添加远程库</span></a></li></ol></li></ol></li></ol></li></ol>
       
   </div>
 </div>
@@ -378,7 +480,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Posts</div>
-    <div class="sidebar-state-number">4</div>
+    <div class="sidebar-state-number">5</div>
   </div>
   <div class="sidebar-state-category">
     <div>Categories</div>
@@ -456,10 +558,10 @@
       
         <div>
           <span class="icon-brush"></span>
-          1.1k
+          2.3k
           &nbsp;|&nbsp;
           <span class="icon-coffee"></span>
-          00:07
+          00:13
         </div>
       
       
@@ -488,7 +590,7 @@
   <h3 class="toc-title">Contents</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">git的介绍和使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">git配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.1.</span> <span class="toc-text">用户信息配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text">文本编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.3.</span> <span class="toc-text">查看配置信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">git工作流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E6%9A%82%E5%AD%98%E5%8C%BA%E5%92%8C%E7%89%88%E6%9C%AC%E5%BA%93"><span class="toc-number">1.3.</span> <span class="toc-text">git工作区暂存区和版本库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">1.4.</span> <span class="toc-text">git创建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%9F%BA%E6%9C%AC%E6%93%8D%E5%81%9A"><span class="toc-number">1.5.</span> <span class="toc-text">git基本操做</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E4%B8%8E%E4%BF%AE%E6%94%B9"><span class="toc-number">1.5.0.2.</span> <span class="toc-text">提交与修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%97"><span class="toc-number">1.5.0.3.</span> <span class="toc-text">提交日志</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%93%8D%E4%BD%9C"><span class="toc-number">1.5.0.4.</span> <span class="toc-text">远程操作</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">git的介绍和使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">git配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.1.</span> <span class="toc-text">用户信息配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text">文本编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.3.</span> <span class="toc-text">查看配置信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">git工作流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%B7%A5%E4%BD%9C%E5%8C%BA%E6%9A%82%E5%AD%98%E5%8C%BA%E5%92%8C%E7%89%88%E6%9C%AC%E5%BA%93"><span class="toc-number">1.3.</span> <span class="toc-text">git工作区暂存区和版本库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">1.4.</span> <span class="toc-text">git创建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%9F%BA%E6%9C%AC%E6%93%8D%E5%81%9A"><span class="toc-number">1.5.</span> <span class="toc-text">git基本操做</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E4%B8%8E%E4%BF%AE%E6%94%B9"><span class="toc-number">1.5.0.2.</span> <span class="toc-text">提交与修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%97"><span class="toc-number">1.5.0.3.</span> <span class="toc-text">提交日志</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%93%8D%E4%BD%9C"><span class="toc-number">1.5.0.4.</span> <span class="toc-text">远程操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="toc-number">1.5.1.</span> <span class="toc-text">git分支管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E6%A0%87%E7%AD%BE"><span class="toc-number">1.6.</span> <span class="toc-text">git标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">1.7.</span> <span class="toc-text">git连接远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%BF%9C%E7%A8%8B%E5%BA%93"><span class="toc-number">1.7.0.1.</span> <span class="toc-text">添加远程库</span></a></li></ol></li></ol></li></ol></li></ol>
       
   </div>
 </div>
@@ -501,7 +603,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Posts</div>
-    <div class="sidebar-state-number">4</div>
+    <div class="sidebar-state-number">5</div>
   </div>
   <div class="sidebar-state-category">
     <div>Categories</div>
