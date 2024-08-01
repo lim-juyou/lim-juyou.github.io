@@ -154,6 +154,8 @@
       <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
     
     
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="Search"></a>
+    
     
   </nav>
 </div>
@@ -226,7 +228,7 @@
         
           
           
-            <img data-src="/images/banner.webp" data-sizes="auto" alt="数据结构" class="lazyload">
+            <img data-src="https://th.bing.com/th/id/OIP.Y9z-66Ltr0fGaoQtOhyd7wHaEK?w=195&amp;h=110&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" data-sizes="auto" alt="数据结构" class="lazyload">
           
         
         <a href="/2024/07/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"></a>
@@ -272,7 +274,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Posts</div>
-    <div class="sidebar-state-number">6</div>
+    <div class="sidebar-state-number">7</div>
   </div>
   <div class="sidebar-state-category">
     <div>Categories</div>
@@ -365,7 +367,7 @@
           2.8k
           &nbsp;|&nbsp;
           <span class="icon-coffee"></span>
-          00:14
+          00:15
         </div>
       
       
@@ -407,7 +409,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Posts</div>
-    <div class="sidebar-state-number">6</div>
+    <div class="sidebar-state-number">7</div>
   </div>
   <div class="sidebar-state-category">
     <div>Categories</div>
@@ -541,6 +543,34 @@
 
 
 
+
+  
+<script src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"></script>
+
+  
+<script src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"></script>
+
+  
+<script src="/js/algolia_search.js"></script>
+
+  <script>
+    var CONFIG = {
+      root: '/',
+      algolia: {
+        applicationID: "DOHSPAI4F3",
+        apiKey: "17c2c27bdd73e409ce82053e9e6880e5",
+        indexName: "blog_posts",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": "搜索.....",
+          "hits_empty": "未发现与 「${query}」相关内容",
+          "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
+        }
+      }
+    };
+  </script>
 
 
 

@@ -154,6 +154,8 @@
       <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
     
     
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="Search"></a>
+    
     
   </nav>
 </div>
@@ -242,7 +244,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Posts</div>
-    <div class="sidebar-state-number">6</div>
+    <div class="sidebar-state-number">7</div>
   </div>
   <div class="sidebar-state-category">
     <div>Categories</div>
@@ -326,7 +328,7 @@
   <div class="widget-wrap wow fadeInRight">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">基础</a>
+      <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 20px;">博客</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">基础</a>
     </div>
   </div>
 
@@ -349,6 +351,10 @@
       <ul>
         
           <li>
+            <a href="/2024/08/01/test/">测试文章</a>
+          </li>
+        
+          <li>
             <a href="/2024/08/01/java1/">java</a>
           </li>
         
@@ -362,10 +368,6 @@
         
           <li>
             <a href="/2024/07/16/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/">hexo搭建个人博客并部署到Github</a>
-          </li>
-        
-          <li>
-            <a href="/2024/07/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
           </li>
         
       </ul>
@@ -404,7 +406,7 @@
           2.8k
           &nbsp;|&nbsp;
           <span class="icon-coffee"></span>
-          00:14
+          00:15
         </div>
       
       
@@ -437,7 +439,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Posts</div>
-    <div class="sidebar-state-number">6</div>
+    <div class="sidebar-state-number">7</div>
   </div>
   <div class="sidebar-state-category">
     <div>Categories</div>
@@ -566,6 +568,34 @@
 
 
 
+
+  
+<script src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"></script>
+
+  
+<script src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"></script>
+
+  
+<script src="/js/algolia_search.js"></script>
+
+  <script>
+    var CONFIG = {
+      root: '/',
+      algolia: {
+        applicationID: "DOHSPAI4F3",
+        apiKey: "17c2c27bdd73e409ce82053e9e6880e5",
+        indexName: "blog_posts",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": "搜索.....",
+          "hits_empty": "未发现与 「${query}」相关内容",
+          "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
+        }
+      }
+    };
+  </script>
 
 
 

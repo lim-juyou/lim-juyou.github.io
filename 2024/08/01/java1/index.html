@@ -158,6 +158,8 @@
       <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
     
     
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="Search"></a>
+    
     
   </nav>
 </div>
@@ -240,12 +242,25 @@
     
   <nav id="article-nav" class="wow fadeInUp">
     
+      <div class="article-nav-link-wrap article-nav-link-left">
+        
+          <img data-src="/covers/image1.jpg" data-sizes="auto" alt="测试文章" class="lazyload">
+        
+        <a href="/2024/08/01/test/"></a>
+        <div class="article-nav-caption">Newer</div>
+        <h3 class="article-nav-title">
+          
+            测试文章
+          
+        </h3>
+      </div>
+    
     
     <div class="article-nav-link-wrap article-nav-link-right">
       
         
         
-          <img data-src="/images/banner.webp" data-sizes="auto" alt="示例文章" class="lazyload">
+          <img data-src="https://th.bing.com/th/id/OIP.nHvPixYPOQkm51Gvf35HgwHaEo?w=195&amp;h=122&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" data-sizes="auto" alt="示例文章" class="lazyload">
         
       
       <a href="/2024/07/17/use/"></a>
@@ -290,7 +305,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Posts</div>
-    <div class="sidebar-state-number">6</div>
+    <div class="sidebar-state-number">7</div>
   </div>
   <div class="sidebar-state-category">
     <div>Categories</div>
@@ -383,7 +398,7 @@
           2.8k
           &nbsp;|&nbsp;
           <span class="icon-coffee"></span>
-          00:14
+          00:15
         </div>
       
       
@@ -425,7 +440,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>Posts</div>
-    <div class="sidebar-state-number">6</div>
+    <div class="sidebar-state-number">7</div>
   </div>
   <div class="sidebar-state-category">
     <div>Categories</div>
@@ -559,6 +574,34 @@
 
 
 
+
+  
+<script src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"></script>
+
+  
+<script src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"></script>
+
+  
+<script src="/js/algolia_search.js"></script>
+
+  <script>
+    var CONFIG = {
+      root: '/',
+      algolia: {
+        applicationID: "DOHSPAI4F3",
+        apiKey: "17c2c27bdd73e409ce82053e9e6880e5",
+        indexName: "blog_posts",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": "搜索.....",
+          "hits_empty": "未发现与 「${query}」相关内容",
+          "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
+        }
+      }
+    };
+  </script>
 
 
 

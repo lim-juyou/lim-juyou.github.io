@@ -107,6 +107,8 @@
       <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
     
     
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="Search"></a>
+    
     
   </nav>
 </div>
@@ -205,6 +207,34 @@
 
 
 
+
+  
+<script src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"></script>
+
+  
+<script src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"></script>
+
+  
+<script src="/js/algolia_search.js"></script>
+
+  <script>
+    var CONFIG = {
+      root: '/',
+      algolia: {
+        applicationID: "DOHSPAI4F3",
+        apiKey: "17c2c27bdd73e409ce82053e9e6880e5",
+        indexName: "blog_posts",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": "搜索.....",
+          "hits_empty": "未发现与 「${query}」相关内容",
+          "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
+        }
+      }
+    };
+  </script>
 
 
 
