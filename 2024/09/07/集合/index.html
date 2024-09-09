@@ -33,7 +33,7 @@
 <meta property="og:description" content="集合集合的框架体系集合主要分为两组（单列集合、多列集合）1.Collection接口有两个重要的子类接口，Set和List，它们的实现子类都是单列集合 2.Map接口的实现的子类都是双列集合，即key-value  CollectionCollection接口实现类的特点特点public interface Collection extends Iterable 1.collection实现的子类">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-09-06T23:49:40.555Z">
-<meta property="article:modified_time" content="2024-09-07T02:09:00.274Z">
+<meta property="article:modified_time" content="2024-09-09T01:20:12.371Z">
 <meta property="article:author" content="Lim">
 <meta name="twitter:card" content="summary">
   
@@ -275,7 +275,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> Object[] elementData;</span><br></pre></td></tr></table></figure>
 
 <p>3.Vector是线程同步的，即线程安全，Vector的操作方法带有syschronized</p>
-<p>4.扩容机制：如果是午餐，默认10，满后就按2倍扩容；如果指定大小，则每次直接按两倍扩</p>
+<p>4.扩容机制：如果是空参，默认10，满后就按2倍扩容；如果指定大小，则每次直接按两倍扩</p>
 <h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p><strong>基本介绍</strong></p>
 <p>1.LinkedList底层实现了双向链表和双端队列的特点</p>
 <p>2.可以添加任意元素（元素可重复），包括null</p>
@@ -324,12 +324,12 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">HashSet</span><span class="params">()</span>&#123;</span><br><span class="line">    map=<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>3.可以存放null值，但只能有一个null</p>
-<p>4.HashSet不保证元素是有序的，取决余hash后，再确定索引的结果</p>
+<p>4.HashSet不保证元素是有序的，取决于hash后，再确定索引的结果</p>
 <p>5.不能有重复的元素&#x2F;对象</p>
 <p><strong>底层机制</strong></p>
 <p>1.HashSet的底层是HashMap,HashMap底层是（数组+链表+红黑树）</p>
 <p>2.第一次添加时，table数组扩容到16，临界值（threshold）是16*加载因子(loadFactor)是0.75&#x3D;12</p>
-<p>3.如果table数组使用到了临界值12，就会扩容到16<em>2&#x3D;32，新的临界值就是32</em>0.75&#x3D;24，以此类推</p>
+<p>3.如果table数组使用到了临界值12，就会扩容到16*2&#x3D;32，新的临界值就是32*0.75&#x3D;24，以此类推</p>
 <p>4.在Java8中，如果一条链表的元素个数到达TREEIFY_THRESHOLD(默认是8)，并且table的大小&gt;&#x3D;MIN_TREEIFY_CAPACITY(默认64)，就会进行树化（红黑树），否则仍然采用数组机制进行扩容</p>
 <hr>
 <h4 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h4><p><strong>基本介绍</strong></p>
@@ -374,7 +374,7 @@
       
         
         
-          <img data-src="https://th.bing.com/th/id/OIP.Rk3zFqzmGNL2d27lKbbVGwHaEK?w=195&amp;h=110&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" data-sizes="auto" alt="" class="lazyload">
+          <img data-src="https://th.bing.com/th/id/OIP.QlUBt1ycKf0taHR9O-r6nQHaEK?w=195&amp;h=110&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" data-sizes="auto" alt="" class="lazyload">
         
       
       <a href="/2024/08/26/center%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86center/"></a>
