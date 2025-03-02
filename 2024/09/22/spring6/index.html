@@ -1,7 +1,12 @@
 
   <!DOCTYPE html>
-  <html lang="en"  >
+  <html lang="en,zh"  
+    
+      data-theme-mode="auto"
+    
+  >
   <head>
+  
   <meta charset="utf-8">
   
 
@@ -9,9 +14,7 @@
 
   
 
-  
-  <script>window.icon_font = '4552607_tq6stt6tcg';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ"};</script>
-  
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'http://lim-juyou.github.io';</script>
   
   <title>
     spring |
@@ -19,14 +22,17 @@
     リムの巣
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
   
-    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_tq6stt6tcg.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_0khxww3tj3q9.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   
   
+    
 <link rel="stylesheet" href="/css/loader.css">
 
-  <meta name="description" content="Spring6  1、概述1.1、Spring是什么？Spring 是一款主流的 Java EE 轻量级开源框架 ，Spring 由“Spring 之父”Rod Johnson 提出并创立，其目的是用于简化 Java 企业级应用的开发难度和开发周期。Spring的用途不仅限于服务器端的开发。从简单性、可测试性和松耦合的角度而言，任何Java应用都可以从Spring中受益。Spring 框架除了自己">
+  
+  
+    <meta name="description" content="Spring6  1、概述1.1、Spring是什么？Spring 是一款主流的 Java EE 轻量级开源框架 ，Spring 由“Spring 之父”Rod Johnson 提出并创立，其目的是用于简化 Java 企业级应用的开发难度和开发周期。Spring的用途不仅限于服务器端的开发。从简单性、可测试性和松耦合的角度而言，任何Java应用都可以从Spring中受益。Spring 框架除了自己">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spring">
 <meta property="og:url" content="http://lim-juyou.github.io/2024/09/22/spring6/index.html">
@@ -82,6 +88,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://lim-juyou.github.io/2024/09/22/spring6/image-20221209110043449.png">
   
+  
     <link rel="alternate" href="/atom.xml" title="リムの巣" type="application/atom+xml">
   
   
@@ -90,51 +97,39 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  <link rel="preload" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   
-<link rel="stylesheet" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css">
-
+  
+  
   
     
-<link rel="stylesheet" href="https://npm.webcache.cn/katex@0.16.9/dist/katex.min.css">
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
 
   
-  
-  
-  
-<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"></script>
-
   
     
-<link rel="stylesheet" href="https://npm.webcache.cn/wowjs@1.1.3/css/libs/animate.css">
+<link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css">
 
-    
-<script src="https://npm.webcache.cn/wowjs@1.1.3/dist/wow.min.js"></script>
-
-    <script>
-      new WOW({
-        offset: 0,
-        mobile: true,
-        live: false
-      }).init();
-    </script>
   
   
-    <script src="/sw.js"></script>
   
 <meta name="generator" content="Hexo 7.3.0"></head>
 
   <body>
+    
     
   <div id='loader'>
     <div class="loading-left-bg loading-bg"></div>
     <div class="loading-right-bg loading-bg"></div>
     <div class="spinner-box">
       <div class="loading-taichi">
-        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
-          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
-          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
-          <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
-        </svg>
+        
+          <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+           M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg>
+        
       </div>
       <div class="loading-word">少女祈祷中...</div>
     </div>
@@ -168,62 +163,71 @@
 <div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
 </div>
 
+
     <div id="container">
       <div id="wrap">
         <div id="header-nav">
   <nav id="main-nav">
     
-      <span class="main-nav-link-wrap">
-        <span class="main-nav-icon"></span>
-        <a class="main-nav-link" href="/">Home</a>
-      </span>
-    
-      <span class="main-nav-link-wrap">
-        <span class="main-nav-icon"></span>
-        <a class="main-nav-link" href="/archives">Archives</a>
-      </span>
-    
-      <span class="main-nav-link-wrap">
-        <span class="main-nav-icon"></span>
-        <a class="main-nav-link" href="/about">About</a>
-      </span>
-    
-      <span class="main-nav-link-wrap">
-        <span class="main-nav-icon"></span>
-        <a class="main-nav-link" href="/friend">Friend</a>
-      </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/">Home</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/archives">Archives</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/about">About</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/friend">Friend</a>
+        </span>
+      
     
     <a id="main-nav-toggle" class="nav-icon"></a>
   </nav>
   <nav id="sub-nav">
     
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" target="_blank"></a>
     
-    
-      <a id="nav-search-btn" class="nav-icon popup-trigger" title="Search"></a>
     
     
   </nav>
+  
 </div>
 <header id="header">
   
+    <picture></picture>
     <img fetchpriority="high" src="/covers/image1.jpg" alt="spring">
   
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <div id="logo-wrap">
-        
-          
-          
-            <a href="/" id="logo">
-              <h1>spring</h1>
-            </a>
-          
-        
-      </div>
+  <div id="header-outer">
+    <div id="header-title">
       
         
-        <h2 id="subtitle-wrap">
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">spring</h1>
+          </a>
+        
+      
+      
+        
+        <h2 id="subtitle-wrap" data-aos="slide-down">
           
         </h2>
       
@@ -231,20 +235,112 @@
   </div>
 </header>
 
-        <div id="content" class="outer">
-          
+        <div id="content"  class="sidebar-right" >
+          <aside id="sidebar">
+  
+  
+  
+  <div class="sidebar-wrapper wrap-sticky">
+    <div class="sidebar-wrap" data-aos="fade-up">
+      
+        <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">Contents</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring6"><span class="toc-number">1.</span> <span class="toc-text">Spring6</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">1、概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E3%80%81Spring%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1、Spring是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2%E3%80%81Spring-%E7%9A%84%E7%8B%AD%E4%B9%89%E5%92%8C%E5%B9%BF%E4%B9%89"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2、Spring 的狭义和广义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3%E3%80%81Spring-Framework%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3、Spring Framework特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4%E3%80%81Spring%E6%A8%A1%E5%9D%97%E7%BB%84%E6%88%90"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.4、Spring模块组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5%E3%80%81Spring6%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.5、Spring6特点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1%E3%80%81%E7%89%88%E6%9C%AC%E8%A6%81%E6%B1%82"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">1.5.1、版本要求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2%E3%80%81%E6%9C%AC%E8%AF%BE%E7%A8%8B%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">1.5.2、本课程软件版本</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%85%A5%E9%97%A8"><span class="toc-number">1.2.</span> <span class="toc-text">2、入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E3%80%81%E7%8E%AF%E5%A2%83%E8%A6%81%E6%B1%82"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1、环境要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E3%80%81%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2、构建模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E3%80%81%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3、程序开发</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1%E3%80%81%E5%BC%95%E5%85%A5%E4%BE%9D%E8%B5%96"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">2.3.1、引入依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2%E3%80%81%E5%88%9B%E5%BB%BAjava%E7%B1%BB"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">2.3.2、创建java类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3%E3%80%81%E5%88%9B%E5%BB%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">2.3.3、创建配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-4%E3%80%81%E5%88%9B%E5%BB%BA%E6%B5%8B%E8%AF%95%E7%B1%BB%E6%B5%8B%E8%AF%95"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">2.3.4、创建测试类测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-5%E3%80%81%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.2.3.5.</span> <span class="toc-text">2.3.5、运行测试程序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4%E3%80%81%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4、程序分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5%E3%80%81%E5%90%AF%E7%94%A8Log4j2%E6%97%A5%E5%BF%97%E6%A1%86%E6%9E%B6"><span class="toc-number">1.2.5.</span> <span class="toc-text">2.5、启用Log4j2日志框架</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-1%E3%80%81Log4j2%E6%97%A5%E5%BF%97%E6%A6%82%E8%BF%B0"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">2.5.1、Log4j2日志概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-2%E3%80%81%E5%BC%95%E5%85%A5Log4j2%E4%BE%9D%E8%B5%96"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">2.5.2、引入Log4j2依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-3%E3%80%81%E5%8A%A0%E5%85%A5%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">2.5.3、加入日志配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-4%E3%80%81%E6%B5%8B%E8%AF%95"><span class="toc-number">1.2.5.4.</span> <span class="toc-text">2.5.4、测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-5%E3%80%81%E4%BD%BF%E7%94%A8%E6%97%A5%E5%BF%97"><span class="toc-number">1.2.5.5.</span> <span class="toc-text">2.5.5、使用日志</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E5%AE%B9%E5%99%A8%EF%BC%9AIoC"><span class="toc-number">1.3.</span> <span class="toc-text">3、容器：IoC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1%E3%80%81IoC%E5%AE%B9%E5%99%A8"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1、IoC容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1%E3%80%81%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%EF%BC%88IoC%EF%BC%89"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">3.1.1、控制反转（IoC）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2%E3%80%81%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">3.1.2、依赖注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3%E3%80%81IoC%E5%AE%B9%E5%99%A8%E5%9C%A8Spring%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">3.1.3、IoC容器在Spring的实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2%E3%80%81%E5%9F%BA%E4%BA%8EXML%E7%AE%A1%E7%90%86Bean"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2、基于XML管理Bean</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1%E3%80%81%E6%90%AD%E5%BB%BA%E5%AD%90%E6%A8%A1%E5%9D%97spring6-ioc-xml"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">3.2.1、搭建子模块spring6-ioc-xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2%E3%80%81%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E8%8E%B7%E5%8F%96bean"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">3.2.2、实验一：获取bean</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%9A%E6%A0%B9%E6%8D%AEid%E8%8E%B7%E5%8F%96"><span class="toc-number">1.3.2.2.1.</span> <span class="toc-text">①方式一：根据id获取</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%9A%E6%A0%B9%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%8E%B7%E5%8F%96"><span class="toc-number">1.3.2.2.2.</span> <span class="toc-text">②方式二：根据类型获取</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2%E6%96%B9%E5%BC%8F%E4%B8%89%EF%BC%9A%E6%A0%B9%E6%8D%AEid%E5%92%8C%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.2.2.3.</span> <span class="toc-text">③方式三：根据id和类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A3%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9"><span class="toc-number">1.3.2.2.4.</span> <span class="toc-text">④注意的地方</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A4%E6%89%A9%E5%B1%95%E7%9F%A5%E8%AF%86"><span class="toc-number">1.3.2.2.5.</span> <span class="toc-text">⑤扩展知识</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3%E3%80%81%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E4%B9%8Bsetter%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">3.2.3、实验二：依赖注入之setter注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4%E3%80%81%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%9A%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E4%B9%8B%E6%9E%84%E9%80%A0%E5%99%A8%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.2.4.</span> <span class="toc-text">3.2.4、实验三：依赖注入之构造器注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-5%E3%80%81%E5%AE%9E%E9%AA%8C%E5%9B%9B%EF%BC%9A%E7%89%B9%E6%AE%8A%E5%80%BC%E5%A4%84%E7%90%86"><span class="toc-number">1.3.2.5.</span> <span class="toc-text">3.2.5、实验四：特殊值处理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E5%AD%97%E9%9D%A2%E9%87%8F%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.2.5.1.</span> <span class="toc-text">①字面量赋值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1null%E5%80%BC"><span class="toc-number">1.3.2.5.2.</span> <span class="toc-text">②null值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2xml%E5%AE%9E%E4%BD%93"><span class="toc-number">1.3.2.5.3.</span> <span class="toc-text">③xml实体</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A3CDATA%E8%8A%82"><span class="toc-number">1.3.2.5.4.</span> <span class="toc-text">④CDATA节</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-6%E3%80%81%E5%AE%9E%E9%AA%8C%E4%BA%94%EF%BC%9A%E4%B8%BA%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.2.6.</span> <span class="toc-text">3.2.6、实验五：为对象类型属性赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%9A%E5%BC%95%E7%94%A8%E5%A4%96%E9%83%A8bean"><span class="toc-number">1.3.2.6.1.</span> <span class="toc-text">方式一：引用外部bean</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%9A%E5%86%85%E9%83%A8bean"><span class="toc-number">1.3.2.6.2.</span> <span class="toc-text">方式二：内部bean</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%89%EF%BC%9A%E7%BA%A7%E8%81%94%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.2.6.3.</span> <span class="toc-text">方式三：级联属性赋值</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-7%E3%80%81%E5%AE%9E%E9%AA%8C%E5%85%AD%EF%BC%9A%E4%B8%BA%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.2.7.</span> <span class="toc-text">3.2.7、实验六：为数组类型属性赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-8%E3%80%81%E5%AE%9E%E9%AA%8C%E4%B8%83%EF%BC%9A%E4%B8%BA%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.2.8.</span> <span class="toc-text">3.2.8、实验七：为集合类型属性赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E4%B8%BAList%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.2.8.1.</span> <span class="toc-text">①为List集合类型属性赋值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E4%B8%BAMap%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.2.8.2.</span> <span class="toc-text">②为Map集合类型属性赋值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2%E5%BC%95%E7%94%A8%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E7%9A%84bean"><span class="toc-number">1.3.2.8.3.</span> <span class="toc-text">③引用集合类型的bean</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-9%E3%80%81%E5%AE%9E%E9%AA%8C%E5%85%AB%EF%BC%9Ap%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="toc-number">1.3.2.9.</span> <span class="toc-text">3.2.9、实验八：p命名空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-10%E3%80%81%E5%AE%9E%E9%AA%8C%E4%B9%9D%EF%BC%9A%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8%E5%B1%9E%E6%80%A7%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.2.10.</span> <span class="toc-text">3.2.10、实验九：引入外部属性文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-11%E3%80%81%E5%AE%9E%E9%AA%8C%E5%8D%81%EF%BC%9Abean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.3.2.11.</span> <span class="toc-text">3.2.11、实验十：bean的作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-12%E3%80%81%E5%AE%9E%E9%AA%8C%E5%8D%81%E4%B8%80%EF%BC%9Abean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.3.2.12.</span> <span class="toc-text">3.2.12、实验十一：bean生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-13%E3%80%81%E5%AE%9E%E9%AA%8C%E5%8D%81%E4%BA%8C%EF%BC%9AFactoryBean"><span class="toc-number">1.3.2.13.</span> <span class="toc-text">3.2.13、实验十二：FactoryBean</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-14%E3%80%81%E5%AE%9E%E9%AA%8C%E5%8D%81%E4%B8%89%EF%BC%9A%E5%9F%BA%E4%BA%8Exml%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D"><span class="toc-number">1.3.2.14.</span> <span class="toc-text">3.2.14、实验十三：基于xml自动装配</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3%E3%80%81%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%AE%A1%E7%90%86Bean%EF%BC%88%E2%98%86%EF%BC%89"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3、基于注解管理Bean（☆）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1%E3%80%81%E6%90%AD%E5%BB%BA%E5%AD%90%E6%A8%A1%E5%9D%97spring6-ioc-annotation"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">3.3.1、搭建子模块spring6-ioc-annotation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2%E3%80%81%E5%BC%80%E5%90%AF%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">3.3.2、开启组件扫描</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-3%E3%80%81%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%AE%9A%E4%B9%89-Bean"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">3.3.3、使用注解定义 Bean</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-4%E3%80%81%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A-Autowired%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.4.</span> <span class="toc-text">3.3.4、实验一：@Autowired注入</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E5%9C%BA%E6%99%AF%E4%B8%80%EF%BC%9A%E5%B1%9E%E6%80%A7%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.4.1.</span> <span class="toc-text">①场景一：属性注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E5%9C%BA%E6%99%AF%E4%BA%8C%EF%BC%9Aset%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.4.2.</span> <span class="toc-text">②场景二：set注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2%E5%9C%BA%E6%99%AF%E4%B8%89%EF%BC%9A%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.4.3.</span> <span class="toc-text">③场景三：构造方法注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A3%E5%9C%BA%E6%99%AF%E5%9B%9B%EF%BC%9A%E5%BD%A2%E5%8F%82%E4%B8%8A%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.4.4.</span> <span class="toc-text">④场景四：形参上注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A4%E5%9C%BA%E6%99%AF%E4%BA%94%EF%BC%9A%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%EF%BC%8C%E6%97%A0%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.3.3.4.5.</span> <span class="toc-text">⑤场景五：只有一个构造函数，无注解</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A5%E5%9C%BA%E6%99%AF%E5%85%AD%EF%BC%9A-Autowired%E6%B3%A8%E8%A7%A3%E5%92%8C-Qualifier%E6%B3%A8%E8%A7%A3%E8%81%94%E5%90%88"><span class="toc-number">1.3.3.4.6.</span> <span class="toc-text">⑥场景六：@Autowired注解和@Qualifier注解联合</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-5%E3%80%81%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A-Resource%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.5.</span> <span class="toc-text">3.3.5、实验二：@Resource注入</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E5%9C%BA%E6%99%AF%E4%B8%80%EF%BC%9A%E6%A0%B9%E6%8D%AEname%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.5.1.</span> <span class="toc-text">①场景一：根据name注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E5%9C%BA%E6%99%AF%E4%BA%8C%EF%BC%9Aname%E6%9C%AA%E7%9F%A5%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.5.2.</span> <span class="toc-text">②场景二：name未知注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2%E5%9C%BA%E6%99%AF%E4%B8%89-%E5%85%B6%E4%BB%96%E6%83%85%E5%86%B5"><span class="toc-number">1.3.3.5.3.</span> <span class="toc-text">③场景三 其他情况</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-6%E3%80%81Spring%E5%85%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91"><span class="toc-number">1.3.3.6.</span> <span class="toc-text">3.3.6、Spring全注解开发</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E5%8E%9F%E7%90%86-%E6%89%8B%E5%86%99IoC"><span class="toc-number">1.4.</span> <span class="toc-text">4、原理-手写IoC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1%E3%80%81%E5%9B%9E%E9%A1%BEJava%E5%8F%8D%E5%B0%84"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1、回顾Java反射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2%E3%80%81%E5%AE%9E%E7%8E%B0Spring%E7%9A%84IoC"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2、实现Spring的IoC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%EF%BC%9AAOP"><span class="toc-number">1.5.</span> <span class="toc-text">5、面向切面：AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1%E3%80%81%E5%9C%BA%E6%99%AF%E6%A8%A1%E6%8B%9F"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1、场景模拟</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-1%E3%80%81%E5%A3%B0%E6%98%8E%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">5.1.1、声明接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-2%E3%80%81%E5%88%9B%E5%BB%BA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">5.1.2、创建实现类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-3%E3%80%81%E5%88%9B%E5%BB%BA%E5%B8%A6%E6%97%A5%E5%BF%97%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">1.5.1.3.</span> <span class="toc-text">5.1.3、创建带日志功能的实现类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-4%E3%80%81%E6%8F%90%E5%87%BA%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.1.4.</span> <span class="toc-text">5.1.4、提出问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2%E3%80%81%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.5.2.</span> <span class="toc-text">5.2、代理模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-1%E3%80%81%E6%A6%82%E5%BF%B5"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">5.2.1、概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-2%E3%80%81%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">5.2.2、静态代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-3%E3%80%81%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86"><span class="toc-number">1.5.2.3.</span> <span class="toc-text">5.2.3、动态代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-4%E3%80%81%E6%B5%8B%E8%AF%95"><span class="toc-number">1.5.2.4.</span> <span class="toc-text">5.2.4、测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3%E3%80%81AOP%E6%A6%82%E5%BF%B5%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD"><span class="toc-number">1.5.3.</span> <span class="toc-text">5.3、AOP概念及相关术语</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-1%E3%80%81%E6%A6%82%E8%BF%B0"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">5.3.1、概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-2%E3%80%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">5.3.2、相关术语</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E6%A8%AA%E5%88%87%E5%85%B3%E6%B3%A8%E7%82%B9"><span class="toc-number">1.5.3.2.1.</span> <span class="toc-text">①横切关注点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E9%80%9A%E7%9F%A5%EF%BC%88%E5%A2%9E%E5%BC%BA%EF%BC%89"><span class="toc-number">1.5.3.2.2.</span> <span class="toc-text">②通知（增强）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2%E5%88%87%E9%9D%A2"><span class="toc-number">1.5.3.2.3.</span> <span class="toc-text">③切面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A3%E7%9B%AE%E6%A0%87"><span class="toc-number">1.5.3.2.4.</span> <span class="toc-text">④目标</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A4%E4%BB%A3%E7%90%86"><span class="toc-number">1.5.3.2.5.</span> <span class="toc-text">⑤代理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A5%E8%BF%9E%E6%8E%A5%E7%82%B9"><span class="toc-number">1.5.3.2.6.</span> <span class="toc-text">⑥连接点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A6%E5%88%87%E5%85%A5%E7%82%B9"><span class="toc-number">1.5.3.2.7.</span> <span class="toc-text">⑦切入点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-3%E3%80%81%E4%BD%9C%E7%94%A8"><span class="toc-number">1.5.3.3.</span> <span class="toc-text">5.3.3、作用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4%E3%80%81%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84AOP"><span class="toc-number">1.5.4.</span> <span class="toc-text">5.4、基于注解的AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-1%E3%80%81%E6%8A%80%E6%9C%AF%E8%AF%B4%E6%98%8E"><span class="toc-number">1.5.4.1.</span> <span class="toc-text">5.4.1、技术说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-2%E3%80%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.5.4.2.</span> <span class="toc-text">5.4.2、准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-3%E3%80%81%E5%88%9B%E5%BB%BA%E5%88%87%E9%9D%A2%E7%B1%BB%E5%B9%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">1.5.4.3.</span> <span class="toc-text">5.4.3、创建切面类并配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-4%E3%80%81%E5%90%84%E7%A7%8D%E9%80%9A%E7%9F%A5"><span class="toc-number">1.5.4.4.</span> <span class="toc-text">5.4.4、各种通知</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-5%E3%80%81%E5%88%87%E5%85%A5%E7%82%B9%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95"><span class="toc-number">1.5.4.5.</span> <span class="toc-text">5.4.5、切入点表达式语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-6%E3%80%81%E9%87%8D%E7%94%A8%E5%88%87%E5%85%A5%E7%82%B9%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.5.4.6.</span> <span class="toc-text">5.4.6、重用切入点表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-7%E3%80%81%E8%8E%B7%E5%8F%96%E9%80%9A%E7%9F%A5%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF"><span class="toc-number">1.5.4.7.</span> <span class="toc-text">5.4.7、获取通知的相关信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-8%E3%80%81%E7%8E%AF%E7%BB%95%E9%80%9A%E7%9F%A5"><span class="toc-number">1.5.4.8.</span> <span class="toc-text">5.4.8、环绕通知</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-9%E3%80%81%E5%88%87%E9%9D%A2%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.5.4.9.</span> <span class="toc-text">5.4.9、切面的优先级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5%E3%80%81%E5%9F%BA%E4%BA%8EXML%E7%9A%84AOP"><span class="toc-number">1.5.5.</span> <span class="toc-text">5.5、基于XML的AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-1%E3%80%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.5.5.1.</span> <span class="toc-text">5.5.1、准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-2%E3%80%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.5.5.2.</span> <span class="toc-text">5.5.2、实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%EF%BC%9AJUnit"><span class="toc-number">1.6.</span> <span class="toc-text">6、单元测试：JUnit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1%E3%80%81%E6%95%B4%E5%90%88JUnit5"><span class="toc-number">1.6.1.</span> <span class="toc-text">6.1、整合JUnit5</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-1%E3%80%81%E6%90%AD%E5%BB%BA%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="toc-number">1.6.1.1.</span> <span class="toc-text">6.1.1、搭建子模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-2%E3%80%81%E5%BC%95%E5%85%A5%E4%BE%9D%E8%B5%96"><span class="toc-number">1.6.1.2.</span> <span class="toc-text">6.1.2、引入依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-3%E3%80%81%E6%B7%BB%E5%8A%A0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.6.1.3.</span> <span class="toc-text">6.1.3、添加配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-4%E3%80%81%E6%B7%BB%E5%8A%A0java%E7%B1%BB"><span class="toc-number">1.6.1.4.</span> <span class="toc-text">6.1.4、添加java类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-5%E3%80%81%E6%B5%8B%E8%AF%95"><span class="toc-number">1.6.1.5.</span> <span class="toc-text">6.1.5、测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2%E3%80%81%E6%95%B4%E5%90%88JUnit4"><span class="toc-number">1.6.2.</span> <span class="toc-text">6.2、整合JUnit4</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-1%E3%80%81%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96"><span class="toc-number">1.6.2.1.</span> <span class="toc-text">6.2.1、添加依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-2%E3%80%81%E6%B5%8B%E8%AF%95"><span class="toc-number">1.6.2.2.</span> <span class="toc-text">6.2.2、测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%E3%80%81%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.</span> <span class="toc-text">7、事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1%E3%80%81JdbcTemplate"><span class="toc-number">1.7.1.</span> <span class="toc-text">7.1、JdbcTemplate</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-1%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">7.1.1、简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-2%E3%80%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.7.1.2.</span> <span class="toc-text">7.1.2、准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-3%E3%80%81%E5%AE%9E%E7%8E%B0CURD"><span class="toc-number">1.7.1.3.</span> <span class="toc-text">7.1.3、实现CURD</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E8%A3%85%E9%85%8D-JdbcTemplate"><span class="toc-number">1.7.1.3.1.</span> <span class="toc-text">①装配 JdbcTemplate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E6%B5%8B%E8%AF%95%E5%A2%9E%E5%88%A0%E6%94%B9%E5%8A%9F%E8%83%BD"><span class="toc-number">1.7.1.3.2.</span> <span class="toc-text">②测试增删改功能</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%BF%94%E5%9B%9E%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.7.1.3.3.</span> <span class="toc-text">③查询数据返回对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A3%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%BF%94%E5%9B%9Elist%E9%9B%86%E5%90%88"><span class="toc-number">1.7.1.3.4.</span> <span class="toc-text">④查询数据返回list集合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A4%E6%9F%A5%E8%AF%A2%E8%BF%94%E5%9B%9E%E5%8D%95%E4%B8%AA%E7%9A%84%E5%80%BC"><span class="toc-number">1.7.1.3.5.</span> <span class="toc-text">⑤查询返回单个的值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2%E3%80%81%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1%E6%A6%82%E5%BF%B5"><span class="toc-number">1.7.2.</span> <span class="toc-text">7.2、声明式事务概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-1%E3%80%81%E4%BA%8B%E5%8A%A1%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.7.2.1.</span> <span class="toc-text">7.2.1、事务基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.2.1.1.</span> <span class="toc-text">①什么是事务</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E4%BA%8B%E5%8A%A1%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-number">1.7.2.1.2.</span> <span class="toc-text">②事务的特性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-2%E3%80%81%E7%BC%96%E7%A8%8B%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.2.2.</span> <span class="toc-text">7.2.2、编程式事务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-3%E3%80%81%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.2.3.</span> <span class="toc-text">7.2.3、声明式事务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3%E3%80%81%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.3.</span> <span class="toc-text">7.3、基于注解的声明式事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-1%E3%80%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.7.3.1.</span> <span class="toc-text">7.3.1、准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-2%E3%80%81%E6%B5%8B%E8%AF%95%E6%97%A0%E4%BA%8B%E5%8A%A1%E6%83%85%E5%86%B5"><span class="toc-number">1.7.3.2.</span> <span class="toc-text">7.3.2、测试无事务情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-3%E3%80%81%E5%8A%A0%E5%85%A5%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.3.3.</span> <span class="toc-text">7.3.3、加入事务</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E6%B7%BB%E5%8A%A0%E4%BA%8B%E5%8A%A1%E9%85%8D%E7%BD%AE"><span class="toc-number">1.7.3.3.1.</span> <span class="toc-text">①添加事务配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E6%B7%BB%E5%8A%A0%E4%BA%8B%E5%8A%A1%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.7.3.3.2.</span> <span class="toc-text">②添加事务注解</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2%E8%A7%82%E5%AF%9F%E7%BB%93%E6%9E%9C"><span class="toc-number">1.7.3.3.3.</span> <span class="toc-text">③观察结果</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-4%E3%80%81-Transactional%E6%B3%A8%E8%A7%A3%E6%A0%87%E8%AF%86%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.7.3.4.</span> <span class="toc-text">7.3.4、@Transactional注解标识的位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-5%E3%80%81%E4%BA%8B%E5%8A%A1%E5%B1%9E%E6%80%A7%EF%BC%9A%E5%8F%AA%E8%AF%BB"><span class="toc-number">1.7.3.5.</span> <span class="toc-text">7.3.5、事务属性：只读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-6%E3%80%81%E4%BA%8B%E5%8A%A1%E5%B1%9E%E6%80%A7%EF%BC%9A%E8%B6%85%E6%97%B6"><span class="toc-number">1.7.3.6.</span> <span class="toc-text">7.3.6、事务属性：超时</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-7%E3%80%81%E4%BA%8B%E5%8A%A1%E5%B1%9E%E6%80%A7%EF%BC%9A%E5%9B%9E%E6%BB%9A%E7%AD%96%E7%95%A5"><span class="toc-number">1.7.3.7.</span> <span class="toc-text">7.3.7、事务属性：回滚策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-8%E3%80%81%E4%BA%8B%E5%8A%A1%E5%B1%9E%E6%80%A7%EF%BC%9A%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="toc-number">1.7.3.8.</span> <span class="toc-text">7.3.8、事务属性：隔离级别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-9%E3%80%81%E4%BA%8B%E5%8A%A1%E5%B1%9E%E6%80%A7%EF%BC%9A%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA"><span class="toc-number">1.7.3.9.</span> <span class="toc-text">7.3.9、事务属性：传播行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-10%E3%80%81%E5%85%A8%E6%B3%A8%E8%A7%A3%E9%85%8D%E7%BD%AE%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.3.10.</span> <span class="toc-text">7.3.10、全注解配置事务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4%E3%80%81%E5%9F%BA%E4%BA%8EXML%E7%9A%84%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.4.</span> <span class="toc-text">7.4、基于XML的声明式事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-1%E3%80%81%E5%9C%BA%E6%99%AF%E6%A8%A1%E6%8B%9F"><span class="toc-number">1.7.4.1.</span> <span class="toc-text">7.3.1、场景模拟</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-2%E3%80%81%E4%BF%AE%E6%94%B9Spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.7.4.2.</span> <span class="toc-text">7.3.2、修改Spring配置文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%E3%80%81%E8%B5%84%E6%BA%90%E6%93%8D%E4%BD%9C%EF%BC%9AResources"><span class="toc-number">1.8.</span> <span class="toc-text">8、资源操作：Resources</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1%E3%80%81Spring-Resources%E6%A6%82%E8%BF%B0"><span class="toc-number">1.8.1.</span> <span class="toc-text">8.1、Spring Resources概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2%E3%80%81Resource%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.8.2.</span> <span class="toc-text">8.2、Resource接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3%E3%80%81Resource%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">1.8.3.</span> <span class="toc-text">8.3、Resource的实现类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-3-1%E3%80%81UrlResource%E8%AE%BF%E9%97%AE%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90"><span class="toc-number">1.8.3.1.</span> <span class="toc-text">8.3.1、UrlResource访问网络资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-3-2%E3%80%81ClassPathResource-%E8%AE%BF%E9%97%AE%E7%B1%BB%E8%B7%AF%E5%BE%84%E4%B8%8B%E8%B5%84%E6%BA%90"><span class="toc-number">1.8.3.2.</span> <span class="toc-text">8.3.2、ClassPathResource 访问类路径下资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-3-3%E3%80%81FileSystemResource-%E8%AE%BF%E9%97%AE%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90"><span class="toc-number">1.8.3.3.</span> <span class="toc-text">8.3.3、FileSystemResource 访问文件系统资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-3-4%E3%80%81ServletContextResource"><span class="toc-number">1.8.3.4.</span> <span class="toc-text">8.3.4、ServletContextResource</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-3-5%E3%80%81InputStreamResource"><span class="toc-number">1.8.3.5.</span> <span class="toc-text">8.3.5、InputStreamResource</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-3-6%E3%80%81ByteArrayResource"><span class="toc-number">1.8.3.6.</span> <span class="toc-text">8.3.6、ByteArrayResource</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4%E3%80%81Resource%E7%B1%BB%E5%9B%BE"><span class="toc-number">1.8.4.</span> <span class="toc-text">8.4、Resource类图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5%E3%80%81ResourceLoader-%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.8.5.</span> <span class="toc-text">8.5、ResourceLoader 接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-5-1%E3%80%81ResourceLoader-%E6%A6%82%E8%BF%B0"><span class="toc-number">1.8.5.1.</span> <span class="toc-text">8.5.1、ResourceLoader 概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-5-2%E3%80%81%E4%BD%BF%E7%94%A8%E6%BC%94%E7%A4%BA"><span class="toc-number">1.8.5.2.</span> <span class="toc-text">8.5.2、使用演示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-5-3%E3%80%81ResourceLoader-%E6%80%BB%E7%BB%93"><span class="toc-number">1.8.5.3.</span> <span class="toc-text">8.5.3、ResourceLoader 总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-6%E3%80%81ResourceLoaderAware-%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.8.6.</span> <span class="toc-text">8.6、ResourceLoaderAware 接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-7%E3%80%81%E4%BD%BF%E7%94%A8Resource-%E4%BD%9C%E4%B8%BA%E5%B1%9E%E6%80%A7"><span class="toc-number">1.8.7.</span> <span class="toc-text">8.7、使用Resource 作为属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-8%E3%80%81%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%8A%E4%B8%8B%E6%96%87%E5%92%8C%E8%B5%84%E6%BA%90%E8%B7%AF%E5%BE%84"><span class="toc-number">1.8.8.</span> <span class="toc-text">8.8、应用程序上下文和资源路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-8-1%E3%80%81%E6%A6%82%E8%BF%B0"><span class="toc-number">1.8.8.1.</span> <span class="toc-text">8.8.1、概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-8-2%E3%80%81ApplicationContext%E5%AE%9E%E7%8E%B0%E7%B1%BB%E6%8C%87%E5%AE%9A%E8%AE%BF%E9%97%AE%E7%AD%96%E7%95%A5"><span class="toc-number">1.8.8.2.</span> <span class="toc-text">8.8.2、ApplicationContext实现类指定访问策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-8-3%E3%80%81%E4%BD%BF%E7%94%A8%E5%89%8D%E7%BC%80%E6%8C%87%E5%AE%9A%E8%AE%BF%E9%97%AE%E7%AD%96%E7%95%A5"><span class="toc-number">1.8.8.3.</span> <span class="toc-text">8.8.3、使用前缀指定访问策略</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9%E3%80%81%E5%9B%BD%E9%99%85%E5%8C%96%EF%BC%9Ai18n"><span class="toc-number">1.9.</span> <span class="toc-text">9、国际化：i18n</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1%E3%80%81i18n%E6%A6%82%E8%BF%B0"><span class="toc-number">1.9.1.</span> <span class="toc-text">9.1、i18n概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2%E3%80%81Java%E5%9B%BD%E9%99%85%E5%8C%96"><span class="toc-number">1.9.2.</span> <span class="toc-text">9.2、Java国际化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-3%E3%80%81Spring6%E5%9B%BD%E9%99%85%E5%8C%96"><span class="toc-number">1.9.3.</span> <span class="toc-text">9.3、Spring6国际化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9-3-1%E3%80%81MessageSource%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.9.3.1.</span> <span class="toc-text">9.3.1、MessageSource接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-3-2%E3%80%81%E4%BD%BF%E7%94%A8Spring6%E5%9B%BD%E9%99%85%E5%8C%96"><span class="toc-number">1.9.3.2.</span> <span class="toc-text">9.3.2、使用Spring6国际化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10%E3%80%81%E6%95%B0%E6%8D%AE%E6%A0%A1%E9%AA%8C%EF%BC%9AValidation"><span class="toc-number">1.10.</span> <span class="toc-text">10、数据校验：Validation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1%E3%80%81Spring-Validation%E6%A6%82%E8%BF%B0"><span class="toc-number">1.10.1.</span> <span class="toc-text">10.1、Spring Validation概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2%E3%80%81%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E9%80%9A%E8%BF%87Validator%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.10.2.</span> <span class="toc-text">10.2、实验一：通过Validator接口实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3%E3%80%81%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9ABean-Validation%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.10.3.</span> <span class="toc-text">10.3、实验二：Bean Validation注解实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-4%E3%80%81%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%9A%E5%9F%BA%E4%BA%8E%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0%E6%A0%A1%E9%AA%8C"><span class="toc-number">1.10.4.</span> <span class="toc-text">10.4、实验三：基于方法实现校验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-5%E3%80%81%E5%AE%9E%E9%AA%8C%E5%9B%9B%EF%BC%9A%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%A1%E9%AA%8C"><span class="toc-number">1.10.5.</span> <span class="toc-text">10.5、实验四：实现自定义校验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11%E3%80%81%E6%8F%90%E5%89%8D%E7%BC%96%E8%AF%91%EF%BC%9AAOT"><span class="toc-number">1.11.</span> <span class="toc-text">11、提前编译：AOT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-1%E3%80%81AOT%E6%A6%82%E8%BF%B0"><span class="toc-number">1.11.1.</span> <span class="toc-text">11.1、AOT概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#11-1-1%E3%80%81JIT%E4%B8%8EAOT%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.11.1.1.</span> <span class="toc-text">11.1.1、JIT与AOT的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-1-2%E3%80%81Graalvm"><span class="toc-number">1.11.1.2.</span> <span class="toc-text">11.1.2、Graalvm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-1-3%E3%80%81Native-Image"><span class="toc-number">1.11.1.3.</span> <span class="toc-text">11.1.3、Native Image</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2%E3%80%81%E6%BC%94%E7%A4%BANative-Image%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">1.11.2.</span> <span class="toc-text">11.2、演示Native Image构建过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#11-2-1%E3%80%81GraalVM%E5%AE%89%E8%A3%85"><span class="toc-number">1.11.2.1.</span> <span class="toc-text">11.2.1、GraalVM安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E4%B8%8B%E8%BD%BDGraalVM"><span class="toc-number">1.11.2.1.1.</span> <span class="toc-text">（1）下载GraalVM</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.11.2.1.2.</span> <span class="toc-text">（2）配置环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E5%AE%89%E8%A3%85native-image%E6%8F%92%E4%BB%B6"><span class="toc-number">1.11.2.1.3.</span> <span class="toc-text">（3）安装native-image插件</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-2-2%E3%80%81%E5%AE%89%E8%A3%85C-%E7%9A%84%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83"><span class="toc-number">1.11.2.2.</span> <span class="toc-text">11.2.2、安装C++的编译环境</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E4%B8%8B%E8%BD%BDVisual-Studio%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.11.2.2.1.</span> <span class="toc-text">（1）下载Visual Studio安装软件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E5%AE%89%E8%A3%85Visual-Studio"><span class="toc-number">1.11.2.2.2.</span> <span class="toc-text">（2）安装Visual Studio</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E6%B7%BB%E5%8A%A0Visual-Studio%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.11.2.2.3.</span> <span class="toc-text">（3）添加Visual Studio环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E6%89%93%E5%BC%80%E5%B7%A5%E5%85%B7%EF%BC%8C%E5%9C%A8%E5%B7%A5%E5%85%B7%E4%B8%AD%E6%93%8D%E4%BD%9C"><span class="toc-number">1.11.2.2.4.</span> <span class="toc-text">（4）打开工具，在工具中操作</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-2-3%E3%80%81%E7%BC%96%E5%86%99%E4%BB%A3%E7%A0%81%EF%BC%8C%E6%9E%84%E5%BB%BANative-Image"><span class="toc-number">1.11.2.3.</span> <span class="toc-text">11.2.3、编写代码，构建Native Image</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E7%BC%96%E5%86%99Java%E4%BB%A3%E7%A0%81"><span class="toc-number">1.11.2.3.1.</span> <span class="toc-text">（1）编写Java代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E5%88%B0%E7%9B%AE%E5%BD%95%EF%BC%8C%E6%89%A7%E8%A1%8C%E7%BC%96%E8%AF%91"><span class="toc-number">1.11.2.3.2.</span> <span class="toc-text">（2）复制文件到目录，执行编译</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%883%EF%BC%89Native-Image-%E8%BF%9B%E8%A1%8C%E6%9E%84%E5%BB%BA"><span class="toc-number">1.11.2.3.3.</span> <span class="toc-text">（3）Native Image 进行构建</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E6%9F%A5%E7%9C%8B%E6%9E%84%E5%BB%BA%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-number">1.11.2.3.4.</span> <span class="toc-text">（4）查看构建的文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%885%EF%BC%89%E6%89%A7%E8%A1%8C%E6%9E%84%E5%BB%BA%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-number">1.11.2.3.5.</span> <span class="toc-text">（5）执行构建的文件</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+      
+  </div>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Lim" class="lazyload">
+  <div class="sidebar-author-name">Lim</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">13</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">5</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">10</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+    
+  
+</div>
+</div>
+      
+      
+        <div class="sidebar-btn-wrapper" style="position:static">
+          <div class="sidebar-toc-btn current"></div>
+          <div class="sidebar-common-btn"></div>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="sidebar-widget">
+  
+  </div>
+  
+</aside>
+
           <section id="main"><article id="post-spring6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-inner">
+  <div class="article-inner" data-aos="fade-up">
     <div class="article-meta">
-      <div class="article-date wow slideInLeft">
-  <a href="/2024/09/22/spring6/" class="article-date-link">
+      <div class="article-date">
+  <span class="article-date-link" data-aos="zoom-in">
     <time datetime="2024-09-22T08:31:50.380Z" itemprop="datePublished">2024-09-22</time>
-  </a>
+    <time style="display: none;" id="post-update-time">2024-10-20</time>
+  </span>
 </div>
 
       
-  <div class="article-category wow slideInLeft">
-    <a class="article-category-link" href="/categories/spring/">spring</a>
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/spring/" data-aos="zoom-in">spring</a>
   </div>
 
 
@@ -253,6 +349,7 @@
     
 
     <div class="e-content article-entry" itemprop="articleBody">
+      
       
         <h1 id="Spring6"><a href="#Spring6" class="headerlink" title="Spring6"></a>Spring6</h1><img src="/2024/09/22/spring6/image-20221209110043449.png" class title="image-20221209110043449">
 
@@ -2020,20 +2117,22 @@
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring6/" rel="tag">spring6</a></li></ul>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/spring6/" rel="tag">spring6</a></li></ul>
 
 
     </footer>
   </div>
   
+  <nav id="article-nav" data-aos="fade-up">
     
-  <nav id="article-nav" class="wow fadeInUp">
-    
+      
       <div class="article-nav-link-wrap article-nav-link-left">
         
           
           
-            <img data-src="https://th.bing.com/th/id/OIP.nHvPixYPOQkm51Gvf35HgwHaEo?w=195&amp;h=122&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" data-sizes="auto" alt="" class="lazyload">
+            <img data-src="/covers/image4.jpg" data-sizes="auto" alt="" class="lazyload">
           
         
         <a href="/2024/09/22/%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/"></a>
@@ -2044,6 +2143,7 @@
           
         </h3>
       </div>
+    
     
     
     <div class="article-nav-link-wrap article-nav-link-right">
@@ -2062,7 +2162,6 @@
   </nav>
 
 
-  
 </article>
 
 
@@ -2071,141 +2170,57 @@
 
 
 </section>
-          
-            <aside id="sidebar">
-  <div class="sidebar-wrap wow fadeInRight wrap-sticky">
-    
-      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
-  <h3 class="toc-title">Contents</h3>
-  <div class="sidebar-toc-wrapper toc-div-class" >
-      
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring6"><span class="toc-number">1.</span> <span class="toc-text">Spring6</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">1、概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E3%80%81Spring%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1、Spring是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2%E3%80%81Spring-%E7%9A%84%E7%8B%AD%E4%B9%89%E5%92%8C%E5%B9%BF%E4%B9%89"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2、Spring 的狭义和广义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3%E3%80%81Spring-Framework%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3、Spring Framework特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4%E3%80%81Spring%E6%A8%A1%E5%9D%97%E7%BB%84%E6%88%90"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.4、Spring模块组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5%E3%80%81Spring6%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.5、Spring6特点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1%E3%80%81%E7%89%88%E6%9C%AC%E8%A6%81%E6%B1%82"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">1.5.1、版本要求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2%E3%80%81%E6%9C%AC%E8%AF%BE%E7%A8%8B%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">1.5.2、本课程软件版本</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%85%A5%E9%97%A8"><span class="toc-number">1.2.</span> <span class="toc-text">2、入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E3%80%81%E7%8E%AF%E5%A2%83%E8%A6%81%E6%B1%82"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1、环境要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E3%80%81%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2、构建模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E3%80%81%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3、程序开发</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1%E3%80%81%E5%BC%95%E5%85%A5%E4%BE%9D%E8%B5%96"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">2.3.1、引入依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2%E3%80%81%E5%88%9B%E5%BB%BAjava%E7%B1%BB"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">2.3.2、创建java类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3%E3%80%81%E5%88%9B%E5%BB%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">2.3.3、创建配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-4%E3%80%81%E5%88%9B%E5%BB%BA%E6%B5%8B%E8%AF%95%E7%B1%BB%E6%B5%8B%E8%AF%95"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">2.3.4、创建测试类测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-5%E3%80%81%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.2.3.5.</span> <span class="toc-text">2.3.5、运行测试程序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4%E3%80%81%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4、程序分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5%E3%80%81%E5%90%AF%E7%94%A8Log4j2%E6%97%A5%E5%BF%97%E6%A1%86%E6%9E%B6"><span class="toc-number">1.2.5.</span> <span class="toc-text">2.5、启用Log4j2日志框架</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-1%E3%80%81Log4j2%E6%97%A5%E5%BF%97%E6%A6%82%E8%BF%B0"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">2.5.1、Log4j2日志概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-2%E3%80%81%E5%BC%95%E5%85%A5Log4j2%E4%BE%9D%E8%B5%96"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">2.5.2、引入Log4j2依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-3%E3%80%81%E5%8A%A0%E5%85%A5%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">2.5.3、加入日志配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-4%E3%80%81%E6%B5%8B%E8%AF%95"><span class="toc-number">1.2.5.4.</span> <span class="toc-text">2.5.4、测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-5%E3%80%81%E4%BD%BF%E7%94%A8%E6%97%A5%E5%BF%97"><span class="toc-number">1.2.5.5.</span> <span class="toc-text">2.5.5、使用日志</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E5%AE%B9%E5%99%A8%EF%BC%9AIoC"><span class="toc-number">1.3.</span> <span class="toc-text">3、容器：IoC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1%E3%80%81IoC%E5%AE%B9%E5%99%A8"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1、IoC容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1%E3%80%81%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%EF%BC%88IoC%EF%BC%89"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">3.1.1、控制反转（IoC）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2%E3%80%81%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">3.1.2、依赖注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3%E3%80%81IoC%E5%AE%B9%E5%99%A8%E5%9C%A8Spring%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">3.1.3、IoC容器在Spring的实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2%E3%80%81%E5%9F%BA%E4%BA%8EXML%E7%AE%A1%E7%90%86Bean"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2、基于XML管理Bean</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1%E3%80%81%E6%90%AD%E5%BB%BA%E5%AD%90%E6%A8%A1%E5%9D%97spring6-ioc-xml"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">3.2.1、搭建子模块spring6-ioc-xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2%E3%80%81%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E8%8E%B7%E5%8F%96bean"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">3.2.2、实验一：获取bean</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%9A%E6%A0%B9%E6%8D%AEid%E8%8E%B7%E5%8F%96"><span class="toc-number">1.3.2.2.1.</span> <span class="toc-text">①方式一：根据id获取</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%9A%E6%A0%B9%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%8E%B7%E5%8F%96"><span class="toc-number">1.3.2.2.2.</span> <span class="toc-text">②方式二：根据类型获取</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2%E6%96%B9%E5%BC%8F%E4%B8%89%EF%BC%9A%E6%A0%B9%E6%8D%AEid%E5%92%8C%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.2.2.3.</span> <span class="toc-text">③方式三：根据id和类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A3%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9"><span class="toc-number">1.3.2.2.4.</span> <span class="toc-text">④注意的地方</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A4%E6%89%A9%E5%B1%95%E7%9F%A5%E8%AF%86"><span class="toc-number">1.3.2.2.5.</span> <span class="toc-text">⑤扩展知识</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3%E3%80%81%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E4%B9%8Bsetter%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">3.2.3、实验二：依赖注入之setter注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4%E3%80%81%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%9A%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E4%B9%8B%E6%9E%84%E9%80%A0%E5%99%A8%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.2.4.</span> <span class="toc-text">3.2.4、实验三：依赖注入之构造器注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-5%E3%80%81%E5%AE%9E%E9%AA%8C%E5%9B%9B%EF%BC%9A%E7%89%B9%E6%AE%8A%E5%80%BC%E5%A4%84%E7%90%86"><span class="toc-number">1.3.2.5.</span> <span class="toc-text">3.2.5、实验四：特殊值处理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E5%AD%97%E9%9D%A2%E9%87%8F%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.2.5.1.</span> <span class="toc-text">①字面量赋值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1null%E5%80%BC"><span class="toc-number">1.3.2.5.2.</span> <span class="toc-text">②null值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2xml%E5%AE%9E%E4%BD%93"><span class="toc-number">1.3.2.5.3.</span> <span class="toc-text">③xml实体</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A3CDATA%E8%8A%82"><span class="toc-number">1.3.2.5.4.</span> <span class="toc-text">④CDATA节</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-6%E3%80%81%E5%AE%9E%E9%AA%8C%E4%BA%94%EF%BC%9A%E4%B8%BA%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.2.6.</span> <span class="toc-text">3.2.6、实验五：为对象类型属性赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%9A%E5%BC%95%E7%94%A8%E5%A4%96%E9%83%A8bean"><span class="toc-number">1.3.2.6.1.</span> <span class="toc-text">方式一：引用外部bean</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%9A%E5%86%85%E9%83%A8bean"><span class="toc-number">1.3.2.6.2.</span> <span class="toc-text">方式二：内部bean</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%89%EF%BC%9A%E7%BA%A7%E8%81%94%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.2.6.3.</span> <span class="toc-text">方式三：级联属性赋值</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-7%E3%80%81%E5%AE%9E%E9%AA%8C%E5%85%AD%EF%BC%9A%E4%B8%BA%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.2.7.</span> <span class="toc-text">3.2.7、实验六：为数组类型属性赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-8%E3%80%81%E5%AE%9E%E9%AA%8C%E4%B8%83%EF%BC%9A%E4%B8%BA%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.2.8.</span> <span class="toc-text">3.2.8、实验七：为集合类型属性赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E4%B8%BAList%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.2.8.1.</span> <span class="toc-text">①为List集合类型属性赋值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E4%B8%BAMap%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E5%B1%9E%E6%80%A7%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.2.8.2.</span> <span class="toc-text">②为Map集合类型属性赋值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2%E5%BC%95%E7%94%A8%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E7%9A%84bean"><span class="toc-number">1.3.2.8.3.</span> <span class="toc-text">③引用集合类型的bean</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-9%E3%80%81%E5%AE%9E%E9%AA%8C%E5%85%AB%EF%BC%9Ap%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="toc-number">1.3.2.9.</span> <span class="toc-text">3.2.9、实验八：p命名空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-10%E3%80%81%E5%AE%9E%E9%AA%8C%E4%B9%9D%EF%BC%9A%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8%E5%B1%9E%E6%80%A7%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.2.10.</span> <span class="toc-text">3.2.10、实验九：引入外部属性文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-11%E3%80%81%E5%AE%9E%E9%AA%8C%E5%8D%81%EF%BC%9Abean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.3.2.11.</span> <span class="toc-text">3.2.11、实验十：bean的作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-12%E3%80%81%E5%AE%9E%E9%AA%8C%E5%8D%81%E4%B8%80%EF%BC%9Abean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.3.2.12.</span> <span class="toc-text">3.2.12、实验十一：bean生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-13%E3%80%81%E5%AE%9E%E9%AA%8C%E5%8D%81%E4%BA%8C%EF%BC%9AFactoryBean"><span class="toc-number">1.3.2.13.</span> <span class="toc-text">3.2.13、实验十二：FactoryBean</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-14%E3%80%81%E5%AE%9E%E9%AA%8C%E5%8D%81%E4%B8%89%EF%BC%9A%E5%9F%BA%E4%BA%8Exml%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D"><span class="toc-number">1.3.2.14.</span> <span class="toc-text">3.2.14、实验十三：基于xml自动装配</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3%E3%80%81%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%AE%A1%E7%90%86Bean%EF%BC%88%E2%98%86%EF%BC%89"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3、基于注解管理Bean（☆）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1%E3%80%81%E6%90%AD%E5%BB%BA%E5%AD%90%E6%A8%A1%E5%9D%97spring6-ioc-annotation"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">3.3.1、搭建子模块spring6-ioc-annotation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2%E3%80%81%E5%BC%80%E5%90%AF%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">3.3.2、开启组件扫描</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-3%E3%80%81%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%AE%9A%E4%B9%89-Bean"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">3.3.3、使用注解定义 Bean</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-4%E3%80%81%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A-Autowired%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.4.</span> <span class="toc-text">3.3.4、实验一：@Autowired注入</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E5%9C%BA%E6%99%AF%E4%B8%80%EF%BC%9A%E5%B1%9E%E6%80%A7%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.4.1.</span> <span class="toc-text">①场景一：属性注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E5%9C%BA%E6%99%AF%E4%BA%8C%EF%BC%9Aset%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.4.2.</span> <span class="toc-text">②场景二：set注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2%E5%9C%BA%E6%99%AF%E4%B8%89%EF%BC%9A%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.4.3.</span> <span class="toc-text">③场景三：构造方法注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A3%E5%9C%BA%E6%99%AF%E5%9B%9B%EF%BC%9A%E5%BD%A2%E5%8F%82%E4%B8%8A%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.4.4.</span> <span class="toc-text">④场景四：形参上注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A4%E5%9C%BA%E6%99%AF%E4%BA%94%EF%BC%9A%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%EF%BC%8C%E6%97%A0%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.3.3.4.5.</span> <span class="toc-text">⑤场景五：只有一个构造函数，无注解</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A5%E5%9C%BA%E6%99%AF%E5%85%AD%EF%BC%9A-Autowired%E6%B3%A8%E8%A7%A3%E5%92%8C-Qualifier%E6%B3%A8%E8%A7%A3%E8%81%94%E5%90%88"><span class="toc-number">1.3.3.4.6.</span> <span class="toc-text">⑥场景六：@Autowired注解和@Qualifier注解联合</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-5%E3%80%81%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A-Resource%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.5.</span> <span class="toc-text">3.3.5、实验二：@Resource注入</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E5%9C%BA%E6%99%AF%E4%B8%80%EF%BC%9A%E6%A0%B9%E6%8D%AEname%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.5.1.</span> <span class="toc-text">①场景一：根据name注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E5%9C%BA%E6%99%AF%E4%BA%8C%EF%BC%9Aname%E6%9C%AA%E7%9F%A5%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.3.5.2.</span> <span class="toc-text">②场景二：name未知注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2%E5%9C%BA%E6%99%AF%E4%B8%89-%E5%85%B6%E4%BB%96%E6%83%85%E5%86%B5"><span class="toc-number">1.3.3.5.3.</span> <span class="toc-text">③场景三 其他情况</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-6%E3%80%81Spring%E5%85%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91"><span class="toc-number">1.3.3.6.</span> <span class="toc-text">3.3.6、Spring全注解开发</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E5%8E%9F%E7%90%86-%E6%89%8B%E5%86%99IoC"><span class="toc-number">1.4.</span> <span class="toc-text">4、原理-手写IoC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1%E3%80%81%E5%9B%9E%E9%A1%BEJava%E5%8F%8D%E5%B0%84"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1、回顾Java反射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2%E3%80%81%E5%AE%9E%E7%8E%B0Spring%E7%9A%84IoC"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2、实现Spring的IoC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%EF%BC%9AAOP"><span class="toc-number">1.5.</span> <span class="toc-text">5、面向切面：AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1%E3%80%81%E5%9C%BA%E6%99%AF%E6%A8%A1%E6%8B%9F"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1、场景模拟</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-1%E3%80%81%E5%A3%B0%E6%98%8E%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">5.1.1、声明接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-2%E3%80%81%E5%88%9B%E5%BB%BA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">5.1.2、创建实现类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-3%E3%80%81%E5%88%9B%E5%BB%BA%E5%B8%A6%E6%97%A5%E5%BF%97%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">1.5.1.3.</span> <span class="toc-text">5.1.3、创建带日志功能的实现类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-4%E3%80%81%E6%8F%90%E5%87%BA%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.1.4.</span> <span class="toc-text">5.1.4、提出问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2%E3%80%81%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.5.2.</span> <span class="toc-text">5.2、代理模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-1%E3%80%81%E6%A6%82%E5%BF%B5"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">5.2.1、概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-2%E3%80%81%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">5.2.2、静态代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-3%E3%80%81%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86"><span class="toc-number">1.5.2.3.</span> <span class="toc-text">5.2.3、动态代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-4%E3%80%81%E6%B5%8B%E8%AF%95"><span class="toc-number">1.5.2.4.</span> <span class="toc-text">5.2.4、测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3%E3%80%81AOP%E6%A6%82%E5%BF%B5%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD"><span class="toc-number">1.5.3.</span> <span class="toc-text">5.3、AOP概念及相关术语</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-1%E3%80%81%E6%A6%82%E8%BF%B0"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">5.3.1、概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-2%E3%80%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">5.3.2、相关术语</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E6%A8%AA%E5%88%87%E5%85%B3%E6%B3%A8%E7%82%B9"><span class="toc-number">1.5.3.2.1.</span> <span class="toc-text">①横切关注点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E9%80%9A%E7%9F%A5%EF%BC%88%E5%A2%9E%E5%BC%BA%EF%BC%89"><span class="toc-number">1.5.3.2.2.</span> <span class="toc-text">②通知（增强）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2%E5%88%87%E9%9D%A2"><span class="toc-number">1.5.3.2.3.</span> <span class="toc-text">③切面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A3%E7%9B%AE%E6%A0%87"><span class="toc-number">1.5.3.2.4.</span> <span class="toc-text">④目标</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A4%E4%BB%A3%E7%90%86"><span class="toc-number">1.5.3.2.5.</span> <span class="toc-text">⑤代理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A5%E8%BF%9E%E6%8E%A5%E7%82%B9"><span class="toc-number">1.5.3.2.6.</span> <span class="toc-text">⑥连接点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A6%E5%88%87%E5%85%A5%E7%82%B9"><span class="toc-number">1.5.3.2.7.</span> <span class="toc-text">⑦切入点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-3%E3%80%81%E4%BD%9C%E7%94%A8"><span class="toc-number">1.5.3.3.</span> <span class="toc-text">5.3.3、作用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4%E3%80%81%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84AOP"><span class="toc-number">1.5.4.</span> <span class="toc-text">5.4、基于注解的AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-1%E3%80%81%E6%8A%80%E6%9C%AF%E8%AF%B4%E6%98%8E"><span class="toc-number">1.5.4.1.</span> <span class="toc-text">5.4.1、技术说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-2%E3%80%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.5.4.2.</span> <span class="toc-text">5.4.2、准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-3%E3%80%81%E5%88%9B%E5%BB%BA%E5%88%87%E9%9D%A2%E7%B1%BB%E5%B9%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">1.5.4.3.</span> <span class="toc-text">5.4.3、创建切面类并配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-4%E3%80%81%E5%90%84%E7%A7%8D%E9%80%9A%E7%9F%A5"><span class="toc-number">1.5.4.4.</span> <span class="toc-text">5.4.4、各种通知</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-5%E3%80%81%E5%88%87%E5%85%A5%E7%82%B9%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95"><span class="toc-number">1.5.4.5.</span> <span class="toc-text">5.4.5、切入点表达式语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-6%E3%80%81%E9%87%8D%E7%94%A8%E5%88%87%E5%85%A5%E7%82%B9%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.5.4.6.</span> <span class="toc-text">5.4.6、重用切入点表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-7%E3%80%81%E8%8E%B7%E5%8F%96%E9%80%9A%E7%9F%A5%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF"><span class="toc-number">1.5.4.7.</span> <span class="toc-text">5.4.7、获取通知的相关信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-8%E3%80%81%E7%8E%AF%E7%BB%95%E9%80%9A%E7%9F%A5"><span class="toc-number">1.5.4.8.</span> <span class="toc-text">5.4.8、环绕通知</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-9%E3%80%81%E5%88%87%E9%9D%A2%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.5.4.9.</span> <span class="toc-text">5.4.9、切面的优先级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5%E3%80%81%E5%9F%BA%E4%BA%8EXML%E7%9A%84AOP"><span class="toc-number">1.5.5.</span> <span class="toc-text">5.5、基于XML的AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-1%E3%80%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.5.5.1.</span> <span class="toc-text">5.5.1、准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-2%E3%80%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.5.5.2.</span> <span class="toc-text">5.5.2、实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%EF%BC%9AJUnit"><span class="toc-number">1.6.</span> <span class="toc-text">6、单元测试：JUnit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1%E3%80%81%E6%95%B4%E5%90%88JUnit5"><span class="toc-number">1.6.1.</span> <span class="toc-text">6.1、整合JUnit5</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-1%E3%80%81%E6%90%AD%E5%BB%BA%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="toc-number">1.6.1.1.</span> <span class="toc-text">6.1.1、搭建子模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-2%E3%80%81%E5%BC%95%E5%85%A5%E4%BE%9D%E8%B5%96"><span class="toc-number">1.6.1.2.</span> <span class="toc-text">6.1.2、引入依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-3%E3%80%81%E6%B7%BB%E5%8A%A0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.6.1.3.</span> <span class="toc-text">6.1.3、添加配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-4%E3%80%81%E6%B7%BB%E5%8A%A0java%E7%B1%BB"><span class="toc-number">1.6.1.4.</span> <span class="toc-text">6.1.4、添加java类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-5%E3%80%81%E6%B5%8B%E8%AF%95"><span class="toc-number">1.6.1.5.</span> <span class="toc-text">6.1.5、测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2%E3%80%81%E6%95%B4%E5%90%88JUnit4"><span class="toc-number">1.6.2.</span> <span class="toc-text">6.2、整合JUnit4</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-1%E3%80%81%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96"><span class="toc-number">1.6.2.1.</span> <span class="toc-text">6.2.1、添加依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-2%E3%80%81%E6%B5%8B%E8%AF%95"><span class="toc-number">1.6.2.2.</span> <span class="toc-text">6.2.2、测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%E3%80%81%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.</span> <span class="toc-text">7、事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1%E3%80%81JdbcTemplate"><span class="toc-number">1.7.1.</span> <span class="toc-text">7.1、JdbcTemplate</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-1%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">7.1.1、简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-2%E3%80%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.7.1.2.</span> <span class="toc-text">7.1.2、准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-3%E3%80%81%E5%AE%9E%E7%8E%B0CURD"><span class="toc-number">1.7.1.3.</span> <span class="toc-text">7.1.3、实现CURD</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E8%A3%85%E9%85%8D-JdbcTemplate"><span class="toc-number">1.7.1.3.1.</span> <span class="toc-text">①装配 JdbcTemplate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E6%B5%8B%E8%AF%95%E5%A2%9E%E5%88%A0%E6%94%B9%E5%8A%9F%E8%83%BD"><span class="toc-number">1.7.1.3.2.</span> <span class="toc-text">②测试增删改功能</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%BF%94%E5%9B%9E%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.7.1.3.3.</span> <span class="toc-text">③查询数据返回对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A3%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%BF%94%E5%9B%9Elist%E9%9B%86%E5%90%88"><span class="toc-number">1.7.1.3.4.</span> <span class="toc-text">④查询数据返回list集合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A4%E6%9F%A5%E8%AF%A2%E8%BF%94%E5%9B%9E%E5%8D%95%E4%B8%AA%E7%9A%84%E5%80%BC"><span class="toc-number">1.7.1.3.5.</span> <span class="toc-text">⑤查询返回单个的值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2%E3%80%81%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1%E6%A6%82%E5%BF%B5"><span class="toc-number">1.7.2.</span> <span class="toc-text">7.2、声明式事务概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-1%E3%80%81%E4%BA%8B%E5%8A%A1%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.7.2.1.</span> <span class="toc-text">7.2.1、事务基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.2.1.1.</span> <span class="toc-text">①什么是事务</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E4%BA%8B%E5%8A%A1%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-number">1.7.2.1.2.</span> <span class="toc-text">②事务的特性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-2%E3%80%81%E7%BC%96%E7%A8%8B%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.2.2.</span> <span class="toc-text">7.2.2、编程式事务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-3%E3%80%81%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.2.3.</span> <span class="toc-text">7.2.3、声明式事务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3%E3%80%81%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.3.</span> <span class="toc-text">7.3、基于注解的声明式事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-1%E3%80%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.7.3.1.</span> <span class="toc-text">7.3.1、准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-2%E3%80%81%E6%B5%8B%E8%AF%95%E6%97%A0%E4%BA%8B%E5%8A%A1%E6%83%85%E5%86%B5"><span class="toc-number">1.7.3.2.</span> <span class="toc-text">7.3.2、测试无事务情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-3%E3%80%81%E5%8A%A0%E5%85%A5%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.3.3.</span> <span class="toc-text">7.3.3、加入事务</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0%E6%B7%BB%E5%8A%A0%E4%BA%8B%E5%8A%A1%E9%85%8D%E7%BD%AE"><span class="toc-number">1.7.3.3.1.</span> <span class="toc-text">①添加事务配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1%E6%B7%BB%E5%8A%A0%E4%BA%8B%E5%8A%A1%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.7.3.3.2.</span> <span class="toc-text">②添加事务注解</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A2%E8%A7%82%E5%AF%9F%E7%BB%93%E6%9E%9C"><span class="toc-number">1.7.3.3.3.</span> <span class="toc-text">③观察结果</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-4%E3%80%81-Transactional%E6%B3%A8%E8%A7%A3%E6%A0%87%E8%AF%86%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.7.3.4.</span> <span class="toc-text">7.3.4、@Transactional注解标识的位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-5%E3%80%81%E4%BA%8B%E5%8A%A1%E5%B1%9E%E6%80%A7%EF%BC%9A%E5%8F%AA%E8%AF%BB"><span class="toc-number">1.7.3.5.</span> <span class="toc-text">7.3.5、事务属性：只读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-6%E3%80%81%E4%BA%8B%E5%8A%A1%E5%B1%9E%E6%80%A7%EF%BC%9A%E8%B6%85%E6%97%B6"><span class="toc-number">1.7.3.6.</span> <span class="toc-text">7.3.6、事务属性：超时</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-7%E3%80%81%E4%BA%8B%E5%8A%A1%E5%B1%9E%E6%80%A7%EF%BC%9A%E5%9B%9E%E6%BB%9A%E7%AD%96%E7%95%A5"><span class="toc-number">1.7.3.7.</span> <span class="toc-text">7.3.7、事务属性：回滚策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-8%E3%80%81%E4%BA%8B%E5%8A%A1%E5%B1%9E%E6%80%A7%EF%BC%9A%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="toc-number">1.7.3.8.</span> <span class="toc-text">7.3.8、事务属性：隔离级别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-9%E3%80%81%E4%BA%8B%E5%8A%A1%E5%B1%9E%E6%80%A7%EF%BC%9A%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA"><span class="toc-number">1.7.3.9.</span> <span class="toc-text">7.3.9、事务属性：传播行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-10%E3%80%81%E5%85%A8%E6%B3%A8%E8%A7%A3%E9%85%8D%E7%BD%AE%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.3.10.</span> <span class="toc-text">7.3.10、全注解配置事务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4%E3%80%81%E5%9F%BA%E4%BA%8EXML%E7%9A%84%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.7.4.</span> <span class="toc-text">7.4、基于XML的声明式事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-1%E3%80%81%E5%9C%BA%E6%99%AF%E6%A8%A1%E6%8B%9F"><span class="toc-number">1.7.4.1.</span> <span class="toc-text">7.3.1、场景模拟</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-2%E3%80%81%E4%BF%AE%E6%94%B9Spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.7.4.2.</span> <span class="toc-text">7.3.2、修改Spring配置文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%E3%80%81%E8%B5%84%E6%BA%90%E6%93%8D%E4%BD%9C%EF%BC%9AResources"><span class="toc-number">1.8.</span> <span class="toc-text">8、资源操作：Resources</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1%E3%80%81Spring-Resources%E6%A6%82%E8%BF%B0"><span class="toc-number">1.8.1.</span> <span class="toc-text">8.1、Spring Resources概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2%E3%80%81Resource%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.8.2.</span> <span class="toc-text">8.2、Resource接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3%E3%80%81Resource%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">1.8.3.</span> <span class="toc-text">8.3、Resource的实现类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-3-1%E3%80%81UrlResource%E8%AE%BF%E9%97%AE%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90"><span class="toc-number">1.8.3.1.</span> <span class="toc-text">8.3.1、UrlResource访问网络资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-3-2%E3%80%81ClassPathResource-%E8%AE%BF%E9%97%AE%E7%B1%BB%E8%B7%AF%E5%BE%84%E4%B8%8B%E8%B5%84%E6%BA%90"><span class="toc-number">1.8.3.2.</span> <span class="toc-text">8.3.2、ClassPathResource 访问类路径下资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-3-3%E3%80%81FileSystemResource-%E8%AE%BF%E9%97%AE%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90"><span class="toc-number">1.8.3.3.</span> <span class="toc-text">8.3.3、FileSystemResource 访问文件系统资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-3-4%E3%80%81ServletContextResource"><span class="toc-number">1.8.3.4.</span> <span class="toc-text">8.3.4、ServletContextResource</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-3-5%E3%80%81InputStreamResource"><span class="toc-number">1.8.3.5.</span> <span class="toc-text">8.3.5、InputStreamResource</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-3-6%E3%80%81ByteArrayResource"><span class="toc-number">1.8.3.6.</span> <span class="toc-text">8.3.6、ByteArrayResource</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4%E3%80%81Resource%E7%B1%BB%E5%9B%BE"><span class="toc-number">1.8.4.</span> <span class="toc-text">8.4、Resource类图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5%E3%80%81ResourceLoader-%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.8.5.</span> <span class="toc-text">8.5、ResourceLoader 接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-5-1%E3%80%81ResourceLoader-%E6%A6%82%E8%BF%B0"><span class="toc-number">1.8.5.1.</span> <span class="toc-text">8.5.1、ResourceLoader 概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-5-2%E3%80%81%E4%BD%BF%E7%94%A8%E6%BC%94%E7%A4%BA"><span class="toc-number">1.8.5.2.</span> <span class="toc-text">8.5.2、使用演示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-5-3%E3%80%81ResourceLoader-%E6%80%BB%E7%BB%93"><span class="toc-number">1.8.5.3.</span> <span class="toc-text">8.5.3、ResourceLoader 总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-6%E3%80%81ResourceLoaderAware-%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.8.6.</span> <span class="toc-text">8.6、ResourceLoaderAware 接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-7%E3%80%81%E4%BD%BF%E7%94%A8Resource-%E4%BD%9C%E4%B8%BA%E5%B1%9E%E6%80%A7"><span class="toc-number">1.8.7.</span> <span class="toc-text">8.7、使用Resource 作为属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-8%E3%80%81%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%8A%E4%B8%8B%E6%96%87%E5%92%8C%E8%B5%84%E6%BA%90%E8%B7%AF%E5%BE%84"><span class="toc-number">1.8.8.</span> <span class="toc-text">8.8、应用程序上下文和资源路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-8-1%E3%80%81%E6%A6%82%E8%BF%B0"><span class="toc-number">1.8.8.1.</span> <span class="toc-text">8.8.1、概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-8-2%E3%80%81ApplicationContext%E5%AE%9E%E7%8E%B0%E7%B1%BB%E6%8C%87%E5%AE%9A%E8%AE%BF%E9%97%AE%E7%AD%96%E7%95%A5"><span class="toc-number">1.8.8.2.</span> <span class="toc-text">8.8.2、ApplicationContext实现类指定访问策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-8-3%E3%80%81%E4%BD%BF%E7%94%A8%E5%89%8D%E7%BC%80%E6%8C%87%E5%AE%9A%E8%AE%BF%E9%97%AE%E7%AD%96%E7%95%A5"><span class="toc-number">1.8.8.3.</span> <span class="toc-text">8.8.3、使用前缀指定访问策略</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9%E3%80%81%E5%9B%BD%E9%99%85%E5%8C%96%EF%BC%9Ai18n"><span class="toc-number">1.9.</span> <span class="toc-text">9、国际化：i18n</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1%E3%80%81i18n%E6%A6%82%E8%BF%B0"><span class="toc-number">1.9.1.</span> <span class="toc-text">9.1、i18n概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2%E3%80%81Java%E5%9B%BD%E9%99%85%E5%8C%96"><span class="toc-number">1.9.2.</span> <span class="toc-text">9.2、Java国际化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-3%E3%80%81Spring6%E5%9B%BD%E9%99%85%E5%8C%96"><span class="toc-number">1.9.3.</span> <span class="toc-text">9.3、Spring6国际化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9-3-1%E3%80%81MessageSource%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.9.3.1.</span> <span class="toc-text">9.3.1、MessageSource接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-3-2%E3%80%81%E4%BD%BF%E7%94%A8Spring6%E5%9B%BD%E9%99%85%E5%8C%96"><span class="toc-number">1.9.3.2.</span> <span class="toc-text">9.3.2、使用Spring6国际化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10%E3%80%81%E6%95%B0%E6%8D%AE%E6%A0%A1%E9%AA%8C%EF%BC%9AValidation"><span class="toc-number">1.10.</span> <span class="toc-text">10、数据校验：Validation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1%E3%80%81Spring-Validation%E6%A6%82%E8%BF%B0"><span class="toc-number">1.10.1.</span> <span class="toc-text">10.1、Spring Validation概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2%E3%80%81%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E9%80%9A%E8%BF%87Validator%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.10.2.</span> <span class="toc-text">10.2、实验一：通过Validator接口实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3%E3%80%81%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9ABean-Validation%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.10.3.</span> <span class="toc-text">10.3、实验二：Bean Validation注解实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-4%E3%80%81%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%9A%E5%9F%BA%E4%BA%8E%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0%E6%A0%A1%E9%AA%8C"><span class="toc-number">1.10.4.</span> <span class="toc-text">10.4、实验三：基于方法实现校验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-5%E3%80%81%E5%AE%9E%E9%AA%8C%E5%9B%9B%EF%BC%9A%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%A1%E9%AA%8C"><span class="toc-number">1.10.5.</span> <span class="toc-text">10.5、实验四：实现自定义校验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11%E3%80%81%E6%8F%90%E5%89%8D%E7%BC%96%E8%AF%91%EF%BC%9AAOT"><span class="toc-number">1.11.</span> <span class="toc-text">11、提前编译：AOT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-1%E3%80%81AOT%E6%A6%82%E8%BF%B0"><span class="toc-number">1.11.1.</span> <span class="toc-text">11.1、AOT概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#11-1-1%E3%80%81JIT%E4%B8%8EAOT%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.11.1.1.</span> <span class="toc-text">11.1.1、JIT与AOT的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-1-2%E3%80%81Graalvm"><span class="toc-number">1.11.1.2.</span> <span class="toc-text">11.1.2、Graalvm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-1-3%E3%80%81Native-Image"><span class="toc-number">1.11.1.3.</span> <span class="toc-text">11.1.3、Native Image</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2%E3%80%81%E6%BC%94%E7%A4%BANative-Image%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">1.11.2.</span> <span class="toc-text">11.2、演示Native Image构建过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#11-2-1%E3%80%81GraalVM%E5%AE%89%E8%A3%85"><span class="toc-number">1.11.2.1.</span> <span class="toc-text">11.2.1、GraalVM安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E4%B8%8B%E8%BD%BDGraalVM"><span class="toc-number">1.11.2.1.1.</span> <span class="toc-text">（1）下载GraalVM</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.11.2.1.2.</span> <span class="toc-text">（2）配置环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E5%AE%89%E8%A3%85native-image%E6%8F%92%E4%BB%B6"><span class="toc-number">1.11.2.1.3.</span> <span class="toc-text">（3）安装native-image插件</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-2-2%E3%80%81%E5%AE%89%E8%A3%85C-%E7%9A%84%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83"><span class="toc-number">1.11.2.2.</span> <span class="toc-text">11.2.2、安装C++的编译环境</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E4%B8%8B%E8%BD%BDVisual-Studio%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.11.2.2.1.</span> <span class="toc-text">（1）下载Visual Studio安装软件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E5%AE%89%E8%A3%85Visual-Studio"><span class="toc-number">1.11.2.2.2.</span> <span class="toc-text">（2）安装Visual Studio</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E6%B7%BB%E5%8A%A0Visual-Studio%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.11.2.2.3.</span> <span class="toc-text">（3）添加Visual Studio环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E6%89%93%E5%BC%80%E5%B7%A5%E5%85%B7%EF%BC%8C%E5%9C%A8%E5%B7%A5%E5%85%B7%E4%B8%AD%E6%93%8D%E4%BD%9C"><span class="toc-number">1.11.2.2.4.</span> <span class="toc-text">（4）打开工具，在工具中操作</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-2-3%E3%80%81%E7%BC%96%E5%86%99%E4%BB%A3%E7%A0%81%EF%BC%8C%E6%9E%84%E5%BB%BANative-Image"><span class="toc-number">1.11.2.3.</span> <span class="toc-text">11.2.3、编写代码，构建Native Image</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E7%BC%96%E5%86%99Java%E4%BB%A3%E7%A0%81"><span class="toc-number">1.11.2.3.1.</span> <span class="toc-text">（1）编写Java代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E5%88%B0%E7%9B%AE%E5%BD%95%EF%BC%8C%E6%89%A7%E8%A1%8C%E7%BC%96%E8%AF%91"><span class="toc-number">1.11.2.3.2.</span> <span class="toc-text">（2）复制文件到目录，执行编译</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%883%EF%BC%89Native-Image-%E8%BF%9B%E8%A1%8C%E6%9E%84%E5%BB%BA"><span class="toc-number">1.11.2.3.3.</span> <span class="toc-text">（3）Native Image 进行构建</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E6%9F%A5%E7%9C%8B%E6%9E%84%E5%BB%BA%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-number">1.11.2.3.4.</span> <span class="toc-text">（4）查看构建的文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%885%EF%BC%89%E6%89%A7%E8%A1%8C%E6%9E%84%E5%BB%BA%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-number">1.11.2.3.5.</span> <span class="toc-text">（5）执行构建的文件</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
-      
-  </div>
-</div>
-</div>
-      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
-  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Lim" class="lazyload">
-  <div class="sidebar-author-name">Lim</div>
-  <div class="sidebar-description"></div>
-</div>
-<div class="sidebar-state">
-  <div class="sidebar-state-article">
-    <div>Posts</div>
-    <div class="sidebar-state-number">13</div>
-  </div>
-  <div class="sidebar-state-category">
-    <div>Categories</div>
-    <div class="sidebar-state-number">5</div>
-  </div>
-  <div class="sidebar-state-tag">
-    <div>Tags</div>
-    <div class="sidebar-state-number">10</div>
-  </div>
-</div>
-<div class="sidebar-social">
-  
-    <div class="icon-github sidebar-social-icon">
-      <a href=https://github.com/lim-juyou itemprop="url" target="_blank" aria-label="github"></a>
-    </div>
-  
-    <div class="icon-google sidebar-social-icon">
-      <a href=https://plus.google.com/SeaBreaze itemprop="url" target="_blank" aria-label="google"></a>
-    </div>
-  
-    <div class="icon-bilibili sidebar-social-icon">
-      <a href=https://space.bilibili.com/ itemprop="url" target="_blank" aria-label="bilibili"></a>
-    </div>
-  
-</div>
-<div class="sidebar-menu">
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
-      <span class="sidebar-menu-icon"></span>
-      <div class="sidebar-menu-link">Home</div>
-    </div>
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
-      <span class="sidebar-menu-icon"></span>
-      <div class="sidebar-menu-link">Archives</div>
-    </div>
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
-      <span class="sidebar-menu-icon"></span>
-      <div class="sidebar-menu-link">About</div>
-    </div>
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
-      <span class="sidebar-menu-icon"></span>
-      <div class="sidebar-menu-link">Friend</div>
-    </div>
-  
-</div>
-</div>
-    
-    
-      <div class="sidebar-btn-wrapper" style="position:static">
-        <div class="sidebar-toc-btn current"></div>
-        <div class="sidebar-common-btn"></div>
-      </div>
-    
-  </div>
-
-  
-</aside>
-
-          
         </div>
-        <footer id="footer" class="wow fadeInUp">
+        
+        
+        <footer id="footer">
   <div style="width: 100%; overflow: hidden">
     <div class="footer-line"></div>
   </div>
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      <div>
-        <span class="icon-copyright"></span>
-        2024-2025
-        <span class="footer-info-sep"></span>
-        Lim
-      </div>
-      
-        <div>
-          Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-          Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
-        </div>
-      
-      
-        <div>
-          <span class="icon-brush"></span>
-          48.1k
-          &nbsp;|&nbsp;
-          <span class="icon-coffee"></span>
-          03:40
-        </div>
-      
-      
-        <div>
-          <span class="icon-eye"></span>
-          <span id="busuanzi_container_site_pv">Number of visits&nbsp;<span id="busuanzi_value_site_pv"></span></span>
-          &nbsp;|&nbsp;
-          <span class="icon-user"></span>
-          <span id="busuanzi_container_site_uv">Number of visitors&nbsp;<span id="busuanzi_value_site_uv"></span></span>
-        </div>
-      
+  <div id="footer-info">
+    
+    <div>
+      <span class="icon-copyright"></span>
+      2020-2025
+      <span class="footer-info-sep rotate"></span>
+      Lim
     </div>
+    
+      <div>
+        Powered by&nbsp;<a href="https://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener external nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+    
+    
+      <div>
+        <span class="icon-brush"></span>
+        48k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        03:39
+      </div>
+    
+    
+    
+    
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">Number of visits&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">Number of visitors&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+    
   </div>
 </footer>
 
-        <div class="sidebar-top">
-          <img src="/images/taichi.png" height="50" width="50" alt="backtop" />
-          <div class="arrow-up"></div>
-        </div>
-        <div id="mask"></div>
+        
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        
+        <div id="mask" class="hide"></div>
       </div>
       <nav id="mobile-nav">
   <div class="sidebar-wrap">
@@ -2226,58 +2241,56 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>Posts</div>
+    <div>Post</div>
     <div class="sidebar-state-number">13</div>
   </div>
   <div class="sidebar-state-category">
-    <div>Categories</div>
+    <div>Category</div>
     <div class="sidebar-state-number">5</div>
   </div>
   <div class="sidebar-state-tag">
-    <div>Tags</div>
+    <div>Tag</div>
     <div class="sidebar-state-number">10</div>
   </div>
 </div>
 <div class="sidebar-social">
   
-    <div class="icon-github sidebar-social-icon">
-      <a href=https://github.com/lim-juyou itemprop="url" target="_blank" aria-label="github"></a>
-    </div>
-  
-    <div class="icon-google sidebar-social-icon">
-      <a href=https://plus.google.com/SeaBreaze itemprop="url" target="_blank" aria-label="google"></a>
-    </div>
-  
-    <div class="icon-bilibili sidebar-social-icon">
-      <a href=https://space.bilibili.com/ itemprop="url" target="_blank" aria-label="bilibili"></a>
-    </div>
-  
 </div>
 <div class="sidebar-menu">
   
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
-      <span class="sidebar-menu-icon"></span>
-      <div class="sidebar-menu-link">Home</div>
-    </div>
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
-      <span class="sidebar-menu-icon"></span>
-      <div class="sidebar-menu-link">Archives</div>
-    </div>
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
-      <span class="sidebar-menu-icon"></span>
-      <div class="sidebar-menu-link">About</div>
-    </div>
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
-      <span class="sidebar-menu-icon"></span>
-      <div class="sidebar-menu-link">Friend</div>
-    </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+    
   
 </div>
 </div>
@@ -2292,25 +2305,12 @@
 </nav>
 
     </div>
-    <div class="site-search">
-      <div class="reimu-popup popup">
-        <div class="reimu-search">
-          <span class="reimu-search-input-icon"></span>
-          <div class="reimu-search-input" id="reimu-search-input"></div>
-        </div>
-        <div class="reimu-results">
-          <div id="reimu-stats"></div>
-          <div id="reimu-hits"></div>
-          <div id="reimu-pagination" class="reimu-pagination"></div>
-        </div>
-        <span class="popup-btn-close"></span>
-      </div>
-    </div>
     
-<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"></script>
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
 
 
-<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"></script>
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
 
 
 
@@ -2318,77 +2318,36 @@
 
 
 
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+
 <script src="/js/pjax_script.js" data-pjax></script>
 
 
-<script type="module" data-pjax>
-  import PhotoSwipeLightbox from "https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js";
-  
-  const pswp = () => {
-    if (_$$('.article-entry a.article-gallery-item').length > 0) {
-      new PhotoSwipeLightbox({
-        gallery: '.article-entry',
-        children: 'a.article-gallery-item',
-        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
-      }).init();
-    }
-    if(_$$('.article-gallery a.article-gallery-item').length > 0) {
-      new PhotoSwipeLightbox({
-        gallery: '.article-gallery',
-        children: 'a.article-gallery-item',
-        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
-      }).init();
-    }
-    window.lightboxStatus = 'done';
-    window.removeEventListener('lightbox:ready', pswp);
-  }
-  if(window.lightboxStatus === 'ready') {
-    pswp()
-  } else {
-    window.addEventListener('lightbox:ready', pswp);
-  }
-</script>
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-  
-<script src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"></script>
-
-  
-<script src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"></script>
-
-  
-<script src="/js/algolia_search.js"></script>
-
-  <script>
-    var CONFIG = {
-      root: '/',
-      algolia: {
-        applicationID: "DOHSPAI4F3",
-        apiKey: "17c2c27bdd73e409ce82053e9e6880e5",
-        indexName: "blog_posts",
-        hits: {
-          "per_page": parseInt("10")
-        },
-        labels: {
-          "input_placeholder": "搜索.....",
-          "hits_empty": "未发现与 「${query}」相关内容",
-          "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
-        }
-      }
-    };
-  </script>
 
 
 
@@ -2399,6 +2358,69 @@
 
 <div id="lazy-script">
   <div>
+    
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "Lim",
+          title: "spring",
+          url: "http://lim-juyou.github.io/2024/09/22/spring6/",
+          excerpt: "",
+          description: "",
+          stripContent: "Spring6  1、概述1.1、Spring是什么？Spring 是一款主流的 Java EE 轻量级开源框架 ，Spring 由“Spring 之父”Rod Johnson 提出并创立，其目的是用于简化 Java 企业级应用的开发难度和开发周期。Spring的用途不仅限于服务器端的开发。从简单性、可测试性和松耦合的角度而言，任何Java应用都可以从Spring中受益。Spring 框架除了自己提供功能外，还提供整合其他技术和框架的能力。 Spring 自诞生以来备受青睐，一直被广大开发人员作",
+          date: "Sun Sep 22 2024 16:31:50 GMT+0800",
+          updated: "Sun Oct 20 2024 16:27:50 GMT+0800",
+          cover: "/covers/image1.jpg",
+        };
+      </script>
+       
+    
+    
+      
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+        
+      
+    
+    
+      <script type="module" data-pjax>
+        const PhotoSwipeLightbox = (await safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+        
+        const pswp = () => {
+          if (_$$('.article-entry a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-entry',
+              children: 'a.article-gallery-item',
+              pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+            }).init();
+          }
+          if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-gallery',
+              children: 'a.article-gallery-item',
+              pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+            }).init();
+          }
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script>
+      
+
+
+
+
+
+
+
+
     
   </div>
 </div>
@@ -2413,17 +2435,35 @@
   \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
                                                   
 `,'color: #ff5252;')
-    console.log('%c Theme.Reimu v' + '0.2.1' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.5.1' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
   </script>
   
 
 
+
   
-<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
 
 
-  <!-- hexo injector body_end start -->
-<script src="/js/insert_highlight.js" data-pjax></script>
-<!-- hexo injector body_end end --></body>
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+</script>
+
+
+
+
+
+
+
+    
+  </body>
   </html>
 
