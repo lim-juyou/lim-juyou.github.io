@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人猫共治条例Pro Max v4.3.0</title>
+    <style>
+        :root {
+            --cat-gold: #ffc107;
+            --cat-pink: #ff85a2;
+            --cat-night: #1a1a1a;
+            --cat-day: #fff5e6;
+            --text-primary: #2d2d2d;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Microsoft YaHei', cursive;
+            background: linear-gradient(45deg, 
+                var(--cat-day) 20%, 
+                #ffe3d8 80%
+            );
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+            color: var(--text-primary);
+        }
+
+        .cat-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, 
+                var(--cat-pink) 0%, 
+                #ff6b6b 100%
+            );
+            color: white;
+            padding: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        .law-section {
+            background: rgba(255,255,255,0.9);
+            border: 4px dashed var(--cat-gold);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cat-clause {
+            position: relative;
+            padding-left: 2rem;
+            color: var(--cat-night);
+            margin-top: 1.5rem;
+        }
+
+        .cat-clause::before {
+            content: '🐾';
+            position: absolute;
+            left: -0.5rem;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
+        }
+
+        .cat-terminal {
+            background: radial-gradient(circle at top left,
+                #2d2d2d 0%,
+                #1a1a1a 100%
+            );
+            color: #0f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: monospace;
+            border: 2px solid #404040;
+            margin: 1rem 0;
+        }
+
+        .kitty-game {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+            user-select: none;
+        }
+
+        .game-tile {
+            aspect-ratio: 1/1;
+            background: repeating-linear-gradient(45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,193,7,0.1) 10px,
+                rgba(255,193,7,0.1) 20px
+            );
+            border: 3px solid var(--cat-gold);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            cursor: pointer;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .game-tile:hover {
+            transform: rotate(3deg) scale(1.05);
+            box-shadow: 0 5px 15px rgba(255,193,7,0.3);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating-cat {
+            animation: float 3s ease-in-out infinite;
+            max-width: 100px;
+            cursor: pointer;
+            margin: 1rem auto;
+            display: block;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --cat-day: #2d2d2d;
+                --text-primary: #e0e0e0;
+            }
+            body {
+                background: linear-gradient(
+                    to bottom right,
+                    #363636 0%,
+                    #2d2d2d 100%
+                );
+            }
+            .law-section {
+                background: rgba(40, 40, 40, 0.9);
+            }
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 1rem;
+            border: 2px solid var(--cat-gold);
+            border-radius: 25px;
+            margin: 1rem 0;
+            transition: 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            box-shadow: 0 0 10px var(--cat-pink);
+        }
+
+        progress {
+            width: 100%;
+            height: 20px;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        progress::-webkit-progress-bar {
+            background: #ffe3d8;
+            border-radius: 10px;
+        }
+
+        progress::-webkit-progress-value {
+            background: var(--cat-pink);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航和正文内容保持不变，结构与原始代码一致 -->
+    <nav class="cat-nav">
+        <div class="nav-btn" onclick="showSection('charter')">🐾 宪法正文</div>
+        <div class="nav-btn" onclick="showSection('game')">🎮 跑酷模拟器</div>
+        <div class="nav-btn" onclick="showSection('translator')">💬 猫语翻译</div>
+        <div class="nav-btn" onclick="toggleDarkMode()">🌙 黑夜模式</div>
+    </nav>
+
+   
+    <!-- 宪法正文模块 -->
+    <section id="charter" class="law-section">
+        <section class="law-box">
+            <h2 class="cat-clause">第一章 领土声明 📜</h2>
+            <ul>
+                <li>所有纸箱默认进入「主权真空」状态，触发<code>catch-box.js</code>自动认领协议</li>
+                <li>键盘使用权在（猫爪子接触时）自动切换为「爪写模式」</li>
+            </ul>
+            <button class="interactive-btn" onclick="alert('🐱 喵嗷~ 你戳到宪法第233条了！')">
+                点我看隐藏条款
+            </button>
+        </section>
+    
+        <section class="law-box">
+            <h2 class="cat-clause">第二章 作息协议 ⏰</h2>
+            <pre><code>if (时间 == '凌晨3点') {
+        猫.触发跑酷模式();
+        人类.睡眠质量 -= 50%;
+    }</code></pre>
+            <progress value="75" max="100"></progress>
+            <p>当前人类精力值：75%</p>
+        </section>
+        <h2>🐟 第3章 食物法案</h2>
+        <div class="cat-terminal">
+            > npm install cat-law --save<br>
+            ⬇️ 正在下载鱼肉协议...<br>
+            🎣 从喵星镜像源下载加速中...<br>
+            ✔️ 已添加 <span style="color:var(--cat-pink)">cat-food==3.14.0</span>
+        </div>
+
+        <h3>供餐规范：</h3>
+        <ul>
+            <li>当翻肚皮指数 ≥ 80% 时，必须立即补充小鱼干</li>
+            <li>猫碗应保持<a href="javascript:void(0)" onclick="showQuantumState()">「量子满态」</a></li>
+            <li>⚠️ 禁止在猫碗放置<a href="javascript:void(0)" 
+                          onmouseover="this.innerHTML='🍉'" 
+                          onmouseout="this.innerHTML='蔬菜'">蔬菜</a>
+            </li>
+        </ul>
+    </section>
+    <div style="text-align: center; margin: 2rem">
+        <button class="interactive-btn" onclick="startLegalityTest()">
+            🧪 开始法律适应性测试
+        </button>
+    </div>
+    
+    <script>
+        function startLegalityTest() {
+            const answer = prompt(`请选择：
+1. 猫爪踩键盘时你正在写毕设
+2. 猫咪把水杯推到你的新手机
+3. 主子在你刚洗的衬衫上掉毛`);
+
+            const responses = [
+                "🖨️ 自动为您打开猫用输入法",
+                "📱 启动『旧的不去新的不来』协议",
+                "👔 触发『猫毛勋章』成就"
+            ];
+            
+            if(answer) {
+                const responseIndex = Math.min(2, parseInt(answer)-1);
+                alert(responses[responseIndex] || "🚫 非法选择！强制进入撸猫模式");
+            }
+        }
+    </script>
+
+    <footer style="text-align: center; margin-top: 3rem">
+        <p style="color: var(--secondary-color)">
+            🚨 PURR-MIT License © 2024 
+            <span style="animation: blink 1s infinite">🐈‍⬛</span>
+            修改条款需获得主子爪印公证
+        </p>
+    </footer>
+
+
+    <!-- 跑酷小游戏模块 -->
+    <section id="game" class="law-section" style="display:none">
+        <h2>🏃 凌晨跑酷模拟器 v1.33</h2>
+        <div class="kitty-game" id="gameBoard"></div>
+        <p>得分：<span id="score">0</span> 🏆</p>
+        <button class="nav-btn" onclick="initGame()">🔄 模式（{{}}）</button>
+    </section>
+
+    <!-- 猫语翻译模块 -->
+    <section id="translator" class="law-section" style="display:none">
+        <h2>🔡 喵星语编译器 beta</h2>
+        <input type="text" 
+               placeholder="输入人类语言..." 
+               style="width:80%; padding:1rem"
+               onkeyup="translateToCat(this.value)">
+        <div id="catOutput" style="margin-top:1rem; font-size:1.5em">
+            🐱→ "miao~"
+        </div>
+        <img src="https://ts4.cn.mm.bing.net/th?id=OIP-C.3n_VpNzPARMuzgTVwlnIDgHaHY&w=250&h=249&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" 
+             class="floating-cat" 
+             onclick="this.src += '?' + Math.random()">
+    </section>
+
+    <script>
+        // === 游戏逻辑 ===
+        let gameState = {
+            score: 0,
+            mode: ['📦', '🐟', '🛏️', '🍳'],
+            currentMode: 0
+        };
+
+        function initGame() {
+            const board = document.getElementById('gameBoard');
+            board.innerHTML = '';
+            gameState.score = 0;
+            document.getElementById('score').textContent = 0;
+            
+            // 生成12个随机方块
+            for(let i=0; i<25; i++){
+                const tile = document.createElement('div');
+                tile.className = 'game-tile';
+                tile.textContent = Math.random() > 0.3 ? 
+                    gameState.mode[gameState.currentMode] : '💥';
+                tile.onclick = () => handleClick(tile);
+                board.appendChild(tile);
+            }
+        }
+
+        function handleClick(tile) {
+            if(tile.textContent === '💥') {
+                alert('🐾 踩到禁忌！扣10条小鱼干');
+                gameState.score = Math.max(0, gameState.score-10);
+            } else {
+                gameState.score += 10;
+                tile.style.transform = 'scale(0)';
+                setTimeout(() => tile.remove(), 300);
+            }
+            document.getElementById('score').textContent = gameState.score;
+        }
+
+        // === 猫语翻译 ===
+        const catWords = ['nya~','murr','prrr','🐟!!!','zZz','=^._.^=∫'];
+        function translateToCat(text) {
+            const output = text.split('').map(() => 
+                catWords[Math.floor(Math.random()*catWords.length)]
+            ).join(' ');
+            document.getElementById('catOutput').textContent = `🐱→ "${output}"`;
+        }
+
+        // === 其他交互 ===
+        function showSection(id) {
+            document.querySelectorAll('.law-section').forEach(sec => 
+                sec.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function toggleDarkMode() {
+            document.body.style.filter = document.body.style.filter ? 
+                '' : 'invert(90%) hue-rotate(180deg)';
+        }
+
+        function showQuantumState() {
+            const states = ['💿📀', '99%', '0%', '×'];
+            alert(`当前碗状态：${states[Math.floor(Math.random()*states.length)]}`);
+        }
+
+        // 彩蛋：右键查看秘密
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            alert('🐈 抓到调皮人类！依据第007条扣留零食');
+        });
+    </script>
+</body>
+</html>

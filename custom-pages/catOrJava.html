@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>程序员の日常选择</title>
+    <style>
+        body {
+            font-family: '微软雅黑', sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #status {
+            background: #333;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0,255,0,0.3);
+        }
+
+        .event-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .event-btn {
+            padding: 20px;
+            width: 200px;
+            background: #444;
+            border: 2px solid #666;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .event-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255,127,80,0.5);
+        }
+
+        #achievements {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .notification {
+            animation: popup 2s forwards;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: rgba(0,255,0,0.9);
+            border-radius: 10px;
+            font-size: 24px;
+        }
+
+        @keyframes popup {
+            0% { opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .cat-emoji {
+            font-size: 3em;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        #bilibili-gif {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="status">
+        <h2>👨💻 程序员状态：</h2>
+        <p>Java知识值: <span id="java">100</span>/100</p>
+        <p>🧠 幸福感: <span id="happy">0</span></p>
+    </div>
+
+    <div id="achievements">
+        <h3>🏆 成就列表</h3>
+        <ul id="achievement-list"></ul>
+    </div>
+
+    <div id="event-area"></div>
+
+    <script>
+        let javaKnowledge = 100;
+        let happiness = 0;
+        let achievements = [];
+        let catClickCount = 0;
+
+        function triggerEvent() {
+            const events = [
+                {
+                    text: "💻 IDEA弹出警告",
+                    action: () => {
+                        javaKnowledge = Math.min(javaKnowledge + 5, 100);
+                        happiness -= 10;
+                        showNotification("+5 Java经验 | 心情不太好了");
+                    }
+                },
+                {
+                    text: "🐱 窗外出现猫猫!",
+                    action: () => {
+                        javaKnowledge -= Math.floor(Math.random() * 15 + 5);
+                        happiness += Math.floor(Math.random() * 2000 + 5000);
+                        catClickCount++;
+                        checkAchievement();
+                        showNotification("😺 猫猫治愈了你！");
+                        triggerCatAnimation();
+                    }
+                },
+                {
+                    text: "🎬 B站推送新番",
+                    action: () => {
+                        javaKnowledge -= 3;
+                        happiness += 2000;
+                        showNotification("<img id='bilibili-gif' src='https://example.com/bilibili.gif' alt='追番'>");
+                    }
+                }
+            ];
+
+            // 清空事件区域
+            document.getElementById('event-area').innerHTML = '';
+
+            // 创建事件按钮
+            events.forEach(event => {
+                const btn = document.createElement('div');
+                btn.className = 'event-btn';
+                btn.innerHTML = event.text;
+                btn.onclick = () => {
+                    event.action();
+                    updateStatus();
+                    setTimeout(triggerEvent, 2000); // 2秒后触发新事件
+                };
+                document.getElementById('event-area').appendChild(btn);
+            });
+        }
+
+        function triggerCatAnimation() {
+            const cat = document.createElement('div');
+            cat.className = 'cat-emoji';
+            cat.innerHTML = '🐾🐈⬛💖';
+            cat.style.position = 'fixed';
+            cat.style.left = `${Math.random() * 80 + 10}%`;
+            cat.style.animation = `falling ${Math.random() * 3 + 2}s linear`;
+            
+            document.body.appendChild(cat);
+            setTimeout(() => cat.remove(), 3000);
+        }
+
+        function checkAchievement() {
+            if (catClickCount === 1 && !achievements.includes('猫的俘虏')) {
+                achievements.push('猫的俘虏');
+                showNotification('🎉 解锁成就：猫的俘虏');
+                updateAchievements();
+            }
+            if (catClickCount >= 3 && !achievements.includes('重度猫瘾')) {
+                achievements.push('重度猫瘾');
+                showNotification('🎉 解锁成就：重度猫瘾');
+                updateAchievements();
+            }
+        }
+
+        function updateStatus() {
+            document.getElementById('java').textContent = Math.max(javaKnowledge, 0);
+            document.getElementById('happy').textContent = happiness;
+            
+            if (javaKnowledge <= 0) {
+                showNotification("💀 Java技能归零，你被猫完全俘虏了！");
+            }
+        }
+
+        function updateAchievements() {
+            const list = document.getElementById('achievement-list');
+            list.innerHTML = achievements.map(a => `<li>${a}</li>`).join('');
+        }
+
+        function showNotification(text) {
+            const div = document.createElement('div');
+            div.className = 'notification';
+            div.innerHTML = text;
+            document.body.appendChild(div);
+            setTimeout(() => div.remove(), 2000);
+        }
+
+        // 开始游戏
+        triggerEvent();
+    </script>
+</body>
+</html>

@@ -6,7 +6,7 @@
   <link href="http://lim-juyou.github.io/atom.xml" rel="self"/>
   
   <link href="http://lim-juyou.github.io/"/>
-  <updated>2024-10-20T03:20:19.293Z</updated>
+  <updated>2025-03-02T11:50:12.412Z</updated>
   <id>http://lim-juyou.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>about和friend中catOrJava小游戏说明</title>
+    <link href="http://lim-juyou.github.io/2025/03/02/CatOrJava/"/>
+    <id>http://lim-juyou.github.io/2025/03/02/CatOrJava/</id>
+    <published>2025-03-02T11:48:09.100Z</published>
+    <updated>2025-03-02T11:50:12.412Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;figure class=&quot;highlight markdown&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="使用说明" scheme="http://lim-juyou.github.io/categories/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
+    
+    
+    <category term="Cat OR Java" scheme="http://lim-juyou.github.io/tags/Cat-OR-Java/"/>
+    
+    <category term="HTML" scheme="http://lim-juyou.github.io/tags/HTML/"/>
+    
+  </entry>
   
   <entry>
     <title>DispatcherServlet</title>
@@ -136,30 +163,30 @@
   </entry>
   
   <entry>
-    <title>测试文章</title>
-    <link href="http://lim-juyou.github.io/2024/08/01/test/"/>
-    <id>http://lim-juyou.github.io/2024/08/01/test/</id>
+    <title>friend中人猫共治宪法草案页面说明</title>
+    <link href="http://lim-juyou.github.io/2024/08/01/%E4%BA%BA%E7%8C%AB%E5%85%B1%E6%B2%BB%E6%B3%95%E6%A1%88/"/>
+    <id>http://lim-juyou.github.io/2024/08/01/%E4%BA%BA%E7%8C%AB%E5%85%B1%E6%B2%BB%E6%B3%95%E6%A1%88/</id>
     <published>2024-08-01T02:36:39.697Z</published>
-    <updated>2024-08-01T03:02:10.585Z</updated>
+    <updated>2025-03-02T11:47:18.530Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;此处是文章内容。&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;p&gt;以下是为该页面项目设计的README文件，采用与页面风格一致的趣味化表述方式：&lt;/p&gt;
+&lt;figure class=&quot;highlight markdown&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
         
       
     
     
     
-    <category term="技术" scheme="http://lim-juyou.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="使用说明" scheme="http://lim-juyou.github.io/categories/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     
     
-    <category term="Hexo" scheme="http://lim-juyou.github.io/tags/Hexo/"/>
+    <category term="HTML" scheme="http://lim-juyou.github.io/tags/HTML/"/>
     
-    <category term="博客" scheme="http://lim-juyou.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    <category term="Cat" scheme="http://lim-juyou.github.io/tags/Cat/"/>
     
   </entry>
   
