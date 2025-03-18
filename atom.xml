@@ -359,11 +359,25 @@
     <link href="http://lim-juyou.github.io/2024/07/15/%E7%AE%97%E6%B3%95/"/>
     <id>http://lim-juyou.github.io/2024/07/15/%E7%AE%97%E6%B3%95/</id>
     <published>2024-07-15T06:45:02.248Z</published>
-    <updated>2024-07-15T06:45:22.534Z</updated>
+    <updated>2025-03-18T12:53:41.650Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.选择排序：每次选择最小的与当前位置上的元素交换，当只剩下一个元素时排好序。时间复杂度O(n^2),空间复杂度O(1)，原地排序，仅需常数级额外空间。&lt;/p&gt;
+&lt;p&gt;代码实现：&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
     
     
     
+    <category term="算法" scheme="http://lim-juyou.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
+    
+    <category term="算法" scheme="http://lim-juyou.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
