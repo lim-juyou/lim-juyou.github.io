@@ -1,0 +1,1113 @@
+
+  <!DOCTYPE html>
+  <html lang="en"  
+    
+      data-theme-mode="auto"
+    
+  >
+  <head>
+  
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'http://lim-juyou.github.io';</script>
+  
+  <title>
+    数据库基础 |
+    
+    リムの巣
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_0khxww3tj3q9.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+  
+  
+    <meta name="description" content="数据库SQL分类1.DDL（Database Definition Language）:数据库定义语言，用来定义数据库对象，库，表，列等；1.操作数据库​	创建数据库： 1create database if not exisit &lt;mydatabse&gt;;  ​	删除数据库： 1drop database if exisit &lt;mydatabse&gt;;  ​	切换数据库 1u">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库基础">
+<meta property="og:url" content="http://lim-juyou.github.io/2025/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
+<meta property="og:site_name" content="リムの巣">
+<meta property="og:description" content="数据库SQL分类1.DDL（Database Definition Language）:数据库定义语言，用来定义数据库对象，库，表，列等；1.操作数据库​	创建数据库： 1create database if not exisit &lt;mydatabse&gt;;  ​	删除数据库： 1drop database if exisit &lt;mydatabse&gt;;  ​	切换数据库 1u">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-18T12:47:12.314Z">
+<meta property="article:modified_time" content="2025-03-18T12:47:45.184Z">
+<meta property="article:author" content="Lim">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="mysql">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="alternate" href="/atom.xml" title="リムの巣" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  
+  
+  
+    
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+  
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css">
+
+  
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+  <body>
+    
+    
+  <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        
+          <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+           M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg>
+        
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/">Home</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/archives">Archives</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/about">About</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/friend">Friend</a>
+        </span>
+      
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" target="_blank"></a>
+    
+    
+    
+  </nav>
+  
+</div>
+<header id="header">
+  
+    <picture>
+      
+    </picture>
+    
+      <img fetchpriority="high" src="/images/banner.webp" alt="数据库基础">
+    
+  
+  <div id="header-outer">
+    <div id="header-title">
+      
+        
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">数据库基础</h1>
+          </a>
+        
+      
+      
+        
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content"  class="sidebar-right" >
+          <aside id="sidebar">
+  
+  
+  
+  <div class="sidebar-wrapper wrap-sticky">
+    <div class="sidebar-wrap" data-aos="fade-up">
+      
+        <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">Contents</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL%E5%88%86%E7%B1%BB"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">SQL分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-DDL%EF%BC%88Database-Definition-Language%EF%BC%89-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80%EF%BC%8C%E7%94%A8%E6%9D%A5%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%BA%93%EF%BC%8C%E8%A1%A8%EF%BC%8C%E5%88%97%E7%AD%89%EF%BC%9B"><span class="toc-number">1.0.0.1.1.</span> <span class="toc-text">1.DDL（Database Definition Language）:数据库定义语言，用来定义数据库对象，库，表，列等；</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.0.0.1.1.1.</span> <span class="toc-text">1.操作数据库</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.0.0.1.1.2.</span> <span class="toc-text">2.数据类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-%E6%93%8D%E4%BD%9C%E8%A1%A8"><span class="toc-number">1.0.0.1.1.3.</span> <span class="toc-text">3.操作表</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-DML%EF%BC%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E8%AF%AD%E8%A8%80%EF%BC%8C%E7%94%A8%E6%9D%A5%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%B0%E5%BD%95%EF%BC%88%E6%95%B0%E6%8D%AE%EF%BC%89"><span class="toc-number">1.0.0.1.2.</span> <span class="toc-text">2.DML，数据库操作语言，用来定义数据库记录（数据）</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">1.0.0.1.2.1.</span> <span class="toc-text">1.插入数据</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="toc-number">1.0.0.1.2.2.</span> <span class="toc-text">2.修改数据</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">1.0.0.1.2.3.</span> <span class="toc-text">3.删除数据</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-DCL%EF%BC%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8E%A7%E5%88%B6%E8%AF%AD%E8%A8%80%EF%BC%8C%E7%94%A8%E6%9D%A5%E5%AE%9A%E4%B9%89%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E5%92%8C%E5%AE%89%E5%85%A8%E7%BA%A7%E5%88%AB%EF%BC%9B"><span class="toc-number">1.0.0.1.3.</span> <span class="toc-text">3.DCL，数据库控制语言，用来定义访问权限和安全级别；</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="toc-number">1.0.0.1.3.1.</span> <span class="toc-text">1.创建用户</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E7%BB%99%E7%94%A8%E6%88%B7%E6%8E%88%E6%9D%83"><span class="toc-number">1.0.0.1.3.2.</span> <span class="toc-text">2.给用户授权</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-%E6%92%A4%E9%94%80%E6%9D%83%E9%99%90"><span class="toc-number">1.0.0.1.3.3.</span> <span class="toc-text">3.撤销权限</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90"><span class="toc-number">1.0.0.1.3.4.</span> <span class="toc-text">4.查看用户权限</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5-%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7"><span class="toc-number">1.0.0.1.3.5.</span> <span class="toc-text">5.删除用户</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#6-%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81"><span class="toc-number">1.0.0.1.3.6.</span> <span class="toc-text">6.修改用户密码</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-DQL%EF%BC%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80%EF%BC%8C%E7%94%A8%E6%9D%A5%E6%9F%A5%E8%AF%A2%E8%AE%B0%E5%BD%95%EF%BC%88%E6%95%B0%E6%8D%AE%EF%BC%89"><span class="toc-number">1.0.0.1.4.</span> <span class="toc-text">4.DQL，数据库查询语言，用来查询记录（数据）</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E4%BD%9C%E7%94%A8"><span class="toc-number">1.0.0.1.4.1.</span> <span class="toc-text">1.作用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E7%BB%93%E6%9E%84"><span class="toc-number">1.0.0.1.4.2.</span> <span class="toc-text">2.基本语法结构</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.0.0.1.4.3.</span> <span class="toc-text">3.常用功能详解</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">聚合函数</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#5-DQL%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE"><span class="toc-number">1.0.0.2.0.1.</span> <span class="toc-text">5. DQL优化建议</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.0.0.2.0.2.</span> <span class="toc-text">应用场景</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">范式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F%EF%BC%881NF%EF%BC%89%EF%BC%9A%E5%8E%9F%E5%AD%90%E6%80%A7"><span class="toc-number">1.0.0.3.1.</span> <span class="toc-text">1.第一范式（1NF）：原子性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E7%AC%AC%E4%BA%8C%E8%8C%83%E5%BC%8F%EF%BC%882NF%EF%BC%89%EF%BC%9A%E6%B6%88%E9%99%A4%E9%83%A8%E5%88%86%E4%BE%9D%E8%B5%96"><span class="toc-number">1.0.0.3.2.</span> <span class="toc-text">2.第二范式（2NF）：消除部分依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E8%8C%83%E5%BC%8F%EF%BC%883NF%EF%BC%89%EF%BC%9A%E6%B6%88%E9%99%A4%E4%BC%A0%E9%80%92%E4%BE%9D%E8%B5%96"><span class="toc-number">1.0.0.3.3.</span> <span class="toc-text">第三范式（3NF）：消除传递依赖</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">索引</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BD%9C%E7%94%A8"><span class="toc-number">1.0.0.4.1.</span> <span class="toc-text">索引的概念与作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E7%B4%A2%E5%BC%95%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.0.0.4.2.</span> <span class="toc-text">常见的索引类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E6%8C%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.0.0.4.2.1.</span> <span class="toc-text">(1) 按数据结构分类</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E6%8C%89%E9%80%BB%E8%BE%91%E5%8A%9F%E8%83%BD%E5%88%86%E7%B1%BB"><span class="toc-number">1.0.0.4.2.2.</span> <span class="toc-text">(2) 按逻辑功能分类</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.0.0.4.3.</span> <span class="toc-text">索引的数据结构详解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-B-%E6%A0%91%E7%B4%A2%E5%BC%95%EF%BC%88%E6%9C%80%E5%B8%B8%E7%94%A8%EF%BC%89"><span class="toc-number">1.0.0.4.3.1.</span> <span class="toc-text">(1) B+树索引（最常用）</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+      
+  </div>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Lim" class="lazyload">
+  <div class="sidebar-author-name">Lim</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">15</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">7</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">11</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+    
+  
+</div>
+</div>
+      
+      
+        <div class="sidebar-btn-wrapper" style="position:static">
+          <div class="sidebar-toc-btn current"></div>
+          <div class="sidebar-common-btn"></div>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="sidebar-widget">
+  
+  </div>
+  
+</aside>
+
+          <section id="main"><article id="post-数据库" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <span class="article-date-link" data-aos="zoom-in">
+    <time datetime="2025-03-18T12:47:12.314Z" itemprop="datePublished">2025-03-18</time>
+    <time style="display: none;" id="post-update-time">2025-03-18</time>
+  </span>
+</div>
+
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/" data-aos="zoom-in">mysql</a>
+  </div>
+
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+      
+        <h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a><center>数据库</center></h1><h4 id="SQL分类"><a href="#SQL分类" class="headerlink" title="SQL分类"></a>SQL分类</h4><h5 id="1-DDL（Database-Definition-Language）-数据库定义语言，用来定义数据库对象，库，表，列等；"><a href="#1-DDL（Database-Definition-Language）-数据库定义语言，用来定义数据库对象，库，表，列等；" class="headerlink" title="1.DDL（Database Definition Language）:数据库定义语言，用来定义数据库对象，库，表，列等；"></a>1.DDL（Database Definition Language）:数据库定义语言，用来定义数据库对象，库，表，列等；</h5><h6 id="1-操作数据库"><a href="#1-操作数据库" class="headerlink" title="1.操作数据库"></a>1.操作数据库</h6><p>​	创建数据库：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database if not exisit &lt;mydatabse&gt;;</span><br></pre></td></tr></table></figure>
+
+<p>​	删除数据库：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database if exisit &lt;mydatabse&gt;;</span><br></pre></td></tr></table></figure>
+
+<p>​	切换数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use &lt;mydatabase&gt;;</span><br></pre></td></tr></table></figure>
+
+<p>​	修改数据库编码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter database &lt;mydatabase&gt; character set utf8;</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-数据类型"><a href="#2-数据类型" class="headerlink" title="2.数据类型"></a>2.数据类型</h6><p><strong>数值类型</strong></p>
+<ul>
+<li>整数：<code>INT</code>, <code>SMALLINT</code>, <code>TINYINT</code>, <code>BIGINT</code>（不同范围）</li>
+<li>浮点数：<code>FLOAT</code>, <code>DOUBLE</code>, <code>DECIMAL</code>（精确小数，如货币）</li>
+</ul>
+<p><strong>字符类型</strong></p>
+<p>固定长度：CHAR(n)（定长，填充空格）<br>可变长度：VARCHAR(n)（变长，按实际长度存储）<br>长文本：TEXT（大段文本，如文章）</p>
+<p><strong>日期时间类型</strong></p>
+<p>DATE（年月日）<br>TIME（时分秒）<br>DATETIME或TIMESTAMP（日期+时间）</p>
+<p><strong>二进制类型</strong></p>
+<ul>
+<li><code>BINARY</code>（定长二进制）</li>
+<li><code>VARBINARY</code>（变长二进制）</li>
+<li><code>BLOB</code>（大二进制文件，如图片）</li>
+</ul>
+<p><strong>其他类型</strong></p>
+<ul>
+<li><code>BOOLEAN</code>（逻辑值）</li>
+<li><code>JSON</code>（结构化JSON数据）</li>
+<li><code>XML</code>（XML格式）</li>
+</ul>
+<p>CHAR vs. VARCHAR <strong>的区别</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>特性</strong></th>
+<th><strong>CHAR</strong></th>
+<th><strong>VARCHAR</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>存储方式</strong></td>
+<td>定长（固定分配空间）</td>
+<td>变长（按需分配）</td>
+</tr>
+<tr>
+<td><strong>空格填充</strong></td>
+<td>不足长度时填充空格</td>
+<td>不填充，保持原数据</td>
+</tr>
+<tr>
+<td><strong>存储开销</strong></td>
+<td>固定为定义的长度（可能浪费空间）</td>
+<td>实际长度 + 1~2字节（记录长度信息）</td>
+</tr>
+<tr>
+<td><strong>适用场景</strong></td>
+<td>固定长度数据（如国家代码、MD5）</td>
+<td>长度变化大的数据（如用户名、地址）</td>
+</tr>
+<tr>
+<td><strong>性能</strong></td>
+<td>检索更快（长度固定，利于索引）</td>
+<td>存储更高效（但频繁更新可能更慢）</td>
+</tr>
+<tr>
+<td><strong>比较行为</strong></td>
+<td>比较时可能忽略尾部空格（因填充）</td>
+<td>严格按存储值比较（包括尾部空格）</td>
+</tr>
+</tbody></table>
+<h6 id="3-操作表"><a href="#3-操作表" class="headerlink" title="3.操作表"></a>3.操作表</h6><p>​	1.创建表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table stu(</span><br><span class="line">	sid CHAR(6),</span><br><span class="line">	sname varchar(20),</span><br><span class="line">	age INT,</span><br><span class="line">	gender VARCHAR(10)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>​	删除表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE 表名;</span><br></pre></td></tr></table></figure>
+
+<p>​	查看表结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DESC 表名;</span><br></pre></td></tr></table></figure>
+
+<p>​	修改表</p>
+<p>​		1.添加列</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table stu add(classname varchar(100));</span><br></pre></td></tr></table></figure>
+
+<p>​		2.修改列的数据类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table stu modify gender char(2);</span><br></pre></td></tr></table></figure>
+
+<p>​		3.修改列名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table stu change gender sex char(2);</span><br></pre></td></tr></table></figure>
+
+<p>​		4.删除列名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table stu drop classname;</span><br></pre></td></tr></table></figure>
+
+<p>​		5.修改表名称</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table stu rename to student;</span><br></pre></td></tr></table></figure>
+
+<p>​		</p>
+<h5 id="2-DML，数据库操作语言，用来定义数据库记录（数据）"><a href="#2-DML，数据库操作语言，用来定义数据库记录（数据）" class="headerlink" title="2.DML，数据库操作语言，用来定义数据库记录（数据）"></a>2.DML，数据库操作语言，用来定义数据库记录（数据）</h5><h6 id="1-插入数据"><a href="#1-插入数据" class="headerlink" title="1.插入数据"></a>1.插入数据</h6><p>语法1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名(列名1,列名2,……) values();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into stu(sid,sname,age,gender) values(&#x27;s_1001&#x27;,&#x27;zhangSan&#x27;,23,&#x27;male&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>语法2：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名 values(值1,值2,……);</span><br></pre></td></tr></table></figure>
+
+<p>因为没有指定插入的列，表示按创建表时列的顺序插入所有列的值</p>
+<p>注意：所有字符串数据必须使用单引号</p>
+<h6 id="2-修改数据"><a href="#2-修改数据" class="headerlink" title="2.修改数据"></a>2.修改数据</h6><p>语法：update 表名 set 列名1&#x3D;值1,… 列名n&#x3D;值n [where 条件];</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update stu set name=&#x27;zhangSanSan&#x27;,age=30,gender=&#x27;female&#x27; where sid=&#x27;s_1001&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h6 id="3-删除数据"><a href="#3-删除数据" class="headerlink" title="3.删除数据"></a>3.删除数据</h6><p>语法1：</p>
+<p>delect from 表名 [where 条件]；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from stu where sid = &#x27;s_1001&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>语法2：</p>
+<p>truncate table 表名;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">truncate table stu;</span><br></pre></td></tr></table></figure>
+
+<p>两者之间的区别:</p>
+<ol>
+<li>定义与语法</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th><strong>操作</strong></th>
+<th><strong>语法</strong></th>
+<th><strong>是否支持WHERE条件</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>DELETE</strong></td>
+<td><code>DELETE FROM 表名 [WHERE ...]</code></td>
+<td>支持</td>
+</tr>
+<tr>
+<td><strong>TRUNCATE</strong></td>
+<td><code>TRUNCATE TABLE 表名</code></td>
+<td>不支持</td>
+</tr>
+</tbody></table>
+<hr>
+<ol start="2">
+<li>核心区别</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th><strong>特性</strong></th>
+<th><strong>DELETE</strong></th>
+<th><strong>TRUNCATE</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>机制</strong></td>
+<td>逐行删除记录，记录事务日志。</td>
+<td>直接释放数据页（删除表数据文件），日志记录最少。</td>
+</tr>
+<tr>
+<td><strong>性能</strong></td>
+<td>较慢（逐行删除，日志量大）。</td>
+<td>更快（批量操作，日志精简）。</td>
+</tr>
+<tr>
+<td><strong>事务与回滚</strong></td>
+<td>DML操作，支持事务回滚（需显式提交）。</td>
+<td>DDL操作，某些数据库隐式提交事务（无法回滚，取决于具体实现，如Oracle；在MySQL的InnoDB中可回滚）。</td>
+</tr>
+<tr>
+<td><strong>触发器</strong></td>
+<td>触发<code>BEFORE DELETE</code>和<code>AFTER DELETE</code>触发器。</td>
+<td>不触发触发器。</td>
+</tr>
+<tr>
+<td><strong>自增列重置</strong></td>
+<td>不重置自增列的起始值。</td>
+<td>重置自增列的起始值（如MySQL的AUTO_INCREMENT重置为1）。</td>
+</tr>
+<tr>
+<td><strong>外键约束处理</strong></td>
+<td>逐行检查外键约束（若有<code>ON DELETE</code>规则则触发级联操作）。</td>
+<td>若表被外键引用，某些数据库（如MySQL）禁止直接TRUNCATE，需先处理约束。</td>
+</tr>
+<tr>
+<td><strong>权限要求</strong></td>
+<td>需要<code>DELETE</code>权限。</td>
+<td>通常需要更高权限（如<code>DROP</code>权限）。</td>
+</tr>
+<tr>
+<td><strong>存储空间释放</strong></td>
+<td>不立即释放存储空间，标记为可复用。</td>
+<td>立即释放存储空间到数据库系统。</td>
+</tr>
+</tbody></table>
+<h5 id="3-DCL，数据库控制语言，用来定义访问权限和安全级别；"><a href="#3-DCL，数据库控制语言，用来定义访问权限和安全级别；" class="headerlink" title="3.DCL，数据库控制语言，用来定义访问权限和安全级别；"></a>3.DCL，数据库控制语言，用来定义访问权限和安全级别；</h5><h6 id="1-创建用户"><a href="#1-创建用户" class="headerlink" title="1.创建用户"></a>1.创建用户</h6><p>语法：</p>
+<p>create user ‘用户名‘@’地址’ identified by ‘密码’;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-- 基础语法</span><br><span class="line">CREATE USER &#x27;用户名&#x27;@&#x27;主机&#x27; IDENTIFIED BY &#x27;密码&#x27;;</span><br><span class="line"></span><br><span class="line">-- 示例：创建用户alice，允许本地登录</span><br><span class="line">CREATE USER &#x27;alice&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;P@ssw0rd&#x27;;</span><br><span class="line"></span><br><span class="line">-- 允许从任意IP登录（谨慎使用）</span><br><span class="line">CREATE USER &#x27;bob&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br><span class="line"></span><br><span class="line">-- 查看用户列表</span><br><span class="line">SELECT user, host FROM mysql.user;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h6 id="2-给用户授权"><a href="#2-给用户授权" class="headerlink" title="2.给用户授权"></a>2.给用户授权</h6><p>语法：</p>
+<p>grant 权限1,…权限n ON 数据库.* TO ‘用户名‘@地址;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grant create,alter,drop,insert,update,delete,select on mydb1.* to &#x27;user01&#x27;@localhost;</span><br><span class="line">grant all on mydb1.* to user2@localhost;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-- 授予alice对test_db所有表的SELECT和INSERT权限</span><br><span class="line">GRANT SELECT, INSERT ON test_db.* TO &#x27;alice&#x27;@&#x27;localhost&#x27;;</span><br><span class="line"></span><br><span class="line">-- 授予bob对所有数据库的只读权限</span><br><span class="line">GRANT SELECT ON *.* TO &#x27;bob&#x27;@&#x27;%&#x27;;</span><br><span class="line"></span><br><span class="line">-- 带WITH选项（允许用户进一步授权）</span><br><span class="line">GRANT UPDATE ON mydb.orders TO &#x27;alice&#x27;@&#x27;localhost&#x27; WITH GRANT OPTION;</span><br><span class="line"></span><br><span class="line">-- 刷新权限（修改后建议执行）</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h6 id="3-撤销权限"><a href="#3-撤销权限" class="headerlink" title="3.撤销权限"></a>3.撤销权限</h6><p>语法：</p>
+<p>revoke 权限1,..,权限n on 数据库.*  from ‘用户名‘@地址;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-- 撤销alice的INSERT权限</span><br><span class="line">REVOKE INSERT ON test_db.* FROM &#x27;alice&#x27;@&#x27;localhost&#x27;;</span><br><span class="line"></span><br><span class="line">-- 撤销所有权限</span><br><span class="line">REVOKE ALL PRIVILEGES, GRANT OPTION FROM &#x27;bob&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h6 id="4-查看用户权限"><a href="#4-查看用户权限" class="headerlink" title="4.查看用户权限"></a>4.查看用户权限</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-- 查看当前用户权限</span><br><span class="line">SHOW GRANTS;</span><br><span class="line"></span><br><span class="line">-- 查看指定用户权限</span><br><span class="line">SHOW GRANTS FOR &#x27;alice&#x27;@&#x27;localhost&#x27;;</span><br><span class="line"></span><br><span class="line">-- 通过系统表查询（更详细）</span><br><span class="line">SELECT * FROM information_schema.user_privileges </span><br><span class="line">WHERE GRANTEE = &quot;&#x27;alice&#x27;@&#x27;localhost&#x27;&quot;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h6 id="5-删除用户"><a href="#5-删除用户" class="headerlink" title="5.删除用户"></a>5.删除用户</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop user &#x27;user01&#x27;@localhost</span><br></pre></td></tr></table></figure>
+
+<h6 id="6-修改用户密码"><a href="#6-修改用户密码" class="headerlink" title="6.修改用户密码"></a>6.修改用户密码</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter user &#x27;用户名&#x27;@localhost identified by &#x27;新密码&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="4-DQL，数据库查询语言，用来查询记录（数据）"><a href="#4-DQL，数据库查询语言，用来查询记录（数据）" class="headerlink" title="4.DQL，数据库查询语言，用来查询记录（数据）"></a>4.DQL，数据库查询语言，用来查询记录（数据）</h5><h6 id="1-作用"><a href="#1-作用" class="headerlink" title="1.作用"></a>1.作用</h6><p><strong>仅用于查询数据</strong>：通过select命令从数据库中读取数据，<strong>不会修改数据</strong>。</p>
+<p><strong>支持复杂逻辑</strong>：可结合条件过滤、排序、分组、聚合、表连接等操作，提取满足需求的数据。</p>
+<h6 id="2-基本语法结构"><a href="#2-基本语法结构" class="headerlink" title="2.基本语法结构"></a>2.基本语法结构</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT [列名|表达式|聚合函数]  -- 选择要查询的字段或计算结果</span><br><span class="line">FROM [表名|视图名]           -- 指定数据来源</span><br><span class="line">[WHERE 条件]                -- 过滤行数据</span><br><span class="line">[GROUP BY 分组字段]         -- 按字段分组（常用于聚合）</span><br><span class="line">[HAVING 分组后条件]          -- 过滤分组后的结果</span><br><span class="line">[ORDER BY 排序字段]         -- 按字段排序（ASC升序/DESC降序）</span><br><span class="line">[LIMIT 行数]               -- 限制返回行数（分页查询）;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h6 id="3-常用功能详解"><a href="#3-常用功能详解" class="headerlink" title="3.常用功能详解"></a>3.常用功能详解</h6><p>1）简单查询</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-- 查询所有字段</span><br><span class="line">SELECT * FROM employees;</span><br><span class="line"></span><br><span class="line">-- 查询特定字段</span><br><span class="line">SELECT name, salary FROM employees;</span><br><span class="line"></span><br><span class="line">-- 去重查询（DISTINCT）</span><br><span class="line">SELECT DISTINCT department FROM employees;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>2)条件过滤（where）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-- 筛选符合条件的记录</span><br><span class="line">SELECT * FROM orders </span><br><span class="line">WHERE amount &gt; 1000 AND status = &#x27;PAID&#x27;;</span><br><span class="line"></span><br><span class="line">-- 模糊匹配（LIKE）</span><br><span class="line">SELECT * FROM products </span><br><span class="line">WHERE name LIKE &#x27;%Apple%&#x27;; -- 包含&quot;Apple&quot;</span><br><span class="line"></span><br><span class="line">SELECT * FROM stu</span><br><span class="line">WHERE sname LIKE &#x27;_a_&#x27;;-- 第二个字母为a的三个字母的名字</span><br></pre></td></tr></table></figure>
+
+<p>3)排序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- 按工资降序排列</span><br><span class="line">SELECT name, salary FROM employees</span><br><span class="line">ORDER BY salary DESC;</span><br><span class="line"></span><br><span class="line">-- 多字段排序（先按部门升序，再按工资降序）</span><br><span class="line">SELECT * FROM employees</span><br><span class="line">ORDER BY department ASC, salary DESC;</span><br></pre></td></tr></table></figure>
+
+<p>4)聚合函数</p>
+<h4 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a><strong>聚合函数</strong></h4><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>COUNT()</code></td>
+<td>统计行数</td>
+<td><code>SELECT COUNT(*) FROM orders</code></td>
+</tr>
+<tr>
+<td><code>SUM()</code></td>
+<td>求和</td>
+<td><code>SELECT SUM(amount) FROM sales</code></td>
+</tr>
+<tr>
+<td><code>AVG()</code></td>
+<td>求平均值</td>
+<td><code>SELECT AVG(salary) FROM employees</code></td>
+</tr>
+<tr>
+<td><code>MAX()</code>&#x2F;<code>MIN()</code></td>
+<td>最大值&#x2F;最小值</td>
+<td><code>SELECT MAX(price) FROM products</code></td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">--统计每个部门的人数和平均工资</span><br><span class="line">SELECT department, COUNT(*),AVG(salary)</span><br><span class="line">FROM employees</span><br><span class="line">GROUP BY department;</span><br></pre></td></tr></table></figure>
+
+<p>5)分组（GROUP BY + HAVING）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">--分组后过滤聚合结果</span><br><span class="line">SELECT department,SUM(sales) AS total_sales</span><br><span class="line">FROM sales_data</span><br><span class="line">GROUP BY departemnt</span><br><span class="line">HAVING total_sales &gt;1000000; -- 筛选销售额超过100万的部门</span><br></pre></td></tr></table></figure>
+
+<p>6）多表连接</p>
+<table>
+<thead>
+<tr>
+<th>连接类型</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>INNER JOIN</strong></td>
+<td>返回两表的交集数据</td>
+<td><code>SELECT * FROM orders INNER JOIN customers ON orders.customer_id = customers.id</code></td>
+</tr>
+<tr>
+<td><strong>LEFT JOIN</strong></td>
+<td>左表全部 + 右表匹配记录</td>
+<td><code>SELECT * FROM employees LEFT JOIN departments ON employees.dept_id = departments.id</code></td>
+</tr>
+<tr>
+<td><strong>RIGHT JOIN</strong></td>
+<td>右表全部 + 左表匹配记录</td>
+<td><code>SELECT * FROM departments RIGHT JOIN employees ON departments.id = employees.dept_id</code></td>
+</tr>
+<tr>
+<td><strong>FULL OUTER JOIN</strong></td>
+<td>全外连接（部分数据库支持）</td>
+<td><code>SELECT * FROM table1 FULL OUTER JOIN table2 ON table1.id = table2.id</code></td>
+</tr>
+</tbody></table>
+<p>7）子查询</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">--查询工资高于平均工资的员工</span><br><span class="line">SELECT name,salary</span><br><span class="line">FROM employees</span><br><span class="line">WHERE salary &gt; (SELECT AVG(salary) FROM employees);</span><br></pre></td></tr></table></figure>
+
+<p>8)分页查询（LIMIT）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--返回10条记录（MySQL）</span><br><span class="line">SELECT * FORM products</span><br><span class="line">LIMIT 10;</span><br><span class="line">--分页查询跳过前10条，取10条</span><br><span class="line">SELECT * FROM products</span><br><span class="line">LIMIT 20,10;-- 或 LIMIT 10 OFFSET 20（更标准的写法）</span><br></pre></td></tr></table></figure>
+
+<h6 id="5-DQL优化建议"><a href="#5-DQL优化建议" class="headerlink" title="5. DQL优化建议"></a>5. DQL优化建议</h6><ol>
+<li>避免全表扫描<ul>
+<li>对常用查询字段建立<strong>索引</strong>（如 <code>WHERE</code> 或 <code>JOIN</code> 的字段）。</li>
+</ul>
+</li>
+<li>减少返回列数<ul>
+<li>明确指定需要的列，而非使用 <code>SELECT *</code>。</li>
+</ul>
+</li>
+<li>慎用 <code>DISTINCT</code><ul>
+<li>去重可能增加计算开销，优先用业务逻辑避免重复数据。</li>
+</ul>
+</li>
+<li>分页优化<ul>
+<li>大数据分页时，避免 <code>LIMIT N, M</code> 深度分页，改用游标或基于索引的条件查询。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol start="6">
+<li><h6 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h6></li>
+<li><p>生成数据报表（如每日销售额统计）。</p>
+</li>
+<li><p>前端页面展示用户信息或商品列表。</p>
+</li>
+<li><p>数据分析（如用户行为、业务趋势分析）。</p>
+</li>
+<li><p>数据导出与清洗（筛选目标数据到文件或其他系统）。</p>
+</li>
+</ol>
+<p>示例：<strong>电商场景复杂查询</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">-- 统计2023年每位用户的订单总金额（按金额降序）</span><br><span class="line">SELECT </span><br><span class="line">    u.user_id, </span><br><span class="line">    u.name, </span><br><span class="line">    SUM(o.amount) AS total_spent</span><br><span class="line">FROM </span><br><span class="line">    users u</span><br><span class="line">INNER JOIN </span><br><span class="line">    orders o ON u.user_id = o.user_id</span><br><span class="line">WHERE </span><br><span class="line">    o.order_date BETWEEN &#x27;2023-01-01&#x27; AND &#x27;2023-12-31&#x27;</span><br><span class="line">GROUP BY </span><br><span class="line">    u.user_id, u.name</span><br><span class="line">HAVING </span><br><span class="line">    total_spent &gt; 1000</span><br><span class="line">ORDER BY </span><br><span class="line">    total_spent DESC;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h4><p>数据库设计中的三大范式（1NF，2NF，3NF）是规范数据库存储结构的核心规则，旨在消除冗余并保证数据的一致性。</p>
+<h5 id="1-第一范式（1NF）：原子性"><a href="#1-第一范式（1NF）：原子性" class="headerlink" title="1.第一范式（1NF）：原子性"></a>1.第一范式（1NF）：原子性</h5><ul>
+<li><p>规则：列的属性不可再分，确保每个字段值都是<strong>原子值</strong>（单一值）。</p>
+</li>
+<li><p>问题场景：一个字段存储多个值（如电话号码），导致查询困难。</p>
+</li>
+<li><p>修正方法：</p>
+<ul>
+<li>单列拆分：将复合值拆分为多列（例如拆分“姓名”为“姓”“名”）。</li>
+<li>行拆分：将多值拆分到多行（例如电话表中一行一个号码）。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-- 错误设计（不符合1NF）</span><br><span class="line">CREATE TABLE users (</span><br><span class="line">    id INT PRIMARY KEY,</span><br><span class="line">    name VARCHAR(50),</span><br><span class="line">    phones VARCHAR(200)  -- 存储如 &quot;13811111111,13822222222&quot;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 正确设计（符合1NF）</span><br><span class="line">CREATE TABLE users (</span><br><span class="line">    id INT PRIMARY KEY,</span><br><span class="line">    name VARCHAR(50)</span><br><span class="line">);</span><br><span class="line">CREATE TABLE user_phones (</span><br><span class="line">    user_id INT,</span><br><span class="line">    phone VARCHAR(20),</span><br><span class="line">    FOREIGN KEY (user_id) REFERENCES users(id)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-第二范式（2NF）：消除部分依赖"><a href="#2-第二范式（2NF）：消除部分依赖" class="headerlink" title="2.第二范式（2NF）：消除部分依赖"></a>2.第二范式（2NF）：消除部分依赖</h5><ul>
+<li>规则：在满足1NF的基础上，<strong>非主键字段必须完全依赖于整个主键</strong>（非部分依赖）。</li>
+<li>问题场景：联合主键情况下，部分字段仅依赖部分主键，导致冗余。</li>
+<li>修正方法：拆表，将部分依赖的字段移到新表中。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">-- 错误设计（不符合2NF）</span><br><span class="line">CREATE TABLE orders (</span><br><span class="line">    order_id INT,         -- 主键1</span><br><span class="line">    product_id INT,       -- 主键2</span><br><span class="line">    product_name VARCHAR(50), -- 仅依赖 product_id（部分主键）</span><br><span class="line">    quantity INT,</span><br><span class="line">    PRIMARY KEY (order_id, product_id)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 正确设计（符合2NF）</span><br><span class="line">-- 拆分到两个表：</span><br><span class="line">CREATE TABLE orders (</span><br><span class="line">    order_id INT PRIMARY KEY,</span><br><span class="line">    -- 其他订单相关字段</span><br><span class="line">);</span><br><span class="line">CREATE TABLE order_items (</span><br><span class="line">    order_id INT,</span><br><span class="line">    product_id INT,</span><br><span class="line">    product_name VARCHAR(50),</span><br><span class="line">    quantity INT,</span><br><span class="line">    PRIMARY KEY (order_id, product_id)</span><br><span class="line">);</span><br><span class="line">-- 进一步优化：产品名称应存储在产品表中</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="第三范式（3NF）：消除传递依赖"><a href="#第三范式（3NF）：消除传递依赖" class="headerlink" title="第三范式（3NF）：消除传递依赖"></a>第三范式（3NF）：消除传递依赖</h5><ul>
+<li>规则：在满足2NF基础上，<strong>非主键字段不能依赖其他非主键字段</strong>（即无传递依赖）。</li>
+<li>问题场景：非主键字段彼此依赖，导致修改时需要更新多处。</li>
+<li>修正方法：拆表，将间接依赖的字段独立。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">-- 错误设计（不符合3NF）</span><br><span class="line">CREATE TABLE students (</span><br><span class="line">    student_id INT PRIMARY KEY,</span><br><span class="line">    name VARCHAR(50),</span><br><span class="line">    department VARCHAR(50),    -- 所在学院</span><br><span class="line">    department_phone VARCHAR(20)  -- 依赖 department，而非直接依赖 student_id</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 正确设计（符合3NF）</span><br><span class="line">CREATE TABLE students (</span><br><span class="line">    student_id INT PRIMARY KEY,</span><br><span class="line">    name VARCHAR(50),</span><br><span class="line">    department_id INT,</span><br><span class="line">    FOREIGN KEY (department_id) REFERENCES departments(id)</span><br><span class="line">);</span><br><span class="line">CREATE TABLE departments (</span><br><span class="line">    id INT PRIMARY KEY,</span><br><span class="line">    name VARCHAR(50),</span><br><span class="line">    phone VARCHAR(20)  -- 学院电话直接依赖学院主键</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">1 对 n : n中要保存1中的主键作为外键</span><br><span class="line">n 对 n : 两个表的主键拆成新表的字段。</span><br></pre></td></tr></table></figure>
+
+<h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><h5 id="索引的概念与作用"><a href="#索引的概念与作用" class="headerlink" title="索引的概念与作用"></a>索引的概念与作用</h5><p>​	定义：帮助存储引擎快速获取数据的一种数据结构，形象的说索引就是数据的目录。</p>
+<p>​	核心作用：</p>
+<p>​		加速查询：减少全表扫描，提高 <code>SELECT</code>、<code>JOIN</code>、<code>WHERE</code>、<code>ORDER BY</code> 等操作的效率</p>
+<p>​		保证唯一性：唯一索引（如主键索引）可强制字段值唯一</p>
+<p>​	</p>
+<ul>
+<li>代价：<ul>
+<li><strong>占用存储空间</strong>：索引本身需要磁盘空间。</li>
+<li><strong>影响写入性能</strong>：<code>INSERT</code>、<code>UPDATE</code>、<code>DELETE</code> 操作需维护索引，可能变慢。</li>
+</ul>
+</li>
+</ul>
+<h5 id="常见的索引类型"><a href="#常见的索引类型" class="headerlink" title="常见的索引类型"></a>常见的索引类型</h5><h6 id="1-按数据结构分类"><a href="#1-按数据结构分类" class="headerlink" title="(1) 按数据结构分类"></a><strong>(1) 按数据结构分类</strong></h6><table>
+<thead>
+<tr>
+<th>索引类型</th>
+<th>数据结构</th>
+<th>适用场景</th>
+<th>优缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>B+树索引</strong></td>
+<td>B+树</td>
+<td>默认索引类型，支持范围查询、排序、模糊匹配</td>
+<td>平衡查询性能和存储，范围查询高效</td>
+</tr>
+<tr>
+<td><strong>哈希索引</strong></td>
+<td>哈希表</td>
+<td>精确匹配（如 <code>WHERE key = value</code>）</td>
+<td>查询O(1)，但无顺序性，不支范围查询</td>
+</tr>
+<tr>
+<td><strong>全文索引</strong></td>
+<td>倒排索引</td>
+<td>文本字段的关键词搜索（如 <code>LIKE &#39;%keyword%&#39;</code>）</td>
+<td>支持模糊匹配，但占用空间大</td>
+</tr>
+<tr>
+<td><strong>R树索引</strong></td>
+<td>R树</td>
+<td>地理空间数据（如 <code>GIS</code> 坐标查询）</td>
+<td>复杂度高，特定场景使用</td>
+</tr>
+</tbody></table>
+<h6 id="2-按逻辑功能分类"><a href="#2-按逻辑功能分类" class="headerlink" title="(2) 按逻辑功能分类"></a><strong>(2) 按逻辑功能分类</strong></h6><table>
+<thead>
+<tr>
+<th>索引类型</th>
+<th>特性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>主键索引</strong></td>
+<td>唯一且非空（<code>PRIMARY KEY</code>）</td>
+</tr>
+<tr>
+<td><strong>唯一索引</strong></td>
+<td>字段值唯一（<code>UNIQUE KEY</code>），允许NULL</td>
+</tr>
+<tr>
+<td><strong>普通索引</strong></td>
+<td>无唯一性约束，仅加速查询（<code>INDEX</code>）</td>
+</tr>
+<tr>
+<td><strong>复合索引</strong></td>
+<td>多列组合索引（如 <code>INDEX (col1, col2)</code>）</td>
+</tr>
+</tbody></table>
+<hr>
+<h5 id="索引的数据结构详解"><a href="#索引的数据结构详解" class="headerlink" title="索引的数据结构详解"></a>索引的数据结构详解</h5><h6 id="1-B-树索引（最常用）"><a href="#1-B-树索引（最常用）" class="headerlink" title="(1) B+树索引（最常用）"></a><strong>(1) B+树索引（最常用）</strong></h6><ul>
+<li>结构特点：<ul>
+<li><strong>叶子节点</strong>：存储实际数据（或主键值 + 数据地址），通过链表连接，支持顺序遍历。</li>
+<li><strong>非叶子节点</strong>：仅存储索引键值和子节点指针，减少树的高度。</li>
+</ul>
+</li>
+<li>优势：<ul>
+<li><strong>范围查询高效</strong>：叶子节点链表支持范围扫描（如 <code>WHERE id &gt; 100</code>）。</li>
+<li><strong>高扇出性</strong>：每个节点可存储更多键值，3~4层即可支持千万级数据。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+  <nav id="article-nav" data-aos="fade-up">
+    
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        
+        
+          <img data-src="https://d-sketon.top/img/backimg/bg1.jpg" data-sizes="auto" alt="集合补充" class="lazyload">
+        
+      
+      <a href="/2025/03/18/Collections/"></a>
+      <div class="article-nav-caption">Older</div>
+      <h3 class="article-nav-title">
+        
+          集合补充
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+</article>
+
+
+
+
+
+
+</section>
+        </div>
+        
+        
+        <footer id="footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    
+    <div>
+      <span class="icon-copyright"></span>
+      2020-2025
+      <span class="footer-info-sep rotate"></span>
+      Lim
+    </div>
+    
+      <div>
+        Powered by&nbsp;<a href="https://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener external nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+    
+    
+      <div>
+        <span class="icon-brush"></span>
+        53.1k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        03:58
+      </div>
+    
+    
+    
+    
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">Number of visits&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">Number of visitors&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+    
+  </div>
+</footer>
+
+        
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">Contents</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL%E5%88%86%E7%B1%BB"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">SQL分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-DDL%EF%BC%88Database-Definition-Language%EF%BC%89-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80%EF%BC%8C%E7%94%A8%E6%9D%A5%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%BA%93%EF%BC%8C%E8%A1%A8%EF%BC%8C%E5%88%97%E7%AD%89%EF%BC%9B"><span class="toc-number">1.0.0.1.1.</span> <span class="toc-text">1.DDL（Database Definition Language）:数据库定义语言，用来定义数据库对象，库，表，列等；</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.0.0.1.1.1.</span> <span class="toc-text">1.操作数据库</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.0.0.1.1.2.</span> <span class="toc-text">2.数据类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-%E6%93%8D%E4%BD%9C%E8%A1%A8"><span class="toc-number">1.0.0.1.1.3.</span> <span class="toc-text">3.操作表</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-DML%EF%BC%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E8%AF%AD%E8%A8%80%EF%BC%8C%E7%94%A8%E6%9D%A5%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%B0%E5%BD%95%EF%BC%88%E6%95%B0%E6%8D%AE%EF%BC%89"><span class="toc-number">1.0.0.1.2.</span> <span class="toc-text">2.DML，数据库操作语言，用来定义数据库记录（数据）</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">1.0.0.1.2.1.</span> <span class="toc-text">1.插入数据</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="toc-number">1.0.0.1.2.2.</span> <span class="toc-text">2.修改数据</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">1.0.0.1.2.3.</span> <span class="toc-text">3.删除数据</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-DCL%EF%BC%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8E%A7%E5%88%B6%E8%AF%AD%E8%A8%80%EF%BC%8C%E7%94%A8%E6%9D%A5%E5%AE%9A%E4%B9%89%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E5%92%8C%E5%AE%89%E5%85%A8%E7%BA%A7%E5%88%AB%EF%BC%9B"><span class="toc-number">1.0.0.1.3.</span> <span class="toc-text">3.DCL，数据库控制语言，用来定义访问权限和安全级别；</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="toc-number">1.0.0.1.3.1.</span> <span class="toc-text">1.创建用户</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E7%BB%99%E7%94%A8%E6%88%B7%E6%8E%88%E6%9D%83"><span class="toc-number">1.0.0.1.3.2.</span> <span class="toc-text">2.给用户授权</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-%E6%92%A4%E9%94%80%E6%9D%83%E9%99%90"><span class="toc-number">1.0.0.1.3.3.</span> <span class="toc-text">3.撤销权限</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90"><span class="toc-number">1.0.0.1.3.4.</span> <span class="toc-text">4.查看用户权限</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5-%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7"><span class="toc-number">1.0.0.1.3.5.</span> <span class="toc-text">5.删除用户</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#6-%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81"><span class="toc-number">1.0.0.1.3.6.</span> <span class="toc-text">6.修改用户密码</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-DQL%EF%BC%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80%EF%BC%8C%E7%94%A8%E6%9D%A5%E6%9F%A5%E8%AF%A2%E8%AE%B0%E5%BD%95%EF%BC%88%E6%95%B0%E6%8D%AE%EF%BC%89"><span class="toc-number">1.0.0.1.4.</span> <span class="toc-text">4.DQL，数据库查询语言，用来查询记录（数据）</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E4%BD%9C%E7%94%A8"><span class="toc-number">1.0.0.1.4.1.</span> <span class="toc-text">1.作用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E7%BB%93%E6%9E%84"><span class="toc-number">1.0.0.1.4.2.</span> <span class="toc-text">2.基本语法结构</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.0.0.1.4.3.</span> <span class="toc-text">3.常用功能详解</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">聚合函数</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#5-DQL%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE"><span class="toc-number">1.0.0.2.0.1.</span> <span class="toc-text">5. DQL优化建议</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.0.0.2.0.2.</span> <span class="toc-text">应用场景</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">范式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F%EF%BC%881NF%EF%BC%89%EF%BC%9A%E5%8E%9F%E5%AD%90%E6%80%A7"><span class="toc-number">1.0.0.3.1.</span> <span class="toc-text">1.第一范式（1NF）：原子性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E7%AC%AC%E4%BA%8C%E8%8C%83%E5%BC%8F%EF%BC%882NF%EF%BC%89%EF%BC%9A%E6%B6%88%E9%99%A4%E9%83%A8%E5%88%86%E4%BE%9D%E8%B5%96"><span class="toc-number">1.0.0.3.2.</span> <span class="toc-text">2.第二范式（2NF）：消除部分依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E8%8C%83%E5%BC%8F%EF%BC%883NF%EF%BC%89%EF%BC%9A%E6%B6%88%E9%99%A4%E4%BC%A0%E9%80%92%E4%BE%9D%E8%B5%96"><span class="toc-number">1.0.0.3.3.</span> <span class="toc-text">第三范式（3NF）：消除传递依赖</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">索引</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BD%9C%E7%94%A8"><span class="toc-number">1.0.0.4.1.</span> <span class="toc-text">索引的概念与作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E7%B4%A2%E5%BC%95%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.0.0.4.2.</span> <span class="toc-text">常见的索引类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E6%8C%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.0.0.4.2.1.</span> <span class="toc-text">(1) 按数据结构分类</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E6%8C%89%E9%80%BB%E8%BE%91%E5%8A%9F%E8%83%BD%E5%88%86%E7%B1%BB"><span class="toc-number">1.0.0.4.2.2.</span> <span class="toc-text">(2) 按逻辑功能分类</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.0.0.4.3.</span> <span class="toc-text">索引的数据结构详解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-B-%E6%A0%91%E7%B4%A2%E5%BC%95%EF%BC%88%E6%9C%80%E5%B8%B8%E7%94%A8%EF%BC%89"><span class="toc-number">1.0.0.4.3.1.</span> <span class="toc-text">(1) B+树索引（最常用）</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Lim" class="lazyload">
+  <div class="sidebar-author-name">Lim</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">15</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">7</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">11</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+    
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "Lim",
+          title: "数据库基础",
+          url: "http://lim-juyou.github.io/2025/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93/",
+          excerpt: "",
+          description: "",
+          stripContent: "数据库SQL分类1.DDL（Database Definition Language）:数据库定义语言，用来定义数据库对象，库，表，列等；1.操作数据库​ 创建数据库： 1create database if not exisit &amp;lt;mydatabse&amp;gt;;  ​ 删除数据库： 1drop database if exisit &amp;lt;mydatabse&amp;gt;;  ​ 切换数据库 1use &amp;lt;mydatabase&amp;gt;;  ​ 修改数据库编码 1alter database ",
+          date: "Tue Mar 18 2025 20:47:12 GMT+0800",
+          updated: "Tue Mar 18 2025 20:47:45 GMT+0800",
+          cover: "/images/banner.webp",
+        };
+      </script>
+       
+    
+    
+      
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+        
+      
+    
+    
+      <script type="module" data-pjax>
+        const PhotoSwipeLightbox = (await safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+        
+        const pswp = () => {
+          if (_$$('.article-entry a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-entry',
+              children: 'a.article-gallery-item',
+              pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+            }).init();
+          }
+          if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-gallery',
+              children: 'a.article-gallery-item',
+              pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+            }).init();
+          }
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script>
+      
+
+
+
+
+
+
+
+
+    
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.5.1' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+</script>
+
+
+
+
+
+
+
+    
+  </body>
+  </html>
+

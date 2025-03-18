@@ -6,7 +6,7 @@
   <link href="http://lim-juyou.github.io/atom.xml" rel="self"/>
   
   <link href="http://lim-juyou.github.io/"/>
-  <updated>2025-03-02T11:50:12.412Z</updated>
+  <updated>2025-03-18T12:47:45.184Z</updated>
   <id>http://lim-juyou.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据库基础</title>
+    <link href="http://lim-juyou.github.io/2025/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>http://lim-juyou.github.io/2025/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
+    <published>2025-03-18T12:47:12.314Z</published>
+    <updated>2025-03-18T12:47:45.184Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;数据库&quot;&gt;&lt;a href=&quot;#数据库&quot; class=&quot;headerlink&quot; title=&quot;数据库&quot;&gt;&lt;/a&gt;&lt;center&gt;数据库&lt;/center&gt;&lt;/h1&gt;&lt;h4 id=&quot;SQL分类&quot;&gt;&lt;a href=&quot;#SQL分类&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="mysql" scheme="http://lim-juyou.github.io/categories/mysql/"/>
+    
+    
+    <category term="java" scheme="http://lim-juyou.github.io/tags/java/"/>
+    
+    <category term="mysql" scheme="http://lim-juyou.github.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>集合补充</title>
+    <link href="http://lim-juyou.github.io/2025/03/18/Collections/"/>
+    <id>http://lim-juyou.github.io/2025/03/18/Collections/</id>
+    <published>2025-03-18T12:44:46.101Z</published>
+    <updated>2025-03-18T12:46:27.699Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;集合&quot;&gt;&lt;a href=&quot;#集合&quot; class=&quot;headerlink&quot; title=&quot;集合&quot;&gt;&lt;/a&gt;&lt;center&gt;集合&lt;/center&gt;&lt;/h1&gt;&lt;h4 id=&quot;一、集合和数组的区别&quot;&gt;&lt;a href=&quot;#一、集合和数组的区别&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Collections" scheme="http://lim-juyou.github.io/categories/Collections/"/>
+    
+    
+    <category term="java" scheme="http://lim-juyou.github.io/tags/java/"/>
+    
+    <category term="集合" scheme="http://lim-juyou.github.io/tags/%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
   
   <entry>
     <title>about和friend中catOrJava小游戏说明</title>

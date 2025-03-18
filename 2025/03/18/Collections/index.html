@@ -1,0 +1,978 @@
+
+  <!DOCTYPE html>
+  <html lang="en"  
+    
+      data-theme-mode="auto"
+    
+  >
+  <head>
+  
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'http://lim-juyou.github.io';</script>
+  
+  <title>
+    集合补充 |
+    
+    リムの巣
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_0khxww3tj3q9.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+  
+  
+    <meta name="description" content="集合一、集合和数组的区别1.数组是长度固定的数据结构，一旦创建长度就无法改变。集合是长度可变的数据结构，可以根据需要动态的增加或减少元素 2.数组可以存储基本数据类型和对象，集合只能包含对象 3.数组可以直接访问元素，而集合需要通过迭代器或其它方法。 4.数组的功能简单，仅支持元素的存储和遍历。集合提供丰富的API，如（添加add()、删除remove()、查找contains()、排序sort(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集合补充">
+<meta property="og:url" content="http://lim-juyou.github.io/2025/03/18/Collections/index.html">
+<meta property="og:site_name" content="リムの巣">
+<meta property="og:description" content="集合一、集合和数组的区别1.数组是长度固定的数据结构，一旦创建长度就无法改变。集合是长度可变的数据结构，可以根据需要动态的增加或减少元素 2.数组可以存储基本数据类型和对象，集合只能包含对象 3.数组可以直接访问元素，而集合需要通过迭代器或其它方法。 4.数组的功能简单，仅支持元素的存储和遍历。集合提供丰富的API，如（添加add()、删除remove()、查找contains()、排序sort(">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-18T12:44:46.101Z">
+<meta property="article:modified_time" content="2025-03-18T12:46:27.699Z">
+<meta property="article:author" content="Lim">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="集合">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="alternate" href="/atom.xml" title="リムの巣" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  
+  
+  
+    
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+  
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css">
+
+  
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+  <body>
+    
+    
+  <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        
+          <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+           M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg>
+        
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/">Home</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/archives">Archives</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/about">About</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/friend">Friend</a>
+        </span>
+      
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" target="_blank"></a>
+    
+    
+    
+  </nav>
+  
+</div>
+<header id="header">
+  
+    <picture>
+      
+    </picture>
+    
+      <img fetchpriority="high" src="/images/banner.webp" alt="集合补充">
+    
+  
+  <div id="header-outer">
+    <div id="header-title">
+      
+        
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">集合补充</h1>
+          </a>
+        
+      
+      
+        
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content"  class="sidebar-right" >
+          <aside id="sidebar">
+  
+  
+  
+  <div class="sidebar-wrapper wrap-sticky">
+    <div class="sidebar-wrap" data-aos="fade-up">
+      
+        <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">Contents</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9B%86%E5%90%88"><span class="toc-number">1.</span> <span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%9B%86%E5%90%88%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">一、集合和数组的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%9B%86%E5%90%88"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">二、集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#List"><span class="toc-number">1.0.0.2.1.</span> <span class="toc-text">List</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-ArrayList"><span class="toc-number">1.0.0.2.1.1.</span> <span class="toc-text">1.ArrayList</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-LinkedList"><span class="toc-number">1.0.0.2.1.2.</span> <span class="toc-text">2.LinkedList</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-Vector"><span class="toc-number">1.0.0.2.1.3.</span> <span class="toc-text">3.Vector</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Set"><span class="toc-number">1.0.0.2.2.</span> <span class="toc-text">Set</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-HashSet"><span class="toc-number">1.0.0.2.2.1.</span> <span class="toc-text">1.HashSet</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-TreeSet"><span class="toc-number">1.0.0.2.2.2.</span> <span class="toc-text">2.TreeSet</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-LinkedHashSet"><span class="toc-number">1.0.0.2.2.3.</span> <span class="toc-text">3.LinkedHashSet</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Map"><span class="toc-number">1.0.0.2.3.</span> <span class="toc-text">Map</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-HashMap"><span class="toc-number">1.0.0.2.3.1.</span> <span class="toc-text">1.HashMap</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JDK-1-8%EF%BC%9A%E6%95%B0%E7%BB%84-%E5%8D%95%E9%93%BE%E8%A1%A8-%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">JDK 1.8：数组 + 单链表&#x2F;红黑树</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#2-LinkedHashMap"><span class="toc-number">1.0.0.3.0.1.</span> <span class="toc-text">2.LinkedHashMap</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-HashTable"><span class="toc-number">1.0.0.3.0.2.</span> <span class="toc-text">3.HashTable</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-TreeMap"><span class="toc-number">1.0.0.3.0.3.</span> <span class="toc-text">4.TreeMap</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Map%E7%9A%84%E5%85%AD%E5%A4%A7%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F"><span class="toc-number">1.0.0.3.0.4.</span> <span class="toc-text">Map的六大遍历方式</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+      
+  </div>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Lim" class="lazyload">
+  <div class="sidebar-author-name">Lim</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">15</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">7</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">11</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+    
+  
+</div>
+</div>
+      
+      
+        <div class="sidebar-btn-wrapper" style="position:static">
+          <div class="sidebar-toc-btn current"></div>
+          <div class="sidebar-common-btn"></div>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="sidebar-widget">
+  
+  </div>
+  
+</aside>
+
+          <section id="main"><article id="post-Collections" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <span class="article-date-link" data-aos="zoom-in">
+    <time datetime="2025-03-18T12:44:46.101Z" itemprop="datePublished">2025-03-18</time>
+    <time style="display: none;" id="post-update-time">2025-03-18</time>
+  </span>
+</div>
+
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Collections/" data-aos="zoom-in">Collections</a>
+  </div>
+
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+      
+        <h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a><center>集合</center></h1><h4 id="一、集合和数组的区别"><a href="#一、集合和数组的区别" class="headerlink" title="一、集合和数组的区别"></a>一、集合和数组的区别</h4><p>1.数组是长度固定的数据结构，一旦创建长度就无法改变。集合是长度可变的数据结构，可以根据需要动态的增加或减少元素</p>
+<p>2.数组可以存储基本数据类型和对象，集合只能包含对象</p>
+<p>3.数组可以直接访问元素，而集合需要通过迭代器或其它方法。</p>
+<p>4.数组的功能简单，仅支持元素的存储和遍历。集合提供丰富的API，如（添加add()、删除remove()、查找contains()、排序sort()）等。</p>
+<p>5.数组在运行时检查类型的一致性，集合使用泛型时，在编译时检查类型，避免类型错误。</p>
+<h4 id="二、集合"><a href="#二、集合" class="headerlink" title="二、集合"></a>二、集合</h4><pre class="mermaid">classDiagram
+    direction BT
+
+    %% Collection 分支
+    Collection <|.. list collection <|.. set queue arraylist linkedlist vector stack hashset linkedhashset treeset priorityqueue %% map 分支 hashmap linkedhashmap treemap hashtable properties 接口标记 class { <<interface>>
+    }
+    class List {
+        <<interface>>
+    }
+    class Set {
+        <<interface>>
+    }
+    class Queue {
+        <<interface>>
+    }
+    class Map {
+        <<interface>>
+    }
+
+    %% 实现类
+    class ArrayList
+    class LinkedList
+    class Vector
+    class Stack
+    class HashSet
+    class LinkedHashSet
+    class TreeSet
+    class PriorityQueue
+    class HashMap
+    class LinkedHashMap
+    class TreeMap
+    class Hashtable
+    class Properties</interface></interface></interface></interface></|..></pre>
+
+<h5 id="List"><a href="#List" class="headerlink" title="List"></a>List</h5><p>List是有序的Collection，使用此接口能够精准的控制每个元素的插入位置，用户可以根据索引访问List中元素。常用的实现List的类有ArrayList, LinkedList, Vector, Stack.</p>
+<h6 id="1-ArrayList"><a href="#1-ArrayList" class="headerlink" title="1.ArrayList"></a>1.ArrayList</h6><p>底层使用数组实现，非线程安全。支持对元素的快速随机访问，但插入和删除速度很慢。可以放null值，且元素可以重复。</p>
+<p>扩容机制：</p>
+<p>ArrayList中维护了一个Object类型的数组elementData。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transient Object[] elementData;//transient 表示瞬间，短暂的，表示该属性不会被序列化</span><br></pre></td></tr></table></figure>
+
+<p>当创建对象时，如果使用的是无参构造器，则初始的elementData容量为0，在第一次add()的时候，elementData的容量扩容到10，如果需要再次扩容，则按1.5倍来扩容。</p>
+<p>如果使用指定大小的构造器，则elementData容量为指定大小，如果需要扩容，则直接扩容elementData为1.5倍。</p>
+<h6 id="2-LinkedList"><a href="#2-LinkedList" class="headerlink" title="2.LinkedList"></a>2.LinkedList</h6><p>底层维护了一个双向链表，可以添加任意元素，可以重复包括null,线程不安全，没有实现同步。添加和删除效率高</p>
+<h6 id="3-Vector"><a href="#3-Vector" class="headerlink" title="3.Vector"></a>3.Vector</h6><p>底层也是Object对象数组，Vector是线程同步的，即线程安全，Vector类的操作方法带有synchronized，效率不高。</p>
+<p>扩容机制：如果使用无参构造，默认初始容量为10，如需扩容，按两倍扩容；如果使用有参构造，elementData大小为指定大小，扩容时为elementData两倍。</p>
+<h5 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h5><p>Set不允许存在重复的元素，与List不同，set中的元素是无序的，不能使用索引获取数据。常见的实现类有HashSet,TreeSet，LinkedHashSet</p>
+<h6 id="1-HashSet"><a href="#1-HashSet" class="headerlink" title="1.HashSet"></a>1.HashSet</h6><p>底层实际上是HashMap。可以存放null，但只能一个，即元素不能重复。不能保证存放元素的顺序和取出顺序一致，但每次取出的顺序一致。</p>
+<p>添加元素时，先得到hash值-会转成-&gt;索引值。找到存储数据表的table，看这个索引位置是否已经存放有元素。如果没有，直接加入。如果有，调用equals比较，如果相同，不加入，如果不同，则添加的到后面。</p>
+<p>如果一条链表的元素个数大于等于8，并且table的大小大于MIN_TREEIFY_CAPACITY（默认64）就会进行树化</p>
+<p>扩容机制：HashSet的构造函数允许指定初始容量和负载因子，默认情况下，初始容量为16，负载因子为0.75，和HashMap一致。当元素的数量达到容量*负载因子时，会自动扩容为当前容量的两倍。</p>
+<table>
+<thead>
+<tr>
+<th><strong>参数</strong></th>
+<th><strong>默认值</strong></th>
+<th><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>初始容量</td>
+<td>16</td>
+<td>初始桶数组的大小（2的幂）</td>
+</tr>
+<tr>
+<td>负载因子</td>
+<td>0.75</td>
+<td>触发扩容的填充阈值（容量 × 负载因子）</td>
+</tr>
+<tr>
+<td>哈希冲突阈值</td>
+<td>8</td>
+<td>单链表超过该长度转为红黑树（Java 8+优化）</td>
+</tr>
+<tr>
+<td>降级阈值</td>
+<td>6</td>
+<td>红黑树节点少于该值转回链表（Java 8+优化）</td>
+</tr>
+</tbody></table>
+<p>当满足以下任一条件时触发扩容：</p>
+<JAVA>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素总数 &gt; 当前容量 × 负载因子或单个哈希桶内的链表长度 &gt; <span class="number">8</span>（自动树化前需扩容尝试）</span><br></pre></td></tr></table></figure>
+
+<p> <strong>完整扩容流程</strong></p>
+<ol>
+<li><p><strong>创建新数组</strong>：容量翻倍（如 <code>16 → 32</code>），确保维持 2 的幂次方特点。</p>
+</li>
+<li><p>重新哈希（Rehash）</p>
+<ul>
+<li>遍历原桶数组中的所有元素（包括链表&#x2F;红黑树节点）</li>
+<li>对每个元素重新计算哈希值：<code>(e.hash &amp; (newCapacity - 1))</code></li>
+<li>分散到新数组的对应桶中（可能调整到高位或低位）</li>
+</ul>
+</li>
+<li><p>迁移后的结构调整</p>
+<ul>
+<li><p>若某桶链表长度在迁移后 ≤ 6，将红黑树退化为链表</p>
+</li>
+<li><p>新数组开始接收后续新增操作</p>
+<ul>
+<li><strong>误区1</strong>：“HashSet的初始容量可以随便设置”<br> → 实际会强制对齐到最近的2的幂次方（如设5→8；设17→32）</li>
+<li><strong>误区2</strong>：“负载因子越大性能越好”<br> → 负载因子高意味着更迟触发扩容，但哈希冲突概率增加，链表或树结构可能影响性能</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h6 id="2-TreeSet"><a href="#2-TreeSet" class="headerlink" title="2.TreeSet"></a>2.TreeSet</h6><h6 id="3-LinkedHashSet"><a href="#3-LinkedHashSet" class="headerlink" title="3.LinkedHashSet"></a>3.LinkedHashSet</h6><p>LinkedHashSet是HashSet的子类，底层是LinkedHashMap，底层维护了一个数组加双向链表。LinkedHashSet根据元素的hashCode值来决定元素的存储位置，同时使用链表维护元素次序，这使得元素看起来是插入顺序保存的。不允许添加重复数据。</p>
+<h5 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h5><p>Map是一个键值对集合，存储键、值之间的映射。key无序，唯一；value不要求有序，允许重复。主要实现有HashMap,TreeMap,HashTable,LinkedHashMap,ConcurrentHashMap。常用方法（添加add()、删除remove()、根据键值获取get()、获取元素个数size()、判断是否为空isEmpty()、清除clean()、查找键值是否存在containsKey()）。</p>
+<p>以下是Map（以HashMap为例中 Node、Entry和EntrySet的关系解析图）</p>
+<pre class="mermaid">classDiagram
+    class HashMap~K, V~ {
+        - table: Node~K, V~[]
+        - entrySet: EntrySet~K, V~
+    }
+
+    class Node~K, V~ {
+        << (I,#FFEECF) inner class >>
+        + final key: K
+        + value: V
+        + hash: int
+        + next: Node~K, V~
+    }
+
+    class EntrySet~K, V~ {
+        << (I,#FFEECF) inner class >>
+        + iterator(): Iterator~Entry~K, V~~
+    }
+
+    HashMap~K, V~ *-- "table elements" Node~K, V~ : array storage
+    HashMap~K, V~ --> "1" EntrySet~K, V~ : contains
+    EntrySet~K, V~ ..> Node~K, V~ : iterates via
+    Node~K, V~ --|> `Map.Entry` : implements
+
+    note for Node~K, V~ "Node 类实现 Map.Entry 接口\n存储键值对(key, value)\n通过 next 字段实现链表结构"
+    note for EntrySet~K, V~ "EntrySet 是 Map 的视图集合，\n不存储独立数据，直接遍历底层 Node 数组"</pre>
+
+
+
+<table>
+<thead>
+<tr>
+<th><strong>组件</strong></th>
+<th><strong>作用</strong></th>
+<th><strong>内存效率</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Node</code></td>
+<td>实际存储键值对的哈希链表&#x2F;树节点，直接承载数据读写。</td>
+<td>直接操作内存</td>
+</tr>
+<tr>
+<td><code>Entry</code></td>
+<td><code>Node</code> 的接口形态，提供对 <code>key</code> 和 <code>value</code> 的访问与修改。</td>
+<td>无内存开销</td>
+</tr>
+<tr>
+<td><code>EntrySet</code></td>
+<td>基于 <code>Node</code> 数组的视图集合，通过惰性遍历避免数据复制。</td>
+<td>零拷贝</td>
+</tr>
+</tbody></table>
+<h6 id="1-HashMap"><a href="#1-HashMap" class="headerlink" title="1.HashMap"></a>1.HashMap</h6><p>底层是数组+链表+红黑树。 线程不安全。</p>
+<p>扩容机制：同上HashSet。HashMap底层维护了一个Node数组，默认为空。当创建对象时，将加载因子初始化为0.75.当添加key-value时，通过key的哈希值计算出索引。然后判断该索引处是否有元素，如果没有直接添加。如果有，继续判断该元素的key和添加元素的key是否相等，如果相等，直接替换value；如果不想等需要判断是树结构还是链表结构，做出相应处理。如果添加时发现容量不够，需要扩容。</p>
+<p>第一次添加，table容量扩容到16，阈值为12；以后再扩容，则需要扩容table容量为原来的两倍。</p>
+<p>在Java8中，如果一条链表的元素个数超过8，如果此时的table容量小于64，会先尝试扩容。如果大于等于64，会触发树化机制。</p>
+<p>在 JDK 1.7 和 JDK 1.8 中，<code>HashMap</code> 的实现经历了显著优化，主要改进集中在数据结构、哈希冲突处理、扩容机制及性能方面。以下是具体变化及对比：</p>
+<hr>
+<ol>
+<li><strong>数据结构的变化</strong></li>
+</ol>
+<p><strong>JDK 1.7</strong>：数组 + 单链表</p>
+<ul>
+<li>冲突处理：使用单向链表解决冲突，新元素插入链表的头部（头插法）。</li>
+<li>缺点：<ul>
+<li>频繁哈希冲突时，链表过长会导致查询效率退化至 O(n)。</li>
+<li>并发扩容时，头插法可能产生循环链表，导致死循环（非线程安全引起的问题）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="JDK-1-8：数组-单链表-红黑树"><a href="#JDK-1-8：数组-单链表-红黑树" class="headerlink" title="JDK 1.8：数组 + 单链表&#x2F;红黑树"></a><strong>JDK 1.8：数组 + 单链表&#x2F;红黑树</strong></h4><ul>
+<li><strong>优化引入红黑树</strong>：当链表长度超过阈值（默认 8）时，链表转换为红黑树；当节点减少到阈值以下（默认 6）时，红黑树退化为链表。</li>
+<li><strong>优势</strong>：<ul>
+<li>在极端哈希冲突情况下，查询效率仍能保持 O(log n)。</li>
+<li>降低哈希攻击（人为构造冲突）带来的性能风险。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong>2. hash 方法的优化</strong></p>
+<p>JDK 1.7：四次扰动</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="type">int</span> <span class="title function_">hash</span><span class="params">(Object k)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">h</span> <span class="operator">=</span> hashSeed;</span><br><span class="line">    h ^= k.hashCode();</span><br><span class="line">    h ^= (h &gt;&gt;&gt; <span class="number">20</span>) ^ (h &gt;&gt;&gt; <span class="number">12</span>);</span><br><span class="line">    <span class="keyword">return</span> h ^ (h &gt;&gt;&gt; <span class="number">7</span>) ^ (h &gt;&gt;&gt; <span class="number">4</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>多次位扰动降低碰撞概率，但计算较复杂。</li>
+</ul>
+<p><strong>JDK 1.8：简化扰动（一次异或）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">hash</span><span class="params">(Object key)</span> &#123;</span><br><span class="line">    <span class="type">int</span> h;</span><br><span class="line">    <span class="keyword">return</span> (key == <span class="literal">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>高位与低位参与散列：将哈希码的高 16 位与低 16 位异或，充分利用哈希值。</li>
+<li>计算更高效，同时分散性更好，间接减少转红黑树的概率。</li>
+</ul>
+<hr>
+<ol start="3">
+<li><strong>插入与扩容机制</strong></li>
+</ol>
+<p><strong>插入方式</strong></p>
+<ul>
+<li><strong>JDK 1.7</strong>：头插法（新元素插入链表头部）。<ul>
+<li>问题：并发扩容时可能出现循环链表（如两个线程同时扩容）。</li>
+</ul>
+</li>
+<li><strong>JDK 1.8</strong>：尾插法（新元素插入链表尾部或红黑树）。<ul>
+<li>避免循环链表问题，但多线程下仍有数据覆盖风险（需用<code>ConcurrentHashMap</code>）。</li>
+</ul>
+</li>
+</ul>
+<p><strong>扩容时机</strong></p>
+<ul>
+<li><strong>JDK 1.7</strong>：先扩容再插入（插入前检查<code>size &gt;= threshold</code>）。</li>
+<li><strong>JDK 1.8</strong>：先插入后检查扩容，在插入完成后触发<code>resize</code>，逻辑更统一。</li>
+</ul>
+<p><strong>扩容后数据迁移</strong></p>
+<ul>
+<li><strong>JDK 1.7</strong>：<ol>
+<li>原数组的每个链表重新计算索引（<code>indexFor</code>）。</li>
+<li>遍历链表，按新容量逐个迁移节点。</li>
+</ol>
+</li>
+<li><strong>JDK 1.8</strong>：<ol>
+<li><strong>利用规律</strong>：新索引 &#x3D; 原索引 或 原索引 + 原容量。</li>
+<li>通过位运算快速定位位置（<code>e.hash &amp; oldCap</code>），拆分链表&#x2F;红黑树，迁移效率更高。</li>
+</ol>
+</li>
+</ul>
+<hr>
+<p><strong>4. 线程安全性</strong></p>
+<ul>
+<li><strong>均非线程安全</strong>：<code>HashMap</code>本身设计不考虑多线程，但 JDK 1.8 解决了 1.7 中因头插法导致的循环链表问题。</li>
+<li><strong>并发问题依然存在</strong>：多线程<code>put</code>可能导致数据覆盖或丢失，需改用<code>ConcurrentHashMap</code>。</li>
+</ul>
+<hr>
+<p><strong>5. 性能对比</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>场景</strong></th>
+<th><strong>JDK 1.7</strong></th>
+<th><strong>JDK 1.8</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>哈希冲突较少</strong></td>
+<td>O(1)（链表短）</td>
+<td>O(1)（同 1.7，但计算更快）</td>
+</tr>
+<tr>
+<td><strong>哈希冲突严重</strong></td>
+<td>O(n)（链表长）</td>
+<td>O(log n)（红黑树优化）</td>
+</tr>
+<tr>
+<td><strong>并发扩容</strong></td>
+<td>可能导致循环链表</td>
+<td>数据覆盖，但无死循环问题</td>
+</tr>
+<tr>
+<td><strong>扩容数据迁移</strong></td>
+<td>遍历重新计算索引</td>
+<td>按高位拆分，效率更高</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>总结</strong></p>
+<ul>
+<li><p><strong>JDK 1.8 的改进</strong>：</p>
+<ol>
+<li>数据结构：链表与红黑树结合，解决长链表查询效率问题。</li>
+<li>hash方法：优化扰动逻辑，减少碰撞。</li>
+<li>扩容机制：迁移算法更高效，利用位运算快速定位新索引。</li>
+<li>插入方式：尾插法避免多线程扩容死循环问题（但并发仍需其他手段保证安全）。</li>
+</ol>
+</li>
+<li><p><strong>实际影响</strong>：<br>在哈希碰撞频繁的场景下（如恶意攻击或设计不当的哈希函数），JDK 1.8 的 <code>HashMap</code> 性能显著优于 1.7，同时在高并发场景下更稳定。</p>
+</li>
+</ul>
+<h6 id="2-LinkedHashMap"><a href="#2-LinkedHashMap" class="headerlink" title="2.LinkedHashMap"></a>2.LinkedHashMap</h6><h6 id="3-HashTable"><a href="#3-HashTable" class="headerlink" title="3.HashTable"></a>3.HashTable</h6><p>存放的是键值对；键和值都不能为null，否则会抛出NullPointerException</p>
+<p>HashTable使用方法基本上和HashMap一致</p>
+<p>HashTable是线程安全的，HashMap是线程不安全的</p>
+<p>扩容机制：</p>
+<p>底层有数组HashMap&amp;Entry,初始化大小为11</p>
+<p>阈值：threashold  8 &#x3D; 11 * 0.75;</p>
+<p>扩容：int newCapacity &#x3D; (oldCapacity &gt;&gt; 1) + 1;  新容量为原来的两倍+1</p>
+<h6 id="4-TreeMap"><a href="#4-TreeMap" class="headerlink" title="4.TreeMap"></a>4.TreeMap</h6><h6 id="Map的六大遍历方式"><a href="#Map的六大遍历方式" class="headerlink" title="Map的六大遍历方式"></a>Map的六大遍历方式</h6><ol>
+<li></li>
+</ol>
+</JAVA>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/%E9%9B%86%E5%90%88/" rel="tag">集合</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+  <nav id="article-nav" data-aos="fade-up">
+    
+      
+      <div class="article-nav-link-wrap article-nav-link-left">
+        
+          
+          
+            <img data-src="https://th.bing.com/th/id/OIP.d0tlwXVb0s2yfanvF4hhOAHaEK?w=195&amp;h=110&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" data-sizes="auto" alt="数据库基础" class="lazyload">
+          
+        
+        <a href="/2025/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93/"></a>
+        <div class="article-nav-caption">Newer</div>
+        <h3 class="article-nav-title">
+          
+            数据库基础
+          
+        </h3>
+      </div>
+    
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        <img data-src="/covers/image1.jpg" data-sizes="auto" alt="about和friend中catOrJava小游戏说明" class="lazyload">
+      
+      <a href="/2025/03/02/CatOrJava/"></a>
+      <div class="article-nav-caption">Older</div>
+      <h3 class="article-nav-title">
+        
+          about和friend中catOrJava小游戏说明
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+</article>
+
+
+
+
+
+
+</section>
+        </div>
+        
+        
+        <footer id="footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    
+    <div>
+      <span class="icon-copyright"></span>
+      2020-2025
+      <span class="footer-info-sep rotate"></span>
+      Lim
+    </div>
+    
+      <div>
+        Powered by&nbsp;<a href="https://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener external nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+    
+    
+      <div>
+        <span class="icon-brush"></span>
+        53.1k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        03:58
+      </div>
+    
+    
+    
+    
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">Number of visits&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">Number of visitors&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+    
+  </div>
+</footer>
+
+        
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">Contents</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9B%86%E5%90%88"><span class="toc-number">1.</span> <span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%9B%86%E5%90%88%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">一、集合和数组的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%9B%86%E5%90%88"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">二、集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#List"><span class="toc-number">1.0.0.2.1.</span> <span class="toc-text">List</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-ArrayList"><span class="toc-number">1.0.0.2.1.1.</span> <span class="toc-text">1.ArrayList</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-LinkedList"><span class="toc-number">1.0.0.2.1.2.</span> <span class="toc-text">2.LinkedList</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-Vector"><span class="toc-number">1.0.0.2.1.3.</span> <span class="toc-text">3.Vector</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Set"><span class="toc-number">1.0.0.2.2.</span> <span class="toc-text">Set</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-HashSet"><span class="toc-number">1.0.0.2.2.1.</span> <span class="toc-text">1.HashSet</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-TreeSet"><span class="toc-number">1.0.0.2.2.2.</span> <span class="toc-text">2.TreeSet</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-LinkedHashSet"><span class="toc-number">1.0.0.2.2.3.</span> <span class="toc-text">3.LinkedHashSet</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Map"><span class="toc-number">1.0.0.2.3.</span> <span class="toc-text">Map</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-HashMap"><span class="toc-number">1.0.0.2.3.1.</span> <span class="toc-text">1.HashMap</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JDK-1-8%EF%BC%9A%E6%95%B0%E7%BB%84-%E5%8D%95%E9%93%BE%E8%A1%A8-%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">JDK 1.8：数组 + 单链表&#x2F;红黑树</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#2-LinkedHashMap"><span class="toc-number">1.0.0.3.0.1.</span> <span class="toc-text">2.LinkedHashMap</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-HashTable"><span class="toc-number">1.0.0.3.0.2.</span> <span class="toc-text">3.HashTable</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-TreeMap"><span class="toc-number">1.0.0.3.0.3.</span> <span class="toc-text">4.TreeMap</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Map%E7%9A%84%E5%85%AD%E5%A4%A7%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F"><span class="toc-number">1.0.0.3.0.4.</span> <span class="toc-text">Map的六大遍历方式</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Lim" class="lazyload">
+  <div class="sidebar-author-name">Lim</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">15</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">7</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">11</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+    
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "Lim",
+          title: "集合补充",
+          url: "http://lim-juyou.github.io/2025/03/18/Collections/",
+          excerpt: "",
+          description: "",
+          stripContent: "集合一、集合和数组的区别1.数组是长度固定的数据结构，一旦创建长度就无法改变。集合是长度可变的数据结构，可以根据需要动态的增加或减少元素 2.数组可以存储基本数据类型和对象，集合只能包含对象 3.数组可以直接访问元素，而集合需要通过迭代器或其它方法。 4.数组的功能简单，仅支持元素的存储和遍历。集合提供丰富的API，如（添加add()、删除remove()、查找contains()、排序sort()）等。 5.数组在运行时检查类型的一致性，集合使用泛型时，在编译时检查类型，避免类型错误。 二、集",
+          date: "Tue Mar 18 2025 20:44:46 GMT+0800",
+          updated: "Tue Mar 18 2025 20:46:27 GMT+0800",
+          cover: "/images/banner.webp",
+        };
+      </script>
+       
+    
+    
+      
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+        
+      
+    
+    
+      <script type="module" data-pjax>
+        const PhotoSwipeLightbox = (await safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+        
+        const pswp = () => {
+          if (_$$('.article-entry a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-entry',
+              children: 'a.article-gallery-item',
+              pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+            }).init();
+          }
+          if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-gallery',
+              children: 'a.article-gallery-item',
+              pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+            }).init();
+          }
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script>
+      
+
+
+
+
+
+
+
+
+    
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.5.1' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+</script>
+
+
+
+
+
+
+
+    
+  </body>
+  </html>
+
