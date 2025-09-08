@@ -39,17 +39,23 @@
 <meta property="og:site_name" content="リムの巣">
 <meta property="og:description" content="git的介绍和使用git配置git提供了一个叫git config 的工具，专门用来配置或读取相应的工作环境变量。这些环境变量，决定了 Git 在各个环节的具体工作方式和行为。这些变量可以存放在以下三个不同的地方：  &#x2F;etc&#x2F;gitconfig 文件：系统中对所有用户都普遍适用的配置。若使用 git config 时用 --system 选项，读写的就是这个文件。 ~&#x2F;.gitconfig 文件">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://lim-juyou.github.io/2024/07/16/git/Snipaste_2024-07-16_11-21-48.png">
-<meta property="og:image" content="http://lim-juyou.github.io/2024/07/16/git/image2.png">
-<meta property="og:image" content="http://lim-juyou.github.io/images/git/image1.png">
-<meta property="og:image" content="http://lim-juyou.github.io/images/git/image3.png">
-<meta property="og:image" content="http://lim-juyou.github.io/images/git/image4.png">
-<meta property="og:image" content="http://lim-juyou.github.io/images/git/image4.png">
+<meta property="og:image" content="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageSnipaste_2024-07-16_11-21-48.png">
+<meta property="og:image" content="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage2.png">
+<meta property="og:image" content="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510191844839.png">
+<meta property="og:image" content="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510192706475.png">
+<meta property="og:image" content="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510191900514.png">
+<meta property="og:image" content="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510192840454.png">
+<meta property="og:image" content="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510191916659.png">
+<meta property="og:image" content="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510191940471.png">
+<meta property="og:image" content="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510191959271.png">
+<meta property="og:image" content="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510192020747.png">
+<meta property="og:image" content="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510193028499.png">
+<meta property="og:image" content="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510192348158.png">
 <meta property="article:published_time" content="2024-07-16T01:43:15.772Z">
-<meta property="article:modified_time" content="2025-03-02T14:54:37.107Z">
+<meta property="article:modified_time" content="2025-05-10T11:30:39.307Z">
 <meta property="article:author" content="Lim">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://lim-juyou.github.io/2024/07/16/git/Snipaste_2024-07-16_11-21-48.png">
+<meta name="twitter:image" content="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageSnipaste_2024-07-16_11-21-48.png">
   
   
     <link rel="alternate" href="/atom.xml" title="リムの巣" type="application/atom+xml">
@@ -303,7 +309,7 @@
       <div class="article-date">
   <span class="article-date-link" data-aos="zoom-in">
     <time datetime="2024-07-16T01:43:15.772Z" itemprop="datePublished">2024-07-16</time>
-    <time style="display: none;" id="post-update-time">2025-03-02</time>
+    <time style="display: none;" id="post-update-time">2025-05-10</time>
   </span>
 </div>
 
@@ -354,8 +360,7 @@
 </li>
 <li><p>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</p>
 <p>下图展示了git的工作流程</p>
-<img src="/2024/07/16/git/Snipaste_2024-07-16_11-21-48.png" class>
-
+<p><img src="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageSnipaste_2024-07-16_11-21-48.png"></p>
 <p>+++</p>
 <h2 id="git工作区暂存区和版本库"><a href="#git工作区暂存区和版本库" class="headerlink" title="git工作区暂存区和版本库"></a>git工作区暂存区和版本库</h2><ul>
 <li><p><strong>工作区：</strong>就是你在电脑里能看到的目录。</p>
@@ -364,15 +369,9 @@
 </li>
 <li><p><strong>版本库：</strong>工作区有一个隐藏目录 <strong>.git</strong>，这个不算工作区，而是 Git 的版本库。</p>
 <p>下图为之间的关系</p>
-<img src="/2024/07/16/git/image2.png" class>
-
+<p><img src="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage2.png"></p>
 <p>+++</p>
-<pre class="mermaid">    graph TD
-    A[工作区] -->|git add| B[暂存区]
-    B -->|git commit| C[本地仓库]
-    C -->|git push| D[远程仓库]
-    D -->|git clone/fetch| A</pre>
-
+<p><img src="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510191844839.png" alt="image-20250510191844839"></p>
 <h3 id="文件生命周期状态"><a href="#文件生命周期状态" class="headerlink" title="文件生命周期状态"></a>文件生命周期状态</h3><ol>
 <li><p><strong>Untracked</strong>：新文件，未被Git管理</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> newfile.txt  <span class="comment"># 创建新文件</span></span><br><span class="line">git status         <span class="comment"># 显示Untracked files</span></span><br></pre></td></tr></table></figure>
@@ -403,7 +402,7 @@
 <p>+++</p>
 <h2 id="git基本操做"><a href="#git基本操做" class="headerlink" title="git基本操做"></a>git基本操做</h2><p>git的工作就是创建和保存你项目的快照及之后的快照进行对比</p>
 <p>git常用的6个命令:<strong>git clone, git push, git add, git commit, git checkout, git pull</strong>.</p>
-<p><img src="/images/git/image1.png"></p>
+<p><img src="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510192706475.png" alt="image-20250510192706475"></p>
 </li>
 </ul>
 <h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init </span><br></pre></td></tr></table></figure>
@@ -510,12 +509,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 场景1：查看简洁提交历史</span></span><br><span class="line">git <span class="built_in">log</span> --oneline -n 5  <span class="comment"># 显示最近5条</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 场景2：定位特定功能的提交</span></span><br><span class="line">git <span class="built_in">log</span> --oneline --grep=<span class="string">&quot;支付&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 场景3：创建发布说明</span></span><br><span class="line">git <span class="built_in">log</span> --oneline v1.0..v2.0 &gt; changelog.txt</span><br></pre></td></tr></table></figure></li>
 </ul>
 <hr>
-<h6 id="4-工作流程示意图"><a href="#4-工作流程示意图" class="headerlink" title="4. 工作流程示意图"></a><strong>4. 工作流程示意图</strong></h6><pre class="mermaid">graph LR
-    A[用户操作] --> B[reflog记录]
-    A --> C[提交历史树]
-    B --> D{恢复操作}
-    C --> E{查看历史}</pre>
-
+<h6 id="4-工作流程示意图"><a href="#4-工作流程示意图" class="headerlink" title="4. 工作流程示意图"></a><strong>4. 工作流程示意图</strong></h6><p><img src="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510191900514.png" alt="image-20250510191900514"></p>
 <hr>
 <h6 id="5-高级技巧"><a href="#5-高级技巧" class="headerlink" title="5. 高级技巧"></a><strong>5. 高级技巧</strong></h6><p>（1）组合使用案例</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 找到被覆盖的提交后查看详情</span></span><br><span class="line">git reflog | grep <span class="string">&quot;merge&quot;</span></span><br><span class="line">git show abc123</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成操作时间线</span></span><br><span class="line">git reflog --format=<span class="string">&#x27;%C(auto)%h %&lt;(10)%gd %C(green)%ai%Creset %s&#x27;</span></span><br></pre></td></tr></table></figure>
@@ -562,17 +556,9 @@
 <p>+++</p>
 <h3 id="git分支管理"><a href="#git分支管理" class="headerlink" title="git分支管理"></a>git分支管理</h3><p>几乎每一种版本控制系统都以某种形式支持分支，一条分支代表一条独立的开发栈。</p>
 <p>使用分支意味着你可以从开发主线上分离开来，然后不影响主线的同时继续工作。</p>
-<p><img src="/images/git/image3.png"></p>
+<p><img src="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510192840454.png" alt="image-20250510192840454"></p>
 <p>git分支实际上是指向更改快照的指针</p>
-<h4 id="Git-Flow标准模型"><a href="#Git-Flow标准模型" class="headerlink" title="Git Flow标准模型"></a>Git Flow标准模型</h4><pre class="mermaid">graph LR
-    main([main]) --> release((release))
-    main --> hotfix((hotfix))
-    dev([dev]) --> feature[[feature/*]]
-    release --> main
-    hotfix --> main & dev</pre>
-
-
-
+<h4 id="Git-Flow标准模型"><a href="#Git-Flow标准模型" class="headerlink" title="Git Flow标准模型"></a>Git Flow标准模型</h4><p><img src="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510191916659.png" alt="image-20250510191916659"></p>
 <p>创建分支</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch (branchname)</span><br></pre></td></tr></table></figure>
 
@@ -616,45 +602,13 @@
 
 
 
-<pre class="mermaid">%%{init: { 'gitGraph': { 'showCommitLabel': true, 'mainBranchName': 'main' }} }%%
-gitGraph
-  commit id: "C1"
-  branch feature
-  checkout feature
-  commit id: "C2"
-  checkout main
-  commit id: "C3"
-  merge feature id: "M1" tag: "Merge Commit"</pre>
-
+<p><img src="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510191940471.png" alt="image-20250510191940471"></p>
 <p><strong>Rebase变基（线性历史）</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git checkout feature-auth</span><br><span class="line">git rebase main         # 将特性分支基变到main最新提交</span><br><span class="line"></span><br><span class="line"># 解决冲突后：</span><br><span class="line">git add .</span><br><span class="line">git rebase --continue</span><br></pre></td></tr></table></figure>
 
-<pre class="mermaid">%%{init: { 'gitGraph': { 'showCommitLabel': true, 'mainBranchName': 'main' }} }%%
-gitGraph
-  commit id: "C1"
-  commit id: "C3"
-  branch feature
-  checkout feature
-  commit id: "C2'"
-  checkout main
-  merge feature</pre>
-
+<p><img src="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510191959271.png" alt="image-20250510191959271"></p>
 <p><strong>对比图</strong></p>
-<pre class="mermaid">flowchart LR
-  subgraph Merge
-    direction TB
-    A1[C1] --> A2[C3]
-    A1 --> A3[C2]
-    A2 & A3 --> A4[Merge Commit]
-  end
-
-  subgraph Rebase
-    direction TB
-    B1[C1] --> B2[C3] --> B3[C2']
-  end</pre>
-
-
-
+<p><img src="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510192020747.png" alt="image-20250510192020747"></p>
 <h4 id="团队协作流程"><a href="#团队协作流程" class="headerlink" title="团队协作流程"></a>团队协作流程</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 首次推送分支</span><br><span class="line">git push -u origin feature-auth  # 建立追踪关系</span><br><span class="line"></span><br><span class="line"># 更新本地分支</span><br><span class="line">git fetch origin              # 获取远程更新</span><br><span class="line">git rebase origin/main        # 变基到远程最新</span><br><span class="line"></span><br><span class="line"># 处理推送冲突</span><br><span class="line">git push -f origin feature-auth  # 变基后强制推送（仅限特性分支）</span><br></pre></td></tr></table></figure>
 
 
@@ -694,7 +648,7 @@ gitGraph
 
 
 
-<h2 id="git连接远程仓库"><a href="#git连接远程仓库" class="headerlink" title="git连接远程仓库"></a>git连接远程仓库</h2><p><img src="/images/git/image4.png"></p>
+<h2 id="git连接远程仓库"><a href="#git连接远程仓库" class="headerlink" title="git连接远程仓库"></a>git连接远程仓库</h2><p><img src="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510193028499.png" alt="image-20250510193028499"></p>
 <h4 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h4><p>使用url</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add [shortname] [url]</span><br></pre></td></tr></table></figure>
 
@@ -707,12 +661,12 @@ gitGraph
 <p>生成ssh key</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</span><br></pre></td></tr></table></figure>
 
-<p>后面的 <strong><a href="mailto:&#x79;&#x6f;&#117;&#x72;&#95;&#x65;&#x6d;&#97;&#105;&#x6c;&#x40;&#x79;&#x6f;&#117;&#114;&#101;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;">&#x79;&#x6f;&#117;&#x72;&#95;&#x65;&#x6d;&#97;&#105;&#x6c;&#x40;&#x79;&#x6f;&#117;&#114;&#101;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;</a></strong> 改为你在 Github 上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。</p>
+<p>后面的 <strong><a href="mailto:&#121;&#x6f;&#x75;&#x72;&#x5f;&#101;&#109;&#x61;&#x69;&#x6c;&#64;&#121;&#111;&#x75;&#114;&#x65;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;">&#121;&#x6f;&#x75;&#x72;&#x5f;&#101;&#109;&#x61;&#x69;&#x6c;&#64;&#121;&#111;&#x75;&#114;&#x65;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;</a></strong> 改为你在 Github 上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。</p>
 <p>成功的话会在 <strong>~&#x2F;</strong> 下生成 <strong>.ssh</strong> 文件夹，进去，打开 <strong>id_rsa.pub</strong>，复制里面的 <strong>key</strong>。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;429240967@qq.com&quot;</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/Users/tianqixin/.ssh/id_rsa): </span><br><span class="line">Enter passphrase (empty for no passphrase):    # 直接回车</span><br><span class="line">Enter same passphrase again:                   # 直接回车</span><br><span class="line">Your identification has been saved in /Users/tianqixin/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /Users/tianqixin/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:MDKVidPTDXIQoJwoqUmI4LBAsg5XByBlrOEzkxrwARI 429240967@qq.com</span><br><span class="line">The key&#x27;s randomart image is:</span><br><span class="line">+---[RSA 3072]----+</span><br><span class="line">|E*+.+=**oo       |</span><br><span class="line">|%Oo+oo=o. .      |</span><br><span class="line">|%**.o.o.         |</span><br><span class="line">|OO.  o o         |</span><br><span class="line">|+o+     S        |</span><br><span class="line">|.                |</span><br><span class="line">|                 |</span><br><span class="line">|                 |</span><br><span class="line">|                 |</span><br><span class="line">+----[SHA256]-----+</span><br></pre></td></tr></table></figure>
 
 <p>回到 github 上，进入 Account &#x3D;&gt; Settings（账户配置）</p>
-<p><img src="/images/git/image4.png"></p>
+<p><img src="https://typora-picgo-lim.oss-cn-beijing.aliyuncs.com/typora/imageimage-20250510192348158.png" alt="image-20250510192348158"></p>
 <p>为了验证是否成功，输入以下命令：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">The authenticity of host &#x27;github.com (52.74.223.119)&#x27; can&#x27;t be established.</span><br><span class="line">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span><br><span class="line">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes                   # 输入 yes</span><br><span class="line">Warning: Permanently added &#x27;github.com,52.74.223.119&#x27; (RSA) to the list of known hosts.</span><br><span class="line">Hi tianqixin! You&#x27;ve successfully authenticated, but GitHub does not provide shell access. # 成功信息</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -778,7 +732,7 @@ gitGraph
         
           
           
-            <img data-src="https://th.bing.com/th/id/OIP.nKUJfBRDm1-0sb5GWw7WyQHaEo?w=195&amp;h=122&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" data-sizes="auto" alt="示例文章" class="lazyload">
+            <img data-src="https://th.bing.com/th/id/OIP.iPXV9R-nK6LqZifJ8I629wHaEK?w=195&amp;h=110&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" data-sizes="auto" alt="示例文章" class="lazyload">
           
         
         <a href="/2024/07/17/use/"></a>
@@ -796,7 +750,7 @@ gitGraph
       
         
         
-          <img data-src="https://th.bing.com/th/id/OIP.nHvPixYPOQkm51Gvf35HgwHaEo?w=195&amp;h=122&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" data-sizes="auto" alt="hexo搭建个人博客并部署到Github" class="lazyload">
+          <img data-src="https://th.bing.com/th/id/OIP.8wkwGObK7YbgatrmZ6lRTQHaDv?w=195&amp;h=99&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.5&amp;pid=1.7" data-sizes="auto" alt="hexo搭建个人博客并部署到Github" class="lazyload">
         
       
       <a href="/2024/07/16/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/"></a>
@@ -843,10 +797,10 @@ gitGraph
     
       <div>
         <span class="icon-brush"></span>
-        67.7k
+        67.6k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        05:04
+        05:03
       </div>
     
     
@@ -1039,7 +993,7 @@ gitGraph
           description: "",
           stripContent: "git的介绍和使用git配置git提供了一个叫git config 的工具，专门用来配置或读取相应的工作环境变量。这些环境变量，决定了 Git 在各个环节的具体工作方式和行为。这些变量可以存放在以下三个不同的地方：  /etc/gitconfig 文件：系统中对所有用户都普遍适用的配置。若使用 git config 时用 --system 选项，读写的就是这个文件。 ~/.gitconfig 文件：用户目录下的配置文件只适用于该用户。若使用 git config 时用 --global 选项，读",
           date: "Tue Jul 16 2024 09:43:15 GMT+0800",
-          updated: "Sun Mar 02 2025 22:54:37 GMT+0800",
+          updated: "Sat May 10 2025 19:30:39 GMT+0800",
           cover: "/images/banner.webp",
         };
       </script>

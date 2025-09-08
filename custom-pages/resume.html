@@ -1,15 +1,1070 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8"> <!-- 确保该行存在 -->
-        <title>我的简历</title>
-      </head>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李福海 - Java后端开发工程师 (孤独摇滚风格)</title>
+    <style>
+        /* CSS变量 - 孤独摇滚主题色 */
+        :root {
+            --bocchi-pink: #ffc0cb; /* 小孤独的代表色 */
+            --kita-red: #ff6347;    /* 喜多郁代的活力红 */
+            --ryo-blue: #6495ed;    /* 山田凉的冷静蓝 */
+            --nijika-yellow: #ffd700; /* 伊地知虹夏的阳光黄 */
+            --dark-text: #333333;
+            --light-text: #6a6a6a;
+            --bg-color-light: #fdf5e6; /* 浅米黄，温暖明亮 */
+            --card-bg-light: #ffffff;
+            --border-light: #e0e0e0;
+            --transition-fast: all 0.2s ease-out;
+            --transition-normal: all 0.3s ease-in-out;
+        }
+
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Hina Mincho', 'Noto Sans JP', sans-serif; /* 更可爱的字体选择 */
+            line-height: 1.6;
+            color: var(--dark-text);
+            background: var(--bg-color-light);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 动漫背景装饰 */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: -1;
+        }
+        body::before {
+            width: 150px;
+            height: 150px;
+            top: -50px;
+            left: -50px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23ffc0cb" opacity="0.6"/><path d="M50 10 L60 40 L90 40 L65 60 L75 90 L50 70 L25 90 L35 60 L10 40 L40 40 Z" fill="%23ffd700" opacity="0.8"/></svg>'); /* 粉色圆+黄色星 */
+            animation: floatAndRotate 10s infinite ease-in-out;
+        }
+        body::after {
+            width: 120px;
+            height: 120px;
+            bottom: -30px;
+            right: -30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="10" width="80" height="80" rx="20" ry="20" fill="%236495ed" opacity="0.7"/><circle cx="50" cy="50" r="20" fill="%23ff6347" opacity="0.9"/></svg>'); /* 蓝色圆角方块+红色圆 */
+            animation: floatAndRotateReverse 12s infinite ease-in-out;
+        }
+        @keyframes floatAndRotate {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(20px, 20px) rotate(180deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        @keyframes floatAndRotateReverse {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-20px, -20px) rotate(-180deg); }
+            100% { transform: translate(0, 0) rotate(-360deg); }
+        }
+
+
+        /* 导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            border-bottom: 3px solid var(--bocchi-pink); /* 底部粉色边框 */
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark-text);
+            text-shadow: 2px 2px var(--kita-red); /* 简单阴影，更活泼 */
+            transition: var(--transition-normal);
+        }
+        .logo:hover {
+            transform: scale(1.05) rotate(-3deg);
+            color: var(--ryo-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition-fast);
+            position: relative;
+            padding: 0.5rem 0; /* 增加点击区域 */
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 4px; /* 加粗下划线 */
+            background: var(--nijika-yellow); /* 亮黄色下划线 */
+            border-radius: 2px;
+            transition: var(--transition-fast);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--bocchi-pink); /* 悬停和激活变粉色 */
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* 主要内容区 */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 1rem 4rem;
+        }
+        
+        /* 段落标题 */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-text);
+            margin-bottom: 2.5rem;
+            position: relative;
+            text-align: center; /* 标题居中 */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .section-title::after {
+            content: '🎵'; /* 音符装饰 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3.5rem;
+            color: var(--nijika-yellow);
+            opacity: 0.2;
+            z-index: -1;
+        }
+        .section-title span {
+            position: relative;
+            z-index: 1; /* 确保文字在音符上方 */
+            background: linear-gradient(90deg, var(--bocchi-pink), var(--kita-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        /* 英雄区域 */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, var(--card-bg-light) 0%, #fffaf0 100%); /* 渐变背景 */
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(var(--bocchi-pink), 0.2);
+            position: relative;
+            overflow: hidden;
+            border: 2px dashed var(--ryo-blue); /* 虚线边框 */
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--bocchi-pink), var(--kita-red));
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            font-weight: 700;
+            border: 6px solid var(--nijika-yellow); /* 黄色边框 */
+            box-shadow: 0 0 15px var(--nijika-yellow), 0 0 25px var(--bocchi-pink); /* 发光效果 */
+            transition: var(--transition-normal);
+            animation: pulse 2s infinite alternate; /* 脉动效果 */
+        }
+        .avatar:hover {
+            transform: scale(1.08) rotate(5deg);
+            box-shadow: 0 0 20px var(--nijika-yellow), 0 0 35px var(--bocchi-pink);
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px var(--nijika-yellow), 0 0 25px var(--bocchi-pink); }
+            100% { box-shadow: 0 0 25px var(--nijika-yellow), 0 0 40px var(--bocchi-pink); }
+        }
+
+
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-text);
+            text-shadow: 3px 3px 0px var(--bocchi-pink), 5px 5px 0px var(--ryo-blue); /* 多层阴影，立体感 */
+            letter-spacing: 2px;
+            animation: popIn 0.8s ease-out forwards;
+        }
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.8) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--kita-red);
+            font-weight: 600;
+            margin-bottom: 1.8rem;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
+            animation: fadeInScale 1s ease-out 0.2s forwards;
+        }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+            animation: fadeInTranslate 1s ease-out 0.4s forwards;
+        }
+        @keyframes fadeInTranslate {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            animation: fadeInTranslate 1s ease-out 0.6s forwards;
+        }
+
+        .contact-btn {
+            padding: 0.9rem 1.8rem;
+            border: 3px solid var(--ryo-blue); /* 粗边框 */
+            border-radius: 30px; /* 更圆润 */
+            text-decoration: none;
+            color: var(--ryo-blue);
+            font-weight: 700;
+            transition: var(--transition-normal);
+            background-color: transparent;
+            position: relative;
+            overflow: hidden;
+            text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+        }
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--ryo-blue), var(--nijika-yellow));
+            transition: var(--transition-normal);
+            z-index: -1;
+            opacity: 0.8;
+        }
+        .contact-btn:hover::before {
+            left: 0;
+        }
+        .contact-btn:hover {
+            color: white;
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(var(--ryo-blue), 0.4);
+            text-shadow: none;
+        }
+
+        /* 卡片容器 */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: var(--card-bg-light);
+            border-radius: 15px; /* 更圆润 */
+            padding: 2.5rem;
+            border: 2px solid var(--border-light);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            border-left: 8px solid var(--bocchi-pink); /* 左侧亮色条 */
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 60px;
+            height: 60px;
+            background: var(--nijika-yellow);
+            border-radius: 50%;
+            opacity: 0.3;
+            filter: blur(15px);
+            animation: bubble 8s infinite ease-in-out;
+        }
+        @keyframes bubble {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.1); }
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(var(--bocchi-pink), 0.2), 0 0 15px rgba(var(--kita-red), 0.1);
+            border-color: var(--kita-red); /* 悬停边框变色 */
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.8rem;
+        }
+
+        .card-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: var(--nijika-yellow); /* 黄色背景 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-right: 1.2rem;
+            color: white;
+            box-shadow: 0 2px 8px rgba(var(--nijika-yellow), 0.4);
+            transition: var(--transition-normal);
+        }
+        .card:hover .card-icon {
+            transform: rotate(15deg) scale(1.1);
+            background: var(--kita-red); /* 悬停图标变色 */
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.7);
+        }
+
+        .card-content h3 {
+            font-size: 1.2rem;
+            color: var(--dark-text);
+            margin-bottom: 0.6rem;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            color: var(--light-text);
+            margin-bottom: 0.6rem;
+        }
+
+        /* 技能标签 */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.2rem;
+        }
+
+        .skill-tag {
+            padding: 0.6rem 1.2rem;
+            background: #ffe0f0; /* 浅粉色背景 */
+            border-radius: 25px; /* 椭圆形 */
+            font-size: 0.9rem;
+            color: var(--dark-text);
+            border: 1px solid var(--bocchi-pink);
+            transition: var(--transition-fast);
+            font-weight: 500;
+        }
+
+        .skill-tag:hover {
+            background: var(--bocchi-pink);
+            color: white;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(var(--bocchi-pink), 0.4);
+        }
+
+        /* 项目卡片 */
+        .project-card {
+            background: var(--card-bg-light);
+            border-radius: 15px;
+            border: 2px solid var(--border-light);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition-normal);
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 15px 40px rgba(var(--ryo-blue), 0.2);
+        }
+
+        .project-header {
+            background: linear-gradient(90deg, var(--ryo-blue), var(--nijika-yellow)); /* 蓝黄渐变 */
+            color: white;
+            padding: 1.8rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--kita-red); /* 底部红线 */
+        }
+        .project-header::before {
+            content: '🎸'; /* 吉他图标 */
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%) rotate(15deg);
+            font-size: 3rem;
+            opacity: 0.3;
+            color: white;
+        }
+
+
+        .project-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+        }
+
+        .project-period {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-body p {
+            font-size: 1.05rem;
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-body h4 {
+            font-size: 1.2rem;
+            color: var(--dark-text);
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--bocchi-pink); /* 粉色左边框 */
+            padding-left: 0.8rem;
+            font-weight: 600;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 1.2rem 0;
+        }
+
+        .tech-tag {
+            padding: 0.4rem 1rem;
+            background: var(--ryo-blue); /* 蓝色背景 */
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(var(--ryo-blue), 0.3);
+            transition: var(--transition-fast);
+        }
+        .tech-tag:hover {
+            background: var(--kita-red); /* 悬停变红 */
+            transform: scale(1.05);
+        }
+
+        .project-links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            padding: 0.6rem 1.2rem;
+            border: 2px solid var(--kita-red);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--kita-red);
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        .project-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--kita-red);
+            transition: var(--transition-normal);
+            z-index: -1;
+        }
+        .project-link:hover::before {
+            left: 0;
+        }
+        .project-link:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(var(--kita-red), 0.3);
+        }
+        
+        .project-body ul {
+            list-style: none;
+            padding-left: 0; /* 移除默认内边距 */
+        }
+        
+        .project-body ul li {
+            position: relative;
+            margin-bottom: 0.8rem;
+            color: var(--light-text);
+            padding-left: 1.5rem; /* 为自定义项目符号留出空间 */
+        }
+        
+        .project-body ul li::before {
+            content: '✨'; /* 星星项目符号 */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2em;
+            color: var(--bocchi-pink);
+            animation: bounce 0.8s infinite alternate;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-3px); }
+        }
+        
+        /* 个人特质 */
+        .personal-traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.8rem;
+            text-align: center;
+        }
+        
+        .trait {
+            padding: 1.8rem;
+            background: #fff8dc; /* 浅黄色背景 */
+            border-radius: 12px;
+            border: 1px dashed var(--nijika-yellow); /* 黄色虚线边框 */
+            transition: var(--transition-normal);
+        }
+        .trait:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(var(--nijika-yellow), 0.3);
+            background: #ffecb3; /* 悬停颜色加深 */
+        }
+        
+        .trait h4 {
+            font-size: 1.2rem;
+            color: var(--dark-text);
+            margin-bottom: 0.6rem;
+        }
+        
+        .trait p {
+            font-size: 0.95rem;
+            color: var(--light-text);
+        }
+        
+        /* 联系方式 */
+        .contact-section .card {
+            text-align: center;
+            padding: 3rem;
+            border: 3px solid var(--kita-red); /* 红色边框 */
+            box-shadow: 0 10px 30px rgba(var(--kita-red), 0.2);
+            background: linear-gradient(160deg, var(--card-bg-light) 0%, #ffe0e6 100%); /* 粉色渐变 */
+        }
+        .contact-section .card:hover {
+            transform: none; /* 移除悬停动画，保持稳定 */
+            border-color: var(--bocchi-pink);
+            box-shadow: 0 12px 35px rgba(var(--bocchi-pink), 0.3);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .container {
+                padding: 100px 1rem 2rem;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .section-title::after {
+                font-size: 2.8rem;
+            }
+            .avatar {
+                width: 100px;
+                height: 100px;
+                font-size: 3rem;
+            }
+        }
+
+        /* 滚动动画 */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* 加载动画 */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--bocchi-pink), var(--ryo-blue)); /* 渐变加载背景 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease-out;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite, glow 1.5s infinite alternate; /* 旋转和发光 */
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px white, 0 0 10px white; }
+            100% { box-shadow: 0 0 10px white, 0 0 20px white; }
+        }
+        
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            font-size: 0.9rem;
+            color: var(--light-text);
+            border-top: 2px dashed var(--bocchi-pink); /* 粉色虚线 */
+            margin-top: 3rem;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.7); /* 半透明背景 */
+        }
+        footer::before {
+            content: '✨';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            animation: twinkle 2s infinite ease-in-out;
+            opacity: 0.8;
+        }
+        footer::after {
+            content: '🎸';
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            animation: bounce 1.5s infinite alternate;
+            opacity: 0.8;
+        }
+        @keyframes twinkle {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+            50% { transform: scale(1.2) rotate(15deg); opacity: 1; }
+        }
+
+    </style>
+</head>
 <body>
-    <h1>lim的个人简历</h1>
-    <!-- 页面内容 -->
-     <h3>内容怎么不见了捏？</h3>
-     <h3>原来被捣蛋鬼偷走了</h3>
-    <h3>正在升级中..................</h3>
-    <a href="/about">返回About页</a>
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">李福海</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">首页</a></li>
+                <li><a href="#about" class="nav-link">关于</a></li>
+                <li><a href="#skills" class="nav-link">技能</a></li>
+                <li><a href="#projects" class="nav-link">项目</a></li>
+                <li><a href="#contact" class="nav-link">联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero" id="home">
+            <div class="avatar">李</div>
+            <div class="hero-content">
+                <h1>李福海</h1>
+                <p class="subtitle">Java后端开发工程师</p>
+                <p class="description">
+                    海南大学软件工程专业应届毕业生，热爱互联网行业，专注于Java后端开发与AI应用开发。
+                    具备扎实的技术功底和强烈的学习热情，善于运用新技术解决实际问题。
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:philiplim001@outlook.com" class="contact-btn">📧 邮箱联系</a>
+                    <a href="tel:17879706805" class="contact-btn">📱 电话联系</a>
+                    <a href="https://github.com/lim-juyou" target="_blank" class="contact-btn">🔗 GitHub</a>
+                    <a href="https://gitee.com/joyou11/ai-auto-coding" target="_blank" class="project-link">🔗 Gitee仓库</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="animate-on-scroll">
+            <h2 class="section-title"><span>个人概况</span></h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎓</div>
+                        <div class="card-title">教育背景</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>海南大学 (211 双一流)</h3>
+                        <p><strong>软件工程 本科</strong> | 2022.09 - 2026.06</p>
+                        <p><strong>GPA:</strong> 3.48/4.0 (专业前15%)</p>
+                        <p><strong>英语水平:</strong> 英语四级</p>
+                        <p><strong>荣誉:</strong> 海南大学综合奖学金、国家发明专利申请 (CN119766547A)</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📚</div>
+                        <div class="card-title">核心课程</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="skills-container">
+                            <span class="skill-tag">Java程序设计</span>
+                            <span class="skill-tag">C/C++程序设计</span>
+                            <span class="skill-tag">MySQL数据库</span>
+                            <span class="skill-tag">计算机网络</span>
+                            <span class="skill-tag">高性能web架构</span>
+                            <span class="skill-tag">分布式应用开发</span>
+                            <span class="skill-tag">软件工程</span>
+                            <span class="skill-tag">数据结构</span>
+                            <span class="skill-tag">操作系统</span>
+                            <span class="skill-tag">机器学习系统</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="animate-on-scroll">
+            <h2 class="section-title"><span>专业技能</span></h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">☕</div>
+                        <div class="card-title">Java生态</div>
+                    </div>
+                    <div class="card-content">
+                        <p>掌握Spring Boot 3和Java21虚拟线程，熟练使用hutool、Lombok、Knife4j等类库提高开发效率。</p>
+                        <div class="skills-container">
+                            <span class="skill-tag">Spring Boot 3</span>
+                            <span class="skill-tag">Java 21</span>
+                            <span class="skill-tag">虚拟线程</span>
+                            <span class="skill-tag">Hutool</span>
+                            <span class="skill-tag">Lombok</span>
+                            <span class="skill-tag">Knife4j</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🌐</div>
+                        <div class="card-title">网络协议</div>
+                    </div>
+                    <div class="card-content">
+                        <p>熟悉TCP/IP网络模型，对HTTP/1.1、HTTP/2.0、HTTP/3.0版本变化有深入研究。</p>
+                        <div class="skills-container">
+                            <span class="skill-tag">TCP/IP</span>
+                            <span class="skill-tag">HTTP</span>
+                            <span class="skill-tag">TCP</span>
+                            <span class="skill-tag">UDP</span>
+                            <span class="skill-tag">HTTP/2.0</span>
+                            <span class="skill-tag">HTTP/3.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <div class="card-title">设计模式</div>
+                    </div>
+                    <div class="card-content">
+                        <p>掌握常见设计模式，并在实际项目中应用优化代码结构。</p>
+                        <div class="skills-container">
+                            <span class="skill-tag">门面模式</span>
+                            <span class="skill-tag">策略模式</span>
+                            <span class="skill-tag">模板方法</span>
+                            <span class="skill-tag">工厂模式</span>
+                            <span class="skill-tag">执行器模式</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🗄️</div>
+                        <div class="card-title">数据库</div>
+                    </div>
+                    <div class="card-content">
+                        <p>熟悉MySQL使用和原理，能够进行SQL调优，了解读写分离、分库分表。</p>
+                        <div class="skills-container">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">索引优化</span>
+                            <span class="skill-tag">事务处理</span>
+                            <span class="skill-tag">SQL调优</span>
+                            <span class="skill-tag">读写分离</span>
+                            <span class="skill-tag">分库分表</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🤖</div>
+                        <div class="card-title">AI开发</div>
+                    </div>
+                    <div class="card-content">
+                        <p>熟悉SpringAI、LangChain4j等AI开发框架，能快速实现AI智能应用。</p>
+                        <div class="skills-container">
+                            <span class="skill-tag">SpringAI</span>
+                            <span class="skill-tag">LangChain4j</span>
+                            <span class="skill-tag">会话记忆</span>
+                            <span class="skill-tag">RAG知识库</span>
+                            <span class="skill-tag">工具调用</span>
+                            <span class="skill-tag">MCP</span>
+                            <span class="skill-tag">AI Agent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">⚡</div>
+                        <div class="card-title">并发编程</div>
+                    </div>
+                    <div class="card-content">
+                        <p>熟悉JUC并发工具包与多线程编程，具备高并发系统设计经验。</p>
+                        <div class="skills-container">
+                            <span class="skill-tag">JUC</span>
+                            <span class="skill-tag">多线程</span>
+                            <span class="skill-tag">线程池</span>
+                            <span class="skill-tag">虚拟线程</span>
+                            <span class="skill-tag">异步处理</span>
+                            <span class="skill-tag">并发控制</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="animate-on-scroll">
+            <h2 class="section-title"><span>项目经历</span></h2>
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">🚀 AI CodeForge - 智能代码生成平台</div>
+                    <div class="project-period">2025.07 - 2025.09</div>
+                </div>
+                <div class="project-body">
+                    <p><strong>项目描述：</strong>基于Spring Boot 3、LangChain4j和LangGraph4j的AI代码生成平台，通过自然语言描述一键生成可访问的Web应用。设计并实现AI Agent工作流，自动化完成开发素材搜集、代码生成、质量检查和项目构建。</p>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Spring Boot 3</span>
+                        <span class="tech-tag">LangChain4j</span>
+                        <span class="tech-tag">LangGraph4j</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">Java21虚拟线程</span>
+                    </div>
+
+                    <div class="card-content">
+                        <h4>🏆 技术亮点</h4>
+                        <ul>
+                            <li><strong>高性能架构:</strong> 引入多级缓存、分布式限流、异步处理和护栏重试策略，有效应对高并发场景</li>
+                            <li><strong>AI模型集成:</strong> 利用LangChain4j框架集成DeepSeek、通义等多种AI大模型</li>
+                            <li><strong>多模式生成:</strong> 支持原生、多文件、Vue工程多种网站生成模式</li>
+                            <li><strong>设计模式应用:</strong> 运用门面模式、策略模式、模板方法模式优化代码结构</li>
+                        </ul>
+
+                        <h4>💡 核心功能</h4>
+                        <ul>
+                            <li><strong>会话记忆:</strong> 整合Redis实现AI对话历史持久化，支持多轮对话优化</li>
+                            <li><strong>内存优化:</strong> 自定义会话记忆存储，通过阈值压缩突破模型上下文限制</li>
+                            <li><strong>异步处理:</strong> 项目构建、封面生成等I/O密集型任务异步化，使用虚拟线程提升性能</li>
+                            <li><strong>查询优化:</strong> 基于时间游标实现分页对话查询，建立复合索引优化性能3倍</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://gitee.com/joyou11/ai-auto-coding" target="_blank" class="project-link">🔗 Gitee仓库</a>
+                        <a href="https://github.com/lim-juyou" target="_blank" class="project-link">🔗 GitHub主页</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="animate-on-scroll">
+            <h2 class="section-title"><span>个人特质</span></h2>
+            <div class="card">
+                <div class="personal-traits-grid">
+                    <div class="trait">
+                        <h4>🚀 技术热情</h4>
+                        <p>热爱互联网行业，持续关注前沿技术动态，善于利用AI工具提高开发效率</p>
+                    </div>
+                    <div class="trait">
+                        <h4>📖 自学能力</h4>
+                        <p>自学SpringAI和LangChain4j等AI应用开发框架并成功应用至实际项目</p>
+                    </div>
+                    <div class="trait">
+                        <h4>🤝 团队协作</h4>
+                        <p>具备良好的组织协调与沟通能力，曾担任班级学习委员和青协干事</p>
+                    </div>
+                    <div class="trait">
+                        <h4>🌟 积极乐观</h4>
+                        <p>性格开朗，热爱生活，能够积极面对挑战，保持持续学习的动力</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="animate-on-scroll contact-section">
+            <div class="card">
+                <div class="card-header" style="justify-content: center;">
+                    <div class="card-icon">📞</div>
+                    <div class="card-title">期待与您联系</div>
+                </div>
+                <p style="margin-bottom: 2rem; color: var(--light-text);">如果您对我的经验和技能感兴趣，期待能与您进一步沟通！</p>
+                <div class="contact-links">
+                    <a href="mailto:philiplim001@outlook.com" class="contact-btn">发送邮件</a>
+                    <a href="tel:17879706805" class="contact-btn">拨打电话</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    
+    <footer>
+        <p>© 2025 李福海. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 加载动画
+            const loadingScreen = document.getElementById('loading');
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+            }, 1500); // 加长加载时间，增加过渡感
+
+            // 滚动动画
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, {
+                threshold: 0.15 // 动画在元素15%可见时触发
+            });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(section => {
+                observer.observe(section);
+            });
+            
+            // 导航栏滚动高亮
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function updateActiveLink() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    // 当滚动位置超过section顶部一半时，将其设为当前active
+                    if (pageYOffset >= sectionTop - sectionHeight / 2) { 
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(a => {
+                    a.classList.remove('active');
+                    if (a.href.includes(current)) {
+                        a.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveLink);
+            updateActiveLink(); // Initial call
+        });
+    </script>
+
 </body>
 </html>
